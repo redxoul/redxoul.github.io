@@ -4,6 +4,8 @@ author: SwiftyCody
 date: 2023-08-17 00:34:00 +0800
 categories: [Tips]
 tags: [mermaid, tips, utility]
+pin: false
+mermaid: true
 ---
 
 [https://mermaid.js.org/](https://mermaid.js.org/)
