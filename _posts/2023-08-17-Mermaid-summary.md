@@ -20,7 +20,7 @@ mermaid: true
 [https://mermaid.live/](https://mermaid.live/)  
   
 
-# Basic
+## Basic
 
 `Flow Chart`의 간단한 예시로는 아래처럼 표현할 수 있습니다.
 
@@ -52,7 +52,7 @@ flowchart TD
 	A -->|Some Injection| C([C Framework])
 ```
 
-# classDef
+## classDef
 
 반복되는 형태는 **classDef**로 정의해서 사용할 수도 있습니다.
 
@@ -75,7 +75,7 @@ flowchart TD
     classDef static fill:#bbf,stroke:#ff,stroke-width:2px,color:#fff,stroke-dasharray: 3 3
 ```
 
-# click
+## click
 
 클릭을 했을 때 다른 문서(url)로 이동하게 하거나,
 
@@ -101,7 +101,7 @@ flowchart TD
     click A "https://www.naver.com" _blank
 ```
 
-# FontAwesome
+## FontAwesome
 
 FontAwesome(fa)를 지원하여 아이콘을 넣을 수도 있습니다(노션 내 Mermaid에서는 미지원).
 
@@ -129,9 +129,9 @@ flowchart TD
 
 ---
 
-# 그 외에 (언젠가 쓸거 같은) 그래프 및 차트 예제
+## 그 외에 (언젠가 쓸거 같은) 그래프 및 차트 예제
 
-## SequenceDiagram
+### SequenceDiagram
 
 ```
 sequenceDiagram
@@ -147,7 +147,7 @@ sequenceDiagram
     Alice-)John: See you later!
 ```
 
-## GitGraph
+### GitGraph
 
 ```
 ---
@@ -183,7 +183,7 @@ gitGraph
    commit
 ```
 
-## PieChart
+### PieChart
 
 ```
 pie title Pets adopted by volunteers
@@ -199,7 +199,7 @@ pie title Pets adopted by volunteers
     "Rats" : 15
 ```
 
-## MindMap
+### MindMap
 
 ```
 mindmap
@@ -241,7 +241,7 @@ mindmap
       Mermaid
 ```
 
-## TimeLine
+### TimeLine
 
 ```
 timeline
