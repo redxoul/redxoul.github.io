@@ -4,9 +4,10 @@
 
 @mixin dark-scheme {
   /* Framework color */
-  --main-bg: rgb(27, 27, 30);
+  --main-bg: rgb(30, 31, 33);
   --mask-bg: rgb(68, 69, 70);
   --main-border-color: rgb(44, 45, 45);
+  --menu-bg: rgb(41, 42, 45);
 
   /* Common color */
   --text-color: rgb(175, 176, 177);
@@ -39,7 +40,7 @@
   --site-subtitle-color: #868686;
   --sidebar-bg: #1e1e1e;
   --sidebar-border-color: #292929;
-  --sidebar-muted-color: #868686;
+  --sidebar-muted-color: rgb(255, 255, 255, 0.95);
   --sidebar-active-color: rgb(255, 255, 255, 0.95);
   --sidebar-hover-bg: #262626;
   --sidebar-btn-bg: #232328;

@@ -688,7 +688,8 @@ $btn-mb: 0.5rem;
   overflow-y: auto;
   width: $sidebar-width;
   z-index: 99;
-  background: url('/assets/img/macos_sonoma.jpg');;
+  // background: url('/assets/img/tim.jpg');
+  background: var(--menu-bg);
   // background-size: 100% 100%;
   background-position: center;
   border-right: 1px solid var(--sidebar-border-color);
@@ -741,7 +742,7 @@ $btn-mb: 0.5rem;
   .site-title {
     font-family: inherit;
     font-weight: 900;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     line-height: 1.2;
     letter-spacing: 0.25px;
     margin-top: 1.25rem;
@@ -756,7 +757,7 @@ $btn-mb: 0.5rem;
   }
 
   .site-subtitle {
-    font-size: 95%;
+    font-size: 80%;
     color: rgba(254, 254, 254, 90%);
     margin-top: 0.25rem;
     word-spacing: 1px;
@@ -774,6 +775,7 @@ $btn-mb: 0.5rem;
       width: 100%;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
+      position: center;
 
       a.nav-link {
         @include pt-pb(0.6rem);

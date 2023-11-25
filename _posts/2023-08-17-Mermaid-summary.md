@@ -1,6 +1,6 @@
 ---
 title: Mermaid.js 정리🧜🏻
-author: SwiftyCody
+author: Cody
 date: 2023-08-17 00:34:00 +0800
 categories: [Tips]
 tags: [mermaid, tips, utility]
