@@ -715,12 +715,14 @@ $btn-mb: 0.5rem;
 
   #avatar {
     display: block;
-    width: 7rem;
-    height: 7rem;
+    width: 5rem;
+    height: 5rem;
     overflow: hidden;
     box-shadow: var(--avatar-border-color) 0 0 0 2px;
     transform: translateZ(0); /* fixed the zoom in Safari */
-
+    margin: auto;
+    display: block;
+    
     img {
       transition: transform 0.5s;
 
@@ -735,8 +737,9 @@ $btn-mb: 0.5rem;
     @extend %clickable-transition;
 
     padding-left: 2.5rem;
-    padding-right: 1.25rem;
+    padding-right: 2.5rem;
     width: 100%;
+    text-align: center;
   }
 
   .site-title {
@@ -776,6 +779,7 @@ $btn-mb: 0.5rem;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
       position: center;
+      text-align: center;
 
       a.nav-link {
         @include pt-pb(0.6rem);
@@ -784,6 +788,8 @@ $btn-mb: 0.5rem;
         align-items: center;
         border-radius: 0.75rem;
         font-weight: 600;
+        margin: auto;
+        display: block;
 
         &:hover {
           background-color: var(--sidebar-hover-bg);
