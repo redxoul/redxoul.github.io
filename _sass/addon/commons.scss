@@ -334,8 +334,8 @@ sup {
   @extend %rounded;
 
   border: 0;
-  background: var(--card-bg);
-  box-shadow: var(--card-shadow);
+  background: none;
+  box-shadow: none;
 
   &::before {
     @extend %rounded;
@@ -344,7 +344,7 @@ sup {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: var(--card-hovor-bg);
+    background-color: none;
     opacity: 0;
     transition: opacity 0.35s ease-in-out;
   }
