@@ -334,7 +334,7 @@ sup {
   @extend %rounded;
 
   border: 0;
-  background: var(--card-bg);
+  background: none;
   box-shadow: none;
 
   &::before {
