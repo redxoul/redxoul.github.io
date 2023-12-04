@@ -3,18 +3,18 @@
 # ----- Commons label -----
 
 layout:
-  post: 포스트
-  category: 카테고리
-  tag: 태그
+  post: Post
+  category: Category
+  tag: Tag
 
 # The tabs of sidebar
 tabs:
   # format: <filename_without_extension>: <value>
-  home: 홈
-  categories: 카테고리
-  tags: 태그
-  archives: 아카이브
-  about: 정보
+  home: Home
+  categories: Categories
+  tags: Tags
+  archives: Archives
+  about: About
 
 # the text displayed in the search bar & search results
 search:
