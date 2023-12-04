@@ -2,7 +2,7 @@
 title: (Refactoring) 6-2 변수 추출하기, 변수 인라인하기
 author: Cody
 date: 2023-05-01 00:34:00 +0800
-categories: [iOS, Refactoring]
+categories: [Refactoring]
 tags: [Swift, Refactoring]
 pin: false
 mermaid: true

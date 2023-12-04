@@ -2,7 +2,7 @@
 title: (Refactoring) 4. 테스트 구축하기
 author: Cody
 date: 2023-04-10 00:34:00 +0800
-categories: [iOS, Refactoring]
+categories: [Refactoring]
 tags: [Swift, Refactoring]
 pin: false
 mermaid: true

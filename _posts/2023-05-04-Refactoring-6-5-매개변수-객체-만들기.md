@@ -2,7 +2,7 @@
 title: (Refactoring) 6-5 매개변수 객체 만들기
 author: Cody
 date: 2023-05-04 00:34:00 +0800
-categories: [iOS, Refactoring]
+categories: [Refactoring]
 tags: [Swift, Refactoring]
 pin: false
 mermaid: true

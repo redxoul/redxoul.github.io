@@ -2,7 +2,7 @@
 title: (Refactoring) 6-1 함수 추출하기, 함수 인라인하기
 author: Cody
 date: 2023-04-30 00:34:00 +0800
-categories: [iOS, Refactoring]
+categories: [Refactoring]
 tags: [Swift, Refactoring]
 pin: false
 mermaid: true

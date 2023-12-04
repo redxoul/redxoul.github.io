@@ -2,7 +2,7 @@
 title: (Refactoring) 6-4 변수 캡슐화하기, 변수 이름 바꾸기
 author: Cody
 date: 2023-05-03 00:34:00 +0800
-categories: [iOS, Refactoring]
+categories: [Refactoring]
 tags: [Swift, Refactoring]
 pin: false
 mermaid: true

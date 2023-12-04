@@ -2,7 +2,7 @@
 title: (Refactoring) 6-6 여러 함수를 클래스로 묶기
 author: Cody
 date: 2023-05-14 00:34:00 +0800
-categories: [iOS, Refactoring]
+categories: [Refactoring]
 tags: [Swift, Refactoring]
 pin: false
 mermaid: true

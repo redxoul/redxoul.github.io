@@ -2,7 +2,7 @@
 title: (Refactoring) 6-3 함수 선언 바꾸기
 author: Cody
 date: 2023-05-02 00:34:00 +0800
-categories: [iOS, Refactoring]
+categories: [Refactoring]
 tags: [Swift, Refactoring]
 pin: false
 mermaid: true

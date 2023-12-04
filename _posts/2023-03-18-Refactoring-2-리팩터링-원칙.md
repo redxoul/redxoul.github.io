@@ -2,7 +2,7 @@
 title: (Refactoring) 2. 리팩터링 원칙
 author: Cody
 date: 2023-03-18 00:34:00 +0800
-categories: [iOS, Refactoring]
+categories: [Refactoring]
 tags: [Swift, Refactoring]
 pin: false
 mermaid: true
