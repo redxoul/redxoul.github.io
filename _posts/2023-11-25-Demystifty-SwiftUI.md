@@ -129,6 +129,7 @@ SwiftUI는 선언적UI로서 고수준의 앱이 원하는 것을 Describe하면
   ```
   함수의 각 조건부 분기는 서로 다른 종류의 View를 리턴하는데, Swift에서는 전체 함수에 대한 단일 리턴타입이 필요하기 때문에 이를 모두 `AnyView`로 래핑.
   > ⚠️ 불행히도 이는 SwiftUI가 작성한 코드의 조건부 구조를 볼 수 없다는 의미
+  
   ```swift
   some View = AnyView
   ```
