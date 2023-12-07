@@ -194,7 +194,7 @@ end
 
   
 
-SecretKeyAndNonce["Secret Key🔑\n& Nonce"] --> EncryptedData
+SecretKeyAndNonce["Secret Key🔑\n& Nonce"] ---> EncryptedData
 
 Data --> EncryptedData
 

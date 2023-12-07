@@ -313,7 +313,7 @@ extension Array: Localizable where Element: Localizable {
 
 (합성된 프로토콜의 적합성)
 
-한동안 Swift를 사용했다면, `Codable`과 같은 프로토콜을 따르자마자 마술처럼 작동하는 프로토콜이 있다는 것을 알아차렸을 것입니다. 이는 Swift가 합성된 프로토콜 구현을 생성할 때 발생합니다. Swift는 `Equatable`, `Hashable`, `Comparable` 및 두 가지 `Codable` 프로토콜인 `Encodable` 및 `Decodable`에 대해 이 작업을 수행합니다.  
+`Codable`과 같은 프로토콜을 따르자마자 마술처럼 작동하는 프로토콜이 있는데 이는 Swift가 합성된 프로토콜 구현을 생성할 때 발생합니다. Swift는 `Equatable`, `Hashable`, `Comparable` 및 두 가지 `Codable` 프로토콜인 `Encodable` 및 `Decodable`에 대해 이 작업을 수행합니다.  
 프로토콜마다 이에 대한 제한이 있습니다. 일반적으로 Swift는 모든 프로퍼티가 해당 프로토콜을 conform하는 경우에만 프로토콜 conformance를 생성할 수 있습니다.
 
 예를 들어 `Hashable`의 경우 Swift에서 필요한 메서드를 합성하려면 모든 프로퍼티가 `hashable`해야 합니다.
