@@ -120,7 +120,7 @@ let value = ifelse(.random(), 100, 0)
 
 이 디자인은 `타입 정보를 보존하고 인수를 반환 타입과 동일한 타입으로 제한`시켜줌.
 
-## **Deferring execution**(실행 지연)
+## `Deferring execution`(실행 지연)
 
 ```swift
 func expensiveValue1() -> Int {
@@ -142,7 +142,7 @@ let taxicab = ifelse(
 
 위 코드를 실행시 두 함수가 모두 호출됨. `사용하는 표현식만 evaluate`되길 원할 것.
 
-이럴 때 실행을 지연(**defer**)시키는 `클로저`를 전달해서 이 문제를 해결할 수 있음.
+이럴 때 실행을 지연(`defer`)시키는 `클로저`를 전달해서 이 문제를 해결할 수 있음.
 
 ```swift
 func ifelse<V>(_ condition: Bool,
@@ -197,7 +197,7 @@ let taxicab = ifelse(
 
 이 변경은 호출되는 곳을 이전 상태로 복원하고 여전히 실행을 연기하므로 사용된 인수만 evaluate됨.
 
-## **Using expressions that can fail**
+## `Using expressions that can fail`
 
 실패가능한 표현식일 때는 위 `ifelse` 함수를 사용할 수 없음.
 
@@ -295,13 +295,13 @@ rethrows -> V {
 ```
 
 > 📄  
-> **Any**는 **Swift**의 궁극적인 **type-erasure**이지만 사용 시 오류가 발생하기 쉬움. 일반적으로 **Generic**이 더 나은 대안.  
+> `Any`는 `Swift`의 궁극적인 `type-erasure`이지만 사용 시 오류가 발생하기 쉬움. 일반적으로 `Generic`이 더 나은 대안.  
 > 클로저를 값을 반환하는 매개변수로 전달하여 함수 본문 내에서 인수 evaluate를 연기.  
-> **@autoclosure**는 표현식 인수의 실행을 지연시키기 때문에 short-circuit 동작을 구현하는 방법.  
-> **rethrow**는 **throws**로 표시되거나 표시되지 않을 수 있는 클로저에서 오류를 전파하는 방법.  
-> **@inlinable**은 함수에 대한 명령을 호출 사이트로 내보내야 함을 컴파일러에 암시.
+> `@autoclosure`는 표현식 인수의 실행을 지연시키기 때문에 short-circuit 동작을 구현하는 방법.  
+> `rethrow`는 `throws`로 표시되거나 표시되지 않을 수 있는 클로저에서 오류를 전파하는 방법.  
+> `@inlinable`은 함수에 대한 명령을 호출 사이트로 내보내야 함을 컴파일러에 암시.
 
-## **Performance**
+## `Performance`
 
 `optimizing 컴파일러`로 프로그램을 작성할 때 멋진 점 중 하나는 코드를 명확하고 유지 관리 가능하게 만드는 추상화 비용이 없거나 거의 없다는 것.
 

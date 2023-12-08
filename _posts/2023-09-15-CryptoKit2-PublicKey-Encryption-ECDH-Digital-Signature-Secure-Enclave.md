@@ -9,7 +9,7 @@ mermaid: true
 ---
 ## Public-Key Cryptography
 
-[이전 글](https://swifty-cody.tistory.com/135)에서 정리했던 `HMAC`, `Sealed Box`암호화는 Sender와 Receiver모두 키를 알고 있는 `대칭키`를 사용합니다.
+[이전 글](https://swiftycody.github.io/posts/CryptoKit-1-HMAC-AEAD/)에서 정리했던 `HMAC`, `Sealed Box`암호화는 Sender와 Receiver모두 키를 알고 있는 `대칭키`를 사용합니다.
 
 `대칭키`는 대역 외(Out of band)로 전송되어야 하고, 이 작업을 안전하게 수행할 수 없는 경우 `공개키 암호화(public-key cryptography)`를 사용합니다. 실제로 인터넷에서 일상적으로 사용하는 대부분의 암호화는 `공개키 암호화`를 사용하고, Xcode가 앱에 서명을 할 때에도 동일합니다.
 

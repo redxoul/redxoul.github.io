@@ -7,7 +7,7 @@ tags: [Xcode, Simulator, Push Notification]
 pin: false
 mermaid: true
 ---
-**Xcode 11.4**부터 시뮬레이터로 **Push Notification**을 보낼 수 있습니다.
+`Xcode 11.4`부터 시뮬레이터로 `Push Notification`을 보낼 수 있습니다.
 
 ## 준비물: apns 파일
 
@@ -52,7 +52,7 @@ xcrun simctl push booted com.swiftyCody.AppStoreSearch payload.apns
 
 ## 시뮬레이터 타겟 찾기
 
-**실행중인 시뮬레이터가 2개 이상**일 때는 `booted`가 아닌 **시뮬레이터 타겟**을 명시해주어야 합니다.
+`실행중인 시뮬레이터가 2개 이상`일 때는 `booted`가 아닌 `시뮬레이터 타겟`을 명시해주어야 합니다.
 
 커맨드라인에 아래 커맨드를 실행하면,
 

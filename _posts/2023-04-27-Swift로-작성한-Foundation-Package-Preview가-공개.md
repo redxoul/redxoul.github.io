@@ -10,13 +10,13 @@ mermaid: true
 
 [Foundation Package Preview Now Available](https://www.swift.org/blog/foundation-preview-now-available/)
 
-드디어 **Swift**로 작성된 **Foundation Package**의 **Preview**가 **Github**에 공개됐습니다.
+드디어 `Swift`로 작성된 `Foundation Package`의 `Preview`가 `Github`에 공개됐습니다.
 
 아직 모두 완성된 것은 아니지만 초기 테스트와 컨트리뷰트를 위해 빠르게 공개되었다고 합니다.
 
 공개된 요소들은 아래와 같습니다.
 
-**FoundationEssentials**
+`FoundationEssentials`
 
 - AttributedString
 - Data
@@ -28,7 +28,7 @@ mermaid: true
 - String extensions
 - UUID
 
-**Internationalization**
+`Internationalization`
 
 - Calendar
 - TimeZone

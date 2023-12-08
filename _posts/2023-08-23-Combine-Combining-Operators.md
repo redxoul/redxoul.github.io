@@ -7,17 +7,17 @@ tags: [Swift, Combine, WWDC19, WWDC, iOS13]
 pin: false
 mermaid: true
 ---
-**Combining Operator**을 사용하면 서로 다른 **Publisher**가 방출한 이벤트를 결합(combine)하고
+`Combining Operator`을 사용하면 서로 다른 `Publisher`가 방출한 이벤트를 결합(combine)하고
 
 결합 코드에서 의미 있는 데이터 조합을 만들 수 있습니다.
 
-예를 들어서 사용자 이름, 비밀번호, 체크박스 등의 입력이 필요한 양식의 경우 각각의 **Publisher**를 조합해서 동작하도록 만들 수 있습니다.
+예를 들어서 사용자 이름, 비밀번호, 체크박스 등의 입력이 필요한 양식의 경우 각각의 `Publisher`를 조합해서 동작하도록 만들 수 있습니다.
 
-먼저 **prepend** 연산자 시리즈입니다.
+먼저 `prepend` 연산자 시리즈입니다.
 
-**prepend**는 '앞에 붙이다'라는 뜻처럼 **Publisher**에서 나오는 값보다 먼저 나오는 값을 지정해줄 수 있습니다.
+`prepend`는 '앞에 붙이다'라는 뜻처럼 `Publisher`에서 나오는 값보다 먼저 나오는 값을 지정해줄 수 있습니다.
 
-(Rx의 **concat**과 유사)
+(Rx의 `concat`과 유사)
 
 # prepend 연산자 시리즈
 
@@ -51,7 +51,7 @@ publisher
 4
 ```
 
-**prepend** 연산자를 여러개를 사용할 수도 있습니다.
+`prepend` 연산자를 여러개를 사용할 수도 있습니다.
 
 ```swift
 let publisher = [3, 4].publisher
@@ -76,13 +76,13 @@ publisher
 
 마지막 prepend가 업스트림에 먼저 영향을 미치기 때문에,
 
-**-1, 0**이 먼저 출력되고, **1, 2**가 출력, 그리고 **3, 4**가 출력되는 것을 확인.
+`-1`, `0`이 먼저 출력되고, `1`, `2`가 출력, 그리고 `3`, `4`가 출력되는 것을 확인.
 
 ## prepend(sequence)
 
-이 **prepend** 변형은 이전 것과 유사하지만 모든 **Sequence** 개체를 입력으로 사용한다는 차이점이 있습니다.
+이 `prepend` 변형은 이전 것과 유사하지만 모든 `Sequence` 개체를 입력으로 사용한다는 차이점이 있습니다.
 
-예를 들어 **Array** 또는 **Set**을 사용할 수 있습니다.
+예를 들어 `Array` 또는 `Set`을 사용할 수 있습니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/3c808332-aee2-431b-afb1-30f3debd5575)
 
@@ -117,7 +117,7 @@ publisher
 > ⚠️ Set은 Array와 달리 순서가 보장되지 않기 때문에 방출되는 순서가 달라질 수 있음.  
 > 위 예시에서는 1, 2가 2, 1이 될 수도 있음.
 
-**stride** **Sequence**를 더 추가.
+`stride` Sequence를 더 추가.
 
 ```swift
 let publisher = [5, 6, 7].publisher
@@ -147,9 +147,9 @@ publisher
 
 ## prepend(Publisher)
 
-두 개의 다른 **publisher**가 있고 그들의 값을 함께 붙이고 싶을 땐
+두 개의 다른 `publisher`가 있고 그들의 값을 함께 붙이고 싶을 땐
 
-prepend(Publisher)를 사용하여 원래 publisher의 값 앞에 두 번째 publisher가 내보낸 값을 추가 가능합니다.
+`prepend(Publisher)`를 사용하여 원래 `publisher`의 값 앞에 두 번째 `publisher`가 내보낸 값을 추가 가능합니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/e4baee9d-b69b-44f9-80c6-593d39bea2fe)
 
@@ -179,7 +179,7 @@ publisher1
 
 prepend(publisher)의 두번째 예시.
 
-이번에는 **publisher2**를 **subject**로 바꿉니다.
+이번에는 `publisher2`를 `subject`로 바꿉니다.
 
 ```swift
 // 1. 첫 번째 publisher는 값 3과 4를 방출.
@@ -205,9 +205,9 @@ publisher2.send(2)
 2
 ```
 
-예상대로 **subject**가 완료되지 않았기 때문에 **publisher1**이 값을 방출할 수 없게 됩니다.
+예상대로 `subject`가 완료되지 않았기 때문에 `publisher1`이 값을 방출할 수 없게 됩니다.
 
-**finish**를 방출시키면, **publisher1**이 값을 방출할 수 있게 됩니다.
+`finish`를 방출시키면, `publisher1`이 값을 방출할 수 있게 됩니다.
 
 ```swift
 let publisher1 = [3, 4].publisher
@@ -236,11 +236,11 @@ publisher2.send(completion: .finished) // 추가
 
 # append 연산자 시리즈
 
-**append**는 **prepend**와 반대로 첫번째 **publisher**가 값을 모두 방출했을 때, 추가로 방출할 값을 설정해 줄 수 있습니다.
+`append`는 `prepend`와 반대로 첫번째 `publisher`가 값을 모두 방출했을 때, 추가로 방출할 값을 설정해 줄 수 있습니다.
 
 ## append(Output…)
 
-append(Output...)은 prepend와 유사하게 작동합니다. 또한 **Output** 유형의 가변 목록을 취하지만 원래 **publisher**가 **.finished** 이벤트로 **completed**된 후에 해당 항목을 추가합니다.
+append(Output...)은 prepend와 유사하게 작동합니다. 또한 `Output` 유형의 가변 목록을 취하지만 원래 `publisher`가 `.finished` 이벤트로 `completed`된 후에 해당 항목을 추가합니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/15ebb1e2-5853-4267-bba5-ea85c5ea0b4a)
 
@@ -267,7 +267,7 @@ publisher
 4
 ```
 
-각 **Append**는 작업을 추가하기 전에 업스트림이 완료될 때까지 기다렸다가 완료 후 동작합니다.
+각 `Append`는 작업을 추가하기 전에 업스트림이 완료될 때까지 기다렸다가 완료 후 동작합니다.
 
 ```swift
 // 1. publisher는 수동으로 값을 보낼 수 있는 PassthroughSubject로
@@ -286,14 +286,14 @@ publisher.send(2)
 
 출력.
 
-**publisher**로 방출한 값만 출력됨을 확인.
+`publisher`로 방출한 값만 출력됨을 확인.
 
 ```
 1
 2
 ```
 
-아래처럼 코드를 추가하면 **append**가 동작함을 확인.
+아래처럼 코드를 추가하면 `append`가 동작함을 확인.
 
 ```swift
 let publisher = PassthroughSubject<Int, Never>()
@@ -323,7 +323,7 @@ publisher.send(completion: .finished) // 추가
 
 ## append(Sequence)
 
-**Sequence**를 개체를 가져와 원래 **publisher**의 모든 값이 내보낸 후에 해당 값을 추가합니다.
+`Sequence`를 개체를 가져와 원래 `publisher`의 모든 값이 내보낸 후에 해당 값을 추가합니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/ad7a60a1-6459-4b07-a2a4-6cf2d59c647d)
 
@@ -390,13 +390,13 @@ publisher1
 
 # Advanced combining
 
-**prepend**, **append**보다는 복잡하지만, **publisher** **composition**에 유용한 연산자들입니다.
+`prepend`, `append`보다는 복잡하지만, `publisher` `composition`에 유용한 연산자들입니다.
 
 ## switchToLatest
 (= Rx의 flatMapLatest)
 
-pending 중인 **publisher**의 **subscription**을 취소하는 동시에 전체 **publisher** **subscription**을 즉시 전환하여 최신 **subscription**으로 전환할 수 있습니다.  
-자체적으로 **publisher**를 내보내는 **publisher**에서만 사용할 수 있습니다.
+pending 중인 `publisher`의 `subscription`을 취소하는 동시에 전체 `publisher` `subscription`을 즉시 전환하여 최신 `subscription`으로 전환할 수 있습니다.  
+자체적으로 `publisher`를 내보내는 `publisher`에서만 사용할 수 있습니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/6222a395-6dcf-471a-be9b-e21a514deec0)
 
@@ -525,11 +525,11 @@ image: receive finished
 
 
 ## merge(with:)
-(= **Rx**의 **merge**)
+(= `Rx`의 `merge`)
 
 merge(with:)는 아래 마블다이어그램과 같이
 
-동일한 타입의 여러 **publisher**의 방출을 interleave(상호배치)시켜줍니다.
+동일한 타입의 여러 `publisher`의 방출을 interleave(상호배치)시켜줍니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/25ca440d-8031-4dbd-973f-eba3135e1b38)
 
@@ -579,11 +579,11 @@ Completed
 ```
 
 ## combineLatest
-(= **Rx**의 **combineLatest**와 유사)
+(= `Rx`의 `combineLatest`와 유사)
 
-**combineLatest**는 다양한 타입의 **publisher**를 튜플로 묶을 수 있게 해주는 연산자입니다.
+`combineLatest`는 다양한 타입의 `publisher`를 튜플로 묶을 수 있게 해주는 연산자입니다.
 
-**publisher** 중 하나에서 값을 방출할 때마다, 모든 **publisher**의 최신값이 포함된 튜플을 방출시켜줍니다.
+`publisher` 중 하나에서 값을 방출할 때마다, 모든 `publisher`의 최신값이 포함된 튜플을 방출시켜줍니다.
 
 > ⚠️ combineLatest로 묶인 모든 publisher들이 최소 1개 이상의 값을 방출하고부터 튜플이 방출됩니다.
 
@@ -627,7 +627,7 @@ publisher2.send(completion: .finished)
 
 출력.
 
-**publisher2**가 최초로 **a**를 방출하고 **publisher1**의 최신값 **2**와 튜플로 방출된 것이 확인됩니다.
+`publisher2`가 최초로 `a`를 방출하고 `publisher1`의 최신값 `2`와 튜플로 방출된 것이 확인됩니다.
 
 ```
 P1: 2, P2: a
@@ -638,11 +638,11 @@ Completed
 ```
 
 ## zip
-(= **Rx**의 **zip**)
+(= `Rx`의 `zip`)
 
-Swift 표준 라이브러리의 **zip**과 유사합니다.
+Swift 표준 라이브러리의 `zip`과 유사합니다.
 
-위 **combineLatest**와 달리, **zip**으로 묶인 **publisher**들의 방출값들을 각 인덱스 순서대로 튜플로 묶어 방출시켜줍니다.
+위 `combineLatest`와 달리, `zip`으로 묶인 `publisher`들의 방출값들을 각 인덱스 순서대로 튜플로 묶어 방출시켜줍니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/6a6b45c1-cfa2-4c68-b71d-0f846149d68e)
 
