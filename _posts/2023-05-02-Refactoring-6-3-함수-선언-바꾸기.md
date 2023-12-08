@@ -9,10 +9,7 @@ mermaid: true
 ---
 함수의 이름이 좋으면 함수의 구현 코드를 볼 필요도 없이 호출문만 보고도 무슨일을 하는지 파악이 가능합니다.
 
-<aside>
-💡 좋은 이름을 떠올리는 효과적인 방법은 '주석으로 함수의 목적을 설명해보기'. 주석이 멋진 이름으로 바뀌어 되돌아 올 때가 있음.
-
-</aside>
+> 💡 좋은 이름을 떠올리는 효과적인 방법은 '주석으로 함수의 목적을 설명해보기'. 주석이 멋진 이름으로 바뀌어 되돌아 올 때가 있음.
 
 매개변수도 마찬가지. 함수를 사용하는 문맥을 설정하는 것.
 
@@ -84,11 +81,11 @@ func circumference(radius: Double) -> Double {
 
 수정한 코드를 테스트한 뒤, 예전 함수를 인라인합니다. 그러면 예전 함수를 호출하는 부분이 모두 새 함수를 호출하도록 바뀌게 됩니다. 하나를 변경할 때마다 테스트하면서 하나씩 처리합니다. 모두 바꿨다면 예전 함수를 제거합니다.
 
-만약 공개된 **API**를 수정해야 한다면? **circumference(radius:)** 함수를 만든 후 리팩터링을 멈춥니다. 가능하면 **circum(radius:)**가 **deprecated**임을 표시해줍니다. 그리고 클라이언트 모두가 **circumference(radius:)**를 사용한다고 판단이 될 때 **circum(radius:)**를 제거해줍니다.
+만약 공개된 **API**를 수정해야 한다면? `circumference(radius:)` 함수를 만든 후 리팩터링을 멈춥니다. 가능하면 `circum(radius:)`가 **deprecated**임을 표시해줍니다. 그리고 클라이언트 모두가 `circumference(radius:)`를 사용한다고 판단이 될 때 `circum(radius:)`를 제거해줍니다.
 
 ## **매개변수 추가하기**
 
-아래는 도서 관리 프로그램의 **Book**클래스의 예시입니다.
+아래는 도서 관리 프로그램의 `Book`클래스의 예시입니다.
 
 ```swift
 class Book {
@@ -110,7 +107,7 @@ class Book {
 
 위와 같은 상황에서 예약 기능에 우선순위 큐를 지원하라는 요구가 추가되는 상황입니다(이건 리팩터링이라기 보다 그냥 기능 추가?).
 
-아래와 같이 새로운 매개변수의 기본값을 설정해두면, 기존 예약은 **customer**만 전달하여 그대로 사용하고 새롭게 추가되는 우선순위 예약의 경우 추가된 매개변수를 사용하면 됩니다.
+아래와 같이 새로운 매개변수의 기본값을 설정해두면, 기존 예약은 `customer`만 전달하여 그대로 사용하고 새롭게 추가되는 우선순위 예약의 경우 추가된 매개변수를 사용하면 됩니다.
 
 ```swift
 func addReservation(customer: Customer, isPriority: Bool = false) {
@@ -127,7 +124,7 @@ func addReservation(customer: Customer, isPriority: Bool = false) {
 
 ## **매개변수를 속성으로 바꾸기**
 
-아래는 손님이 **NewEngland**에 거주하는지 여부를 반환해주는 함수인데, 이렇게 **Customer**를 받아서 처리하면, **Customer**에 국한되어서 처리를 하는 함수가 되어버리기 때문에, **Customer** 대신 **state**만 받아오도록 수정하는 것이 좋습니다.
+아래는 손님이 `NewEngland`에 거주하는지 여부를 반환해주는 함수인데, 이렇게 `Customer`를 받아서 처리하면, `Customer`에 국한되어서 처리를 하는 함수가 되어버리기 때문에, `Customer` 대신 `state`만 받아오도록 수정하는 것이 좋습니다.
 
 ```swift
 func inNewEngland(_ aCustomer: Customer) -> Bool {
@@ -138,7 +135,7 @@ func inNewEngland(_ aCustomer: Customer) -> Bool {
 
 호출되는 부분이 몇 없다면 찾아서 바로 수정해줘도 되지만, 복잡한 상황이라면 아래와 같이 바꾸어줍니다.
 
-먼저 함수 추출하기로 새 함수를 만들어주고, 기존 함수에서 매개변수로 필요한 값(**stateCode**)을 추출하여 인라인하고 매개변수로 넣어줍니다.
+먼저 함수 추출하기로 새 함수를 만들어주고, 기존 함수에서 매개변수로 필요한 값(`stateCode`)을 추출하여 인라인하고 매개변수로 넣어줍니다.
 
 ```swift
 func inNewEngland(_ aCustomer: Customer) -> Bool {
@@ -153,7 +150,7 @@ func xxNewEngland(_ stateCode: String) -> Bool {
 
 그리고 호출문들을 찾아 하나씩 함수 인라인하기로 기존 함수 본문을 넣어줍니다.
 
-위 작업이 다 되면 **[함수 선언 바꾸기]**로 새 함수의 이름(**xxNewEngland(_:)**)을 기존 함수의 이름(**inNewEngland(_:)**)으로 다시 변경하는 작업을 합니다.
+위 작업이 다 되면 **[함수 선언 바꾸기]**로 새 함수의 이름(`xxNewEngland(_:)`)을 기존 함수의 이름(`inNewEngland(_:)`)으로 다시 변경하는 작업을 합니다.
 
 ```swift
 func inNewEngland(_ stateCode: String) -> Bool {
