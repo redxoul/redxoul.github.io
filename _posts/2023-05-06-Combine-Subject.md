@@ -19,7 +19,7 @@ mermaid: true
 
 `Subject`의 가장 기본형입니다.
 
-아래는 우선 커스텀 `Subscriber`의 예시입니다([Custom Subscriber](https://www.notion.so/84c5d45d16cf461b8c7be5005d7c6c44?pvs=21)는 이전글 참조)
+아래는 우선 커스텀 `Subscriber`의 예시입니다([Custom Subscriber](https://swiftycody.github.io/posts/Combine-Publisher-Subscriber-Custom-Subscriber/)는 이전글 참조)
 
 ```swift
 // 1. Error 타입을 정의
