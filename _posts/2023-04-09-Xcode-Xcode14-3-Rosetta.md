@@ -20,7 +20,7 @@ mermaid: true
 
 저는 그동안 아래 글에서 **Apple Silicon** 환경(**M1**, **M2**, ...)에서 발생할 수 있는 문제점 및 해결 방법을 정리하고 계속 글을 갱신하고 있었는데요.
 
-[**애플 실리콘(M1, M2, ...) 환경에서의 빌드 환경 문제**](https://www.notion.so/M1-M2-f833a9b0c5904fd0aedfaa18938d4909?pvs=21) 
+[**애플 실리콘(M1, M2, ...) 환경에서의 빌드 환경 문제**](https://swiftycody.github.io/posts/%EC%95%A0%ED%94%8C-%EC%8B%A4%EB%A6%AC%EC%BD%98-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%EC%9D%98-%EB%B9%8C%EB%93%9C-%ED%99%98%EA%B2%BD-%EB%AC%B8%EC%A0%9C/) 
 
 어떤 문제는 **Xcode**를 **Rosetta**로 실행하여 우회적으로 해결할 수 있었는데,
 
