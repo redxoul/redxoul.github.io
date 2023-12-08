@@ -21,10 +21,10 @@ mermaid: true
 
 아래는 ``collect()` operator`를 나타내는 마블다이어그램입니다.
 
-마블다이어그램에 대한 설명은 `RxSwift`의 그것과 동일하기 때문에 지난글([`[RxSwift] Lifecycle과 마블다이어그램`](https://www.notion.so/RxSwift-Lifecycle-5784576f5e9b47e9a58e0b16e672b4c2?pvs=21) )로 대체합니다.
+마블다이어그램에 대한 설명은 `RxSwift`의 그것과 동일하기 때문에 지난글([`[RxSwift] Lifecycle과 마블다이어그램`](https://swiftycody.github.io/posts/RxSwift-Lifecycle%EA%B3%BC-%EB%A7%88%EB%B8%94%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/))로 대체합니다.
 
-![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/797b0734-41fb-4715-b772-0c6b70430de8)
-collect() operator의 마블다이어그램
+![collect() operator의 마블다이어그램](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/797b0734-41fb-4715-b772-0c6b70430de8)
+
 
 아래는 `collect()`의 예시입니다.
 
