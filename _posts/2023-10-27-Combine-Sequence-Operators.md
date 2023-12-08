@@ -472,7 +472,7 @@ Upstream Publisher가 방출하는 값들을 누적시키며 하나의 결과를
 
 Upstream이 `.finished`를 전달해야 결과값을 방출.
 
-([이전글](https://swifty-cody.tistory.com/114)에서 정리한 scan연산자와 비슷하지만, scan은 모든 단계마다 누적값을 방출시키고 reduce는 최종 누적값만 방출시킴)
+([이전글](https://swiftycody.github.io/posts/Combine-Transforming-Operators/)에서 정리한 scan연산자와 비슷하지만, scan은 모든 단계마다 누적값을 방출시키고 reduce는 최종 누적값만 방출시킴)
 
 ![image](https://github.com/redxoul/redxoul.github.io/assets/9062513/1947e9b0-73a3-4315-ab14-ea10c1e47bb0)
 
