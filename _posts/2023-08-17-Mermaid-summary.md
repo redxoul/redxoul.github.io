@@ -271,4 +271,4 @@ timeline
 
 노션의 `Mermaid`블록에서는 코드보기, 미리보기, 분할보기(동기에보기) 옵션이 있어서 더 편리하게 실시간으로 보면서 그래프를 그리고 정리할 수 있습니다.
 
-![](https://blog.kakaocdn.net/dn/cNnBFb/btsrhEizd53/umYgmd76QdDLs9qPtzgqmK/img.png)
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/93f31187-1337-417e-87f1-ab3bcbaf23db)
