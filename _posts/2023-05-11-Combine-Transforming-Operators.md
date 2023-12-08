@@ -320,7 +320,7 @@ finished
 `reduce`와의 차이점은 모든 처리를 다 한 뒤에 최종값만 방출하는 것이 아니라, 매 reduce과정마다 값을 방출한다는 점입니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/48d48065-8cc1-49a9-8291-372e1f893241)
-scan(_:_:)의 마블다이어그램
+scan의 마블다이어그램
 
 위 마블다이어그램에서는 초기값`0`부터 저장해서 `Upstream Publisher`로부터 값을 받으면 이전 저장값에 더해서 `Output`으로 내보내고 해당 값을 저장합니다.
 
