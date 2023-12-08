@@ -15,14 +15,14 @@ CryptoKit Documentation: [https://developer.apple.com/documentation/CryptoKit](h
 
 # CryptoKit에서 할 수 있는 것
 
-- **Hash 함수**: SHA-256, SHA-384, SHA-512
-- **Symmetric-Key Cryptography**
+- `Hash 함수`: SHA-256, SHA-384, SHA-512
+- `Symmetric-Key Cryptography`
     - Message Authentication Code: HMAC
     - Authenticated Encryption: AES-GCM(Chacha20Poly1305)
-- **Public-Key Cryptography**: Curve25519. P-256, P-384, P-512
+- `Public-Key Cryptography`: Curve25519. P-256, P-384, P-512
     - Key Agreement
     - Signitures
-- **Insecure Module**(안전하지 않은 모듈)
+- `Insecure Module`(안전하지 않은 모듈)
     - Hash Functions: MD5 ,SHA-1
 
 ## Hash 함수
@@ -100,14 +100,14 @@ let publicKeyData = privateKey.publicKey.compactRepresentation! // compact(압�
 let signature = try privateKey.signature(for: transactionData)
 ```
 
-이 매우매우 중요한 키를 보호하기 위해 **Secure Enclave**가 필요.
+이 매우매우 중요한 키를 보호하기 위해 `Secure Enclave`가 필요.
 
 ## Secure Enclave
 
 - [https://support.apple.com/ko-kr/guide/security/sec59b0b31ff/web](https://support.apple.com/ko-kr/guide/security/sec59b0b31ff/web)
 - 추가 보안 계층을 제공하기 위해 메인 프로세서와 분리된 하드웨어 기반 키 관리자.
 - TouchID, FaceID와 같은 중요한 시스템 기능의 일부로 사용됨.
-- 사용법은 매우 간단. 위 키 생성코드에서 **SecureEnclave**를 사용하도록만 하면 끝
+- 사용법은 매우 간단. 위 키 생성코드에서 `SecureEnclave`를 사용하도록만 하면 끝
 
 ```swift
 // Secure Enclave 사용가능 여부를 체크
@@ -126,7 +126,7 @@ let publicKeyData = privateKey.publicKey.compactRepresentation!
 let signature = try privateKey.signature(for: transactionData)
 ```
 
-- **Secure Enclave**의 장점은 **키 사용을 제한**할 수 있다는 점.
+- `Secure Enclave`의 장점은 `키 사용을 제한`할 수 있다는 점.
 - 예시
     - 생성할 키가 디바이스가 잠금해제된 경우에만 액세스할 수 있고, 이 장치에서만 사용할 수 있도록 제한
     - 개인키로 작업할 때(privateKeyUsage), 사용자의 존재(userPresence)가 필요하다고 명시
