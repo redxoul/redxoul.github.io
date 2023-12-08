@@ -230,7 +230,7 @@ Completed with: finished
 
 `Upstream`이 무한한 `Publisher`에서 `last(where:)`를 사용하게 되면, 방출된 값이 마지막 값인지 알 수가 없기 때문에 `DownStream`에서 값을 받을 수 없게 됩니다.
 
-아래는 `PassthroughSubject`에 ``last(where:)``를 사용한 예시입니다.
+아래는 `PassthroughSubject`에 `last(where:)`를 사용한 예시입니다.
 
 ```swift
 let numbers = PassthroughSubject<Int, Never>()
@@ -281,7 +281,7 @@ Completed with: finished
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/30906a7e-88fe-4c26-a9e7-b190088a73b2)
 
-``dropFirst()``의 예시입니다.
+`dropFirst()`의 예시입니다.
 
 ```swift
 // 1. 1에서 10 사이의 Int를 출력하는 publisher 생성
@@ -307,7 +307,7 @@ numbers
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/6bbbfe14-a975-4271-b7d5-ec1533537ea0)
 
-``drop(while:)``의 예시입니다.
+`drop(while:)`의 예시입니다.
 
 ```swift
 // 1. 1에서 10 사이의 Int를 방출하는 publisher 생성
@@ -349,7 +349,7 @@ numbers
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/2eba9f42-b4c7-4d4f-b170-eae9ef5d5c42)
 
-아래는 ``drop(untilOutputFrom:)``의 예시입니다.
+아래는 `drop(untilOutputFrom:)`의 예시입니다.
 
 ```swift
 // 1. 수동으로 값을 전송할 수 있는 두 개의 PassthroughSubject를 생성
@@ -423,7 +423,7 @@ Completed with: finished
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/2d0b137c-f8f1-48b9-b3dd-fdf770497013)
 
-``prefix(while:)``의 예시입니다.
+`prefix(while:)`의 예시입니다.
 
 ```swift
 // 1. 1에서 10 사이의 Int를 방출하는 publisher 생성
@@ -459,7 +459,7 @@ Completed with: finished
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/07276ee9-dcc5-4e06-9b7a-883e168f02ec)
 
-``prefix(untilOutputFrom:)``의 예시입니다.
+`prefix(untilOutputFrom:)`의 예시입니다.
 
 ```swift
 // 1. 수동으로 값을 전송할 수 있는 두 개의 PassthroughSubject를 생성

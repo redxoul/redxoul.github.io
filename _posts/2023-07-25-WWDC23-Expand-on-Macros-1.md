@@ -111,12 +111,12 @@ macro stringify<T>(_ expr: T) -> (T, String)
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/19052f84-1791-4c0f-9802-e5eee273776c)
 
-``@freestanding` Macro`를 만드는 2가지 `Role`
+`@freestanding` Macro를 만드는 2가지 `Role`
 
 - `expression`(표현식)
 - `declaration`(선언)
 
-``@attached` Macro`를 만드는 5가지 `Role`
+`@attached` Macro를 만드는 5가지 `Role`
 
 - `peer`
 - `accessor`
@@ -273,9 +273,9 @@ n을 넣어주는 것에 따라 n차원 배열에 따른 계산해주는 배열 
 
 특정 선언에 `attach`됨 → 작업할 정보가 더 많다는 의미.
 
-``@freestanding` Macro`는 `전달된 인수만 제공`되지만,
+@freestanding` Macro는 `전달된 인수만 제공`되지만,
 
-``@attached` Macro`는 `연결된 선언에 접근`도 가능. 해당 선언을 검사하고 내부에서 `이름, 타입, 기타 정보를 꺼내서 사용`.
+`@attached` Macro는 `연결된 선언에 접근`도 가능. 해당 선언을 검사하고 내부에서 `이름, 타입, 기타 정보를 꺼내서 사용`.
 
 #### @attached(peer)
 
