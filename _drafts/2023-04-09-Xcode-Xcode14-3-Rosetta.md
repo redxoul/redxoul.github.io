@@ -9,13 +9,9 @@ mermaid: true
 ---
 이번 [Xcode14.3 Release Note](https://developer.apple.com/documentation/xcode-release-notes/xcode-14_3-release-notes)를 보면 아래와 같은 **General Deprecation**이 있습니다.
 
-> Xcode isn’t supported under Rosetta. See Developer Technote “Resolving architecture build errors on Apple silicon“ for more information. (92772361)
-> 
+> Xcode isn’t supported under Rosetta. See Developer Technote “Resolving architecture build errors on Apple silicon“ for more information. (92772361)  
+>⚠️ Xcode 14.3부터는 Rosetta로 실행하는 것을 지원하지 않습니다.
 
-<aside>
-⚠️ Xcode 14.3부터는 Rosetta로 실행하는 것을 지원하지 않습니다.
-
-</aside>
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/1f56dd6e-0e28-4f23-911e-87c38a5ced69){: width="50%" height="50%"}
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/84624634-72a9-4c75-ae61-d3fbfe60c8d7){: width="50%" height="50%"}
