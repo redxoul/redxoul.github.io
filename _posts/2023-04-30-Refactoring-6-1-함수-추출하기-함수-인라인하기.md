@@ -7,11 +7,11 @@ tags: [Swift, Refactoring]
 pin: false
 mermaid: true
 ---
-## **함수 추출하기 Extract Function**
+## 함수 추출하기 Extract Function
 
-**코드 조각을 찾아 무슨 일을 하는지 파악한 다음, 독립된 함수로 추출하고 목적에 맞는 이름을 붙이는 작업**입니다.
+`코드 조각을 찾아 무슨 일을 하는지 파악한 다음, 독립된 함수로 추출하고 목적에 맞는 이름을 붙이는 작업`입니다.
 
-**'목적과 구현을 분리'**하는 방식이 가장 합리적인 기준. 코드를 보고 무슨 일을 하는지 파악하는 데 한참이 걸린다면 그 부분을 함수로 추출한 뒤 '무슨 일'에 걸 맞는 이름을 짓습니다.
+`'목적과 구현을 분리'`하는 방식이 가장 합리적인 기준. 코드를 보고 무슨 일을 하는지 파악하는 데 한참이 걸린다면 그 부분을 함수로 추출한 뒤 '무슨 일'에 걸 맞는 이름을 짓습니다.
 
 (1) 함수를 새로 만들고, 목적을 잘 드러내는 이름을 붙임('어떻게'가 아닌 '무엇을' 하는지가 드러나야 함): 대상 코드가 함수 호출문 하나처럼 간단하더라도 함수로 뽑아서 목적이 더 잘 드러나는 이름을 붙일수 있다면 추출할 것(이런 이름이 떠오르지 않는다면 추출하면 안 된다는 신호)
 
@@ -33,9 +33,9 @@ mermaid: true
 func printOwing(invoice: inout Invoice) {
     var outstanding = 0.0
 
-    print("***********************")
-    print("**** Customer Owes ****")
-    print("***********************")
+    print("```````````*")
+    print("`` Customer Owes ``")
+    print("```````````*")
 
     // calculate outstanding
     for order in invoice.orders {
@@ -59,20 +59,20 @@ var invoice = Invoice(orders: [Order(amount: 2.0), Order(amount: 5.0)], customer
 printOwing(invoice: &invoice)
 ```
 
-위 코드의 문제점: **printOwing** 함수의 길이가 매우 길고, 하는 일이 많아서 파악이 어려움. 그리고 코드 리딩을 돕기 위한 주석이 달려 있음 → 한 단계씩 함수를 추출해 나가야 합니다.
+위 코드의 문제점: `printOwing` 함수의 길이가 매우 길고, 하는 일이 많아서 파악이 어려움. 그리고 코드 리딩을 돕기 위한 주석이 달려 있음 → 한 단계씩 함수를 추출해 나가야 합니다.
 
 (inout 매개변수의 문제점은 여기서 짚지는 않습니다)
 
-우선 함수 제일 위의 지역변수 정의: 예전에는 각 함수에서 사용할 지역변수를 가장 상단에 정의하는 것이 관행이었지만 요즘은 그렇지 않습니다. **사용하는 곳과 최대한 가까운 곳에 정의**해주는 것이 좋습니다.
+우선 함수 제일 위의 지역변수 정의: 예전에는 각 함수에서 사용할 지역변수를 가장 상단에 정의하는 것이 관행이었지만 요즘은 그렇지 않습니다. `사용하는 곳과 최대한 가까운 곳에 정의`해주는 것이 좋습니다.
 
 각 단계마다 주석으로 정리해줍니다.
 
 ```swift
  func printOwing(invoice: inout Invoice) {
     // 배너를 출력
-    print("***********************")
-    print("**** Customer Owes ****")
-    print("***********************")
+    print("```````````*")
+    print("`` Customer Owes ``")
+    print("```````````*")
 
     // outstanding(미해결 채무)을 계산
     var outstanding = 0.0 // 사용하는 곳 가까운 곳으로 이동
@@ -143,13 +143,13 @@ func printDetails(invoice: Invoice, outstanding: Double) {
 
 위와 같이 정리를 하고 나면
 
-**printOwing** 함수는 4줄의 함수로 바뀌고 각 줄이 의미와 목적이 있는 이름으로 대체되어
+`printOwing` 함수는 4줄의 함수로 바뀌고 각 줄이 의미와 목적이 있는 이름으로 대체되어
 
 세부내용을 확인하지 않고도 바로 함수를 이해할 수 있게 되었습니다.
 
 만약 후에 버그가 생겼다면 빠르게 해당 함수를 읽고 수정하기도 좋습니다.
 
-추가로 **calculateOutstanding** 메서드의 경우, for문을 도는 절차지향 코드를 함수형 프로그래밍으로 전환.
+추가로 `calculateOutstanding` 메서드의 경우, for문을 도는 절차지향 코드를 함수형 프로그래밍으로 전환.
 
 ```swift
 func calculateOutstanding(_ invoice: Invoice) -> Double {
@@ -159,7 +159,7 @@ func calculateOutstanding(_ invoice: Invoice) -> Double {
 }
 ```
 
-## **함수 인라인하기 Inline Function**
+## 함수 인라인하기 Inline Function
 
 위에서 함수 추출을 통해 목적이 드러나는 이름의 짧은 함수를 사용하기를 권하지만,
 
@@ -214,7 +214,7 @@ func gatherCustomerData(out: inout [[String]], customer: Customer) {
 }
 ```
 
-**reportLines** 함수내에서 불필요한 간접호출이 있는 경우입니다.
+`reportLines` 함수내에서 불필요한 간접호출이 있는 경우입니다.
 
 아래와 같이 인라인을 해줍니다.
 

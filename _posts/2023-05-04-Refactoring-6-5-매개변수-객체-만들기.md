@@ -7,7 +7,7 @@ tags: [Swift, Refactoring]
 pin: false
 mermaid: true
 ---
-## **매개변수 객체 만들기**
+## 매개변수 객체 만들기
 
 데이터 항목 여러개를 함수로 넘겨주게 되면, 데이터 구조를 묶어서 보내주면 좋습니다.
 
@@ -29,9 +29,9 @@ mermaid: true
 
 (7) 기존 매개변수를 제거하고 테스트
 
-아래는 온도측정값(**reading**) 배열에서 정상 작동 범위(**min**, **max**)를 벗어난 것이 있는지 검사하는 코드 예시입니다.
+아래는 온도측정값(`reading`) 배열에서 정상 작동 범위(`min`, `max`)를 벗어난 것이 있는지 검사하는 코드 예시입니다.
 
-매개변수는 최대 **3개**를 넘어가지 않는 것이 좋은데 최대치군요? 그리고 **min**과 **max**는 연관성이 있어 묶어줄 수 있어 보입니다.
+매개변수는 최대 `3개`를 넘어가지 않는 것이 좋은데 최대치군요? 그리고 `min`과 `max`는 연관성이 있어 묶어줄 수 있어 보입니다.
 
 ```swift
 func readingsOutsideRange(station: Station, min: Int, max: Int) -> [Reading] {
@@ -53,7 +53,7 @@ print(readingsOutsideRange(station: station, min: 51, max: 53))
 // [__lldb_expr_7.Reading(temp: 47, time: "2016-11-10 09:10"), __lldb_expr_7.Reading(temp: 58, time: "2016-11-10 09:30")]
 ```
 
-**min**과 **max**를 하나의 데이터 구조로 만들어줍니다.
+`min`과 `max`를 하나의 데이터 구조로 만들어줍니다.
 
 그리고 해당 데이터 관련 처리도 모아주기 위해 함수로 만들어줍니다.
 
@@ -68,7 +68,7 @@ struct NumberRange<T: Comparable> {
 }
 ```
 
-새로 만든 객체를 **readingOutsideRange()** 함수의 매개변수로 추가하도록 선언을 수정해주고,
+새로 만든 객체를 `readingOutsideRange()` 함수의 매개변수로 추가하도록 선언을 수정해주고,
 
 ```swift
 func readingsOutsideRange(station: Station, min: Int, max: Int, range: NumberRange<Int>) -> [Reading] {

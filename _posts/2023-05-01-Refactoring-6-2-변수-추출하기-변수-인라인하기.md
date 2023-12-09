@@ -7,7 +7,7 @@ tags: [Swift, Refactoring]
 pin: false
 mermaid: true
 ---
-## **변수 추출하기 Extract Variable**
+## 변수 추출하기 Extract Variable
 
 표현식이 복잡하여 이해하기 어려울 땐, 지역 변수로 표현식을 쪼개어 관리하기 쉽게 만들수 있습니다.
 
@@ -109,7 +109,7 @@ class Order {
 }
 ```
 
-## **변수 인라인하기 Inline Variable**
+## 변수 인라인하기 Inline Variable
 
 이름이 원래의 표현식과 다를바가 없을 때는 불필요한 변수가 될 수 있고,
 
