@@ -8,10 +8,10 @@ pin: false
 mermaid: true
 ---
 ## dynamicMemberLookup
-**`dynamicMemberLookup`**은
-**`class`**, **`struct`**, **`enum`**, **`protocol`**에 적용하여 런타임에 **dot**(**`.`**) 문법으로 접근할 수 있도록 해주는 편리한 기능입니다.
+`dynamicMemberLookup`은
+`class`, `struct`, `enum`, `protocol`에 적용하여 런타임에 `dot`(`.`) 문법으로 접근할 수 있도록 해주는 편리한 기능입니다.
 
-**`dynamicMemberLookup`**을 사용하려면 **`subscript(dynamicMember:)`**를 구현해주어야 합니다.
+`dynamicMemberLookup`을 사용하려면 `subscript(dynamicMember:)`를 구현해주어야 합니다.
 
 ```swift
 @dynamicMemberLookup
@@ -44,15 +44,15 @@ man.say // Nope!!!
 
 그래서 예상하지 못한 에러가 발생하거나, 가독성이 떨어질 수가 있기 때문에 충분한 주석과 적절한 이름을 부여하는 것이 필요합니다.
 
-## **@dynamicmemberlookup과 Builder 패턴**
+## @dynamicmemberlookup과 Builder 패턴
 
-**`Builder`**패턴은 객체를 생성하는 과정을 캡슐화하여 코드의 가독성과 유연성을 높이는 디자인 패턴 중 하나인데
+`Builder`패턴은 객체를 생성하는 과정을 캡슐화하여 코드의 가독성과 유연성을 높이는 디자인 패턴 중 하나인데
 
 생성자에 매개변수가 많이 필요할 때 고려해볼 수 있는 패턴입니다.
 
 예를 들어 아래와 같이 작성할 수가 있습니다.
 
-많이 보던 **`setter`**와 비슷하지만 **`Self`**를 **`return`**하는 것이 포인트입니다.
+많이 보던 `setter`와 비슷하지만 `Self`를 `return`하는 것이 포인트입니다.
 
 ```swift
 class Person {
@@ -102,17 +102,17 @@ let cody = Person()
 
 어디서 많이 본 패턴이죠?
 
-**SwiftUI**에서 **View**작성시에도 사용하고,
+`SwiftUI`에서 `View`작성시에도 사용하고,
 
-**RxSwift**에서 **`.rx`**을 통해서 **Reactive extension**을 사용할 때에도 이 패턴이 등장합니다.
+`RxSwift`에서 `.rx`을 통해서 `Reactive extension`을 사용할 때에도 이 패턴이 등장합니다.
 
-그런데 **RxSwift**에서 **Builder**패턴(**`.rx`**)을 구현할 때 위 예제처럼 프로퍼티마다 **`setter`**를 만들어주진 않았습니다.
+그런데 `RxSwift`에서 `Builder`패턴(`.rx`)을 구현할 때 위 예제처럼 프로퍼티마다 `setter`를 만들어주진 않았습니다.
 
-저렇게 프로퍼티가 늘어날 때마다 **`setter`**를 만들어주면 모듈 작성 시 매우 매우 번거롭고 지저분해지겠죠?
+저렇게 프로퍼티가 늘어날 때마다 `setter`를 만들어주면 모듈 작성 시 매우 매우 번거롭고 지저분해지겠죠?
 
-그래서 바로 전에 정리했던 **`KeyPath`**와 **`@dynamicMemberLookup`**을 이용해서
+그래서 바로 전에 정리했던 `KeyPath`와 `@dynamicMemberLookup`을 이용해서
 
-**`NSObject`**의 서브클래스들의 **`Writable Reference Property`**들의 **`setter`**를 자동으로 **Builder**패턴으로 만들어줄 수가 있습니다.
+`NSObject`의 서브클래스들의 `Writable Reference Property`들의 `setter`를 자동으로 `Builder`패턴으로 만들어줄 수가 있습니다.
 
 ```swift
 @dynamicMemberLookup
@@ -160,9 +160,9 @@ extension NSObject: Buildable { }
 
 이렇게 작성을 하면,
 
-**`NSObject`**의 서브클래스들은 모두 **Builder**패턴으로 인스턴스를 작성할 수 있게 됩니다.
+`NSObject`의 서브클래스들은 모두 `Builder`패턴으로 인스턴스를 작성할 수 있게 됩니다.
 
-아래처럼 따로 **Builder**패턴의 **`setter`**들을 작성하지 않아도
+아래처럼 따로 `Builder`패턴의 `setter`들을 작성하지 않아도
 
 ```swift
 class Person: NSObject {
@@ -174,7 +174,7 @@ class Person: NSObject {
 }
 ```
 
-이렇게 **`.builder`**를 통해 작성할 수 있게 됩니다.
+이렇게 `.builder`를 통해 작성할 수 있게 됩니다.
 
 ```swift
 var person = Person().builder
@@ -186,7 +186,7 @@ var person = Person().builder
     .build()
 ```
 
-물론 **Foundation**, **UIKit**도 마찬가지입니다.
+물론 `Foundation`, `UIKit`도 마찬가지입니다.
 
 ```swift
 var label = UILabel().builder
@@ -197,7 +197,7 @@ var label = UILabel().builder
     .build()
 ```
 
-**RxSwift**의 **Reactive** 확장(**`.rx`**)도 같은 방식으로 구현되어 있는 것을 확인할 수 있습니다.
+`RxSwift`의 `Reactive` 확장(`.rx`)도 같은 방식으로 구현되어 있는 것을 확인할 수 있습니다.
 
 ```swift
 // RxSwift패키지의 Reactive.swift
@@ -242,8 +242,8 @@ import Foundation
 /// Extend NSObject with `rx` proxy.extension NSObject: ReactiveCompatible { }
 ```
 
-**RxSwift**, **RxCocoa**를 그냥 쓰고만 있다가,
+`RxSwift`, `RxCocoa`를 그냥 쓰고만 있다가,
 
-'기존 **Foundation**, **UIKit**들이 어떻게 **`.rx`**나 **`.bind`**로 확장해서 쓸 수 있도록 구현한걸까?🤔' 라는 궁금증에 이렇게 정리를 해보게 되었네요.
+'기존 `Foundation`, `UIKit`들이 어떻게 `.rx`나 `.bind`로 확장해서 쓸 수 있도록 구현한걸까?🤔' 라는 궁금증에 이렇게 정리를 해보게 되었네요.
 
-**`@dynamicMemeberLookup`**과 **Builder**패턴에 대한 정리는 여기까지입니다.😀
+`@dynamicMemeberLookup`과 `Builder`패턴에 대한 정리는 여기까지입니다.😀

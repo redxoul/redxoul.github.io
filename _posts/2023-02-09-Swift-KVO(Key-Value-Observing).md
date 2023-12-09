@@ -7,15 +7,15 @@ tags: [Swift, KVO]
 pin: false
 mermaid: true
 ---
-**`Key-Value Observing(KVO)`**은 다른 객체의 **property** 변경에 대해 객체에 알리는 데 사용하는 코코아 프로그래밍 패턴입니다.
+`Key-Value Observing(KVO)`은 다른 객체의 `property` 변경에 대해 객체에 알리는 데 사용하는 코코아 프로그래밍 패턴입니다.
 
-**Model**과 **View** 사이와 같이 앱의 논리적으로 분리된 것 사이의 변경 사항을 전달하는 데 유용합니다.
+`Model`과 `View` 사이와 같이 앱의 논리적으로 분리된 것 사이의 변경 사항을 전달하는 데 유용합니다.
 
-**`willSet`**, **`didSet`**과 유사하지만 **`KVO`**는 객체 **외부**에서 **property**변경을 관찰하는 데 사용된다는 차이점이 있습니다.
+`willSet`, `didSet`과 유사하지만 `KVO`는 객체 `외부`에서 `property`변경을 관찰하는 데 사용된다는 차이점이 있습니다.
 
-**`NSObject`**를 상속받은 클래스에서만 **`Key-Value Observing`**을 사용할 수 있습니다.
+`NSObject`를 상속받은 클래스에서만 `Key-Value Observing`을 사용할 수 있습니다.
 
-**`Key-Value Observing`**을 위해 **Observe**할 **property** 앞에 **`@objc` attribute**와 **`dynamic` modifier**를 붙여주어야 합니다.
+`Key-Value Observing`을 위해 `Observe`할 `property` 앞에 `@objc` attribute와 `dynamic` modifier를 붙여주어야 합니다.
 
 ```swift
 class Almond: NSObject { // NSObject를 상속받아야 함
@@ -27,9 +27,9 @@ class Almond: NSObject { // NSObject를 상속받아야 함
 }
 ```
 
-**Observe**는 다음과 같이 설정해 줍니다.
+`Observe`는 다음과 같이 설정해 줍니다.
 
-관찰할 대상을 **`KeyPath`**(\.name)로 넣어줍니다.
+관찰할 대상을 `KeyPath`(\.name)로 넣어줍니다.
 
 ```swift
 var almond = Almond(name: "HoneyButter")
@@ -39,13 +39,13 @@ almond.observe(\.name, options: [.initial, .old, .new]) { object, change in // .
 }
 ```
 
-설정할 때 **`initial`**, **`old`**, **`new`**, **`prior`**로 **options**를 줄 수 있는데요.
+설정할 때 `initial`, `old`, `new`, `prior`로 `options`를 줄 수 있는데요.
 
 관찰하고 싶은 상태들을 옵션으로 넣어주면 됩니다.
 
-위와 같이 **`initial`**을 설정하면 초기값도 포함하여 받아오게 되고, **observe** 설정하자마자 **`newValue`**로 초기값이 받아와 집니다.
+위와 같이 `initial`을 설정하면 초기값도 포함하여 받아오게 되고, `observe` 설정하자마자 `newValue`로 초기값이 받아와 집니다.
 
-```
+```swift
 old almond: nil
 new almond: Optional("HoneyButter")
 ```
@@ -56,14 +56,14 @@ new almond: Optional("HoneyButter")
 almond.name = "Wasabi"
 ```
 
-조금 전 받은 초기값(HoneyButter)은 **`oldValue`**로, 변경시켜 준 값(Wasabi)은 **`newValue`**로 받습니다.
+조금 전 받은 초기값(HoneyButter)은 `oldValue`로, 변경시켜 준 값(Wasabi)은 `newValue`로 받습니다.
 
-```
+```swift
 old almond: Optional("HoneyButter")
 new almond: Optional("Wasabi")
 ```
 
-마지막으로 **`prior`**를 **options**에 포함하면 어떻게 될까요?
+마지막으로 `prior`를 `options`에 포함하면 어떻게 될까요?
 
 이번엔 print를 조금 바꿔봤습니다. 이유는 아래에 나옵니다.
 
@@ -84,17 +84,17 @@ new almond: Optional("HoneyButter")
 
 하지만 새 값으로 바꿔주면?
 
-```
+```swift
 almond.name = "Wasabi"
 ```
 
 아래처럼 변경되기까지의 과정(?)까지 받게 됩니다.
 
-(1) 새 값을 **`newValue`**로 넣기 전에 기존 **`newValue`**(HoneyButter)를 **`oldValue`**로 넣고, **`newValue`**에 **`nil`**을 넣은 상태(**`prior`**)를 받고
+(1) 새 값을 `newValue`로 넣기 전에 기존 `newValue`(HoneyButter)를 `oldValue`로 넣고, `newValue`에 `nil`을 넣은 상태(`prior`)를 받고
 
-(2) 새 값(Wasabi)을 **`newValue`**로 넣은 상태도 전달받습니다.
+(2) 새 값(Wasabi)을 `newValue`로 넣은 상태도 전달받습니다.
 
-```
+```swift
 old almond(prior): Optional("HoneyButter")
 new almond(prior): nil
 // (편의상 분리)
@@ -102,6 +102,6 @@ old almond: Optional("HoneyButter")
 new almond: Optional("Wasabi")
 ```
 
-위에서 **print**에 **`isPrior`**값을 넣어준 이유는 **`prior`**상태의 값을 구분해 주기 위해 필요하기 때문이었습니다.
+위에서 `print`에 `isPrior`값을 넣어준 이유는 `prior`상태의 값을 구분해 주기 위해 필요하기 때문이었습니다.
 
 여기까지 `KVO`에 대한 글이었습니다.

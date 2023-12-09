@@ -9,16 +9,16 @@ mermaid: true
 ---
 클래스로 묶으면
 
-- 함수들이 공유하는 **공통 환경을 더 명확하게 표현**할 수 있고,
-- 각 함수에 전달되는 인수를 줄여서 **객체 안에서의 함수 호출을 간결**하게 만들 수 있습니다.
-- 그리고 이런 객체를 **시스템의 다른 부분에 전달하기 위한 참조를 제공**할 수 있습니다.
-- **클라이언트가 객체의 핵심 데이터를 변경할 수 있고, 파생 객체들을 일관되게 관리**할 수도 있습니다.
+- 함수들이 공유하는 `공통 환경을 더 명확하게 표현`할 수 있고,
+- 각 함수에 전달되는 인수를 줄여서 `객체 안에서의 함수 호출을 간결`하게 만들 수 있습니다.
+- 그리고 이런 객체를 `시스템의 다른 부분에 전달하기 위한 참조를 제공`할 수 있습니다.
+- `클라이언트가 객체의 핵심 데이터를 변경할 수 있고, 파생 객체들을 일관되게 관리`할 수도 있습니다.
 
-(1) 함수들이 공유하는 공통 데이터 레코드를 캡슐화: 공통 데이터가 레코드 구조로 묶여 있지 않다면 '[매개변수 객체 만들기](https://www.notion.so/Refactoring-6-5-a86122a05d824f76b3cbdb9104a8f79b?pvs=21)'로 데이터를 하나로 묶는 레코드를 만들기
+(1) 함수들이 공유하는 공통 데이터 레코드를 캡슐화: 공통 데이터가 레코드 구조로 묶여 있지 않다면 '[매개변수 객체 만들기](https://swiftycody.github.io/posts/Refactoring-6-5-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EA%B0%9D%EC%B2%B4-%EB%A7%8C%EB%93%A4%EA%B8%B0/)'로 데이터를 하나로 묶는 레코드를 만들기
 
 (2) 공통 레코드를 사용하는 함수 각각을 새 클래스로 옮기기: 공통 레코드의 멤버는 함수 호출문의 인수 목록에서 제거
 
-(3) 데이터를 조작하는 로직들을 '[함수로 추출](https://www.notion.so/Refactoring-6-1-3fbba6f486284146b426b6f19534b8fb?pvs=21)'해서 새 클래스로 옮기기
+(3) 데이터를 조작하는 로직들을 '[함수로 추출](https://swiftycody.github.io/posts/Refactoring-6-1-%ED%95%A8%EC%88%98-%EC%B6%94%EC%B6%9C%ED%95%98%EA%B8%B0-%ED%95%A8%EC%88%98-%EC%9D%B8%EB%9D%BC%EC%9D%B8%ED%95%98%EA%B8%B0/)'해서 새 클래스로 옮기기
 
 아래는 '클래스로 묶기'가 필요한 예시코드입니다. 계량기를 읽어 세금을 부과하는 예시입니다.
 
@@ -76,9 +76,9 @@ let basicChargeAmount = calculateBaseCharge(aReading)
 
 하나의 책임을 가진 클래스(or 구조체)가 필요해보입니다.
 
-우선 데이터를 가진 **`Reading`** 구조체로 만들어줍니다.
+우선 데이터를 가진 `Reading` 구조체로 만들어줍니다.
 
-그리고 이미 만들어진 **`baseRate(month:year:)`**와 **`calculateBaseCharge(_:)`**를 옮겨줍니다.
+그리고 이미 만들어진 `baseRate(month:year:)`와 `calculateBaseCharge(_:)`를 옮겨줍니다.
 
 연산 프로퍼티로 옮겨준 후, 그에 맞게 이름도 변경시켜줍니다.
 
@@ -103,7 +103,7 @@ struct Reading {
 }
 ```
 
-각 클라이언트들에서 제각각 `baseCharge`를 계산하던 부분을 **`Reading`**클래스의 **`baseCharge`** 호출로 변경시켜줍니다.
+각 클라이언트들에서 제각각 `baseCharge`를 계산하던 부분을 `Reading`클래스의 `baseCharge` 호출로 변경시켜줍니다.
 
 ```swift
 // client1. 기본요금 계산
@@ -130,7 +130,7 @@ let aReading = acquireReading()
 let basicChargeAmount = aReading.baseCharge // 변경된 baseCharge 호출
 ```
 
-이어서 client2에서 **`taxThreshold`**에 따라 **`taxableCharge`**를 계산하는 부분도 옮겨옵니다.
+이어서 client2에서 `taxThreshold`에 따라 `taxableCharge`를 계산하는 부분도 옮겨옵니다.
 
 ```swift
 struct Reading {
@@ -161,9 +161,9 @@ struct Reading {
 }
 ```
 
-client2를 **`Reading`**의 **`taxableCharge`**를 사용하도록 수정합니다.
+client2를 `Reading`의 `taxableCharge`를 사용하도록 수정합니다.
 
-`base`값도 **`taxableCharge`**를 계산하기 위한 값이었기 때문에 제거해주어 간결하게 만들어줄 수 있습니다.
+`base`값도 `taxableCharge`를 계산하기 위한 값이었기 때문에 제거해주어 간결하게 만들어줄 수 있습니다.
 
 ```swift
 // client2. 세금을 부과. 기본 소비량만큼은 면세.
