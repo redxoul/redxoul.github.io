@@ -97,12 +97,12 @@ magicTest() // 42
 
 터미널 창에서 `magic.swift`가 있는 소스 디렉토리로 변경하고 다음 명령을 실행.
 
-```swift
+```shell
 swiftc -O -emit-silgen magic.swift > magic.rawsil
 ```
 
 > ⚠️ 커맨드라인툴 설치가 자꾸 뜨면 터미널에 아래를 실행 후 위 명령어 수행.  
-> sudo xcode-select -s /Library/Developer/CommandLineTools
+> `sudo xcode-select -s /Library/Developer/CommandLineTools`
 
 이것은 최적화된 `Swift 컴파일러`를 실행하고 `Raw SIL`을 생성하여 `magic.rawsil` 파일로 출력. 텍스트 편집기에서 `magic.rawsil`을 열고 아래로 스크롤하면 `magicTest()` 함수의 다음 정의를 찾을 수 있음.
 
