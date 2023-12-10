@@ -13,7 +13,7 @@ mermaid: true
 
 보통 `Operator`들은 `Upstream`의 이벤트를 받아서 이를 조작한 뒤, 조작된 이벤트를 소비할 `Downstream`으로 보냅니다.
 
-## `collect()`
+## collect()
 
 ( = `RxSwift`의 `toArray`)
 
@@ -96,7 +96,7 @@ var subscriptions = Set<AnyCancellable>()
 finished
 ```
 
-## `map(_:)`
+## map(_:)
 
 ( = `RxSwift`의 `map`)
 
@@ -133,7 +133,7 @@ four
 fifty-six
 ```
 
-## `Map(_:) with KeyPaths`
+## Map(_:) with KeyPaths
 
 `map(_:) operator`에서 파생된 `map<T>(_:)`, `map<T0, T1>(_:_:)`, `map<T0, T1, T2>(_:_:_:)` 시리즈가 있습니다.
 
@@ -168,7 +168,7 @@ The coordinate at (10, -8) is in quadrant 4
 The coordinate at (0, 5) is in quadrant boundary
 ```
 
-## `tryMap(_:)`
+## tryMap(_:)
 
 `Combine`에서 제공하는 `operator`들은 `tryMap(_:)` 뿐만 아니라 `try` `prefix`를 가진 `operator`들을 제공합니다.
 
@@ -197,7 +197,7 @@ UserInfo={NSUserStringVariant=(Folder), NSFilePath=DirectoryNameNotExist, NSUnde
 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}})
 ```
 
-## `flatMap(maxPublisher:_:)`
+## flatMap(maxPublisher:_:)
 
 ( = `RxSwift`의 `merge(maxConcurrent:)`)
 
@@ -249,7 +249,7 @@ flatMap(maxPublisher:_:)의 마블다이어그램
 
 `maxPublishers`가 `.max(2)`로 설정되어 최대 2개의 `Publisher`로부터만 값을 받아 3번째 `Publisher`에게 받은 `Output`은 무시됩니다.
 
-## `replaceNil(with:)`
+## replaceNil(with:)
 
 `Output`이 `Optional`값인 `Upstream`에서 전달받은 ``nil` Output`을 지정한 값으로 바꿔주는 `operator`입니다.
 
@@ -278,7 +278,7 @@ C
 > ✨ `replaceNil(with:)`는 `nil`을 `non-nil`값으로 대체시켜주기 때문에 당연히 `Output`이 `non-Optional`로 나와야할 거 같은데, 위 예시에서 `.eraseToAnyPublisher()`를 제거했을 때, `Output`이 `Optional<String>`으로 나오는 것을 볼 수 있습니다(공식 문서에서도 `Optional`로 나오는 것으로 설명. why??). Upstream에서 `.eraseToAnyPublisher()`를 사용하면 `non-Optional` 값으로 `Output`이 나오도록 할 수 있습니다.
 
 
-## `replaceEmpty(with:)`
+## replaceEmpty(with:)
 
 ( = `RxSwift`의 `ifEmpty(default:)`)
 
@@ -309,7 +309,7 @@ empty
 finished
 ```
 
-## `scan(_:_:)`
+## scan(_:_:)
 
 ( = `RxSwift`의 `scan(_:accumulator:)`)
 
