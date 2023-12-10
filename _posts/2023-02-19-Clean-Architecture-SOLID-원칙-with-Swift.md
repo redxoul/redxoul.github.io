@@ -372,7 +372,7 @@ class CannonAllInOne: Printer, Scanner {
 
 `DIP`를 지키면 `결합도를 낮출 수 있으며, 유연성과 확장성`이 높아집니다. `테스트 코드 작성에도 유리`해집니다.
 
-([의존성, 의존성 주입, 의존성 역전의 원칙](https://www.notion.so/A-dependency-Dependency-Injection-Dependency-Inversion-Principle-0049752fcf81427385a713c534e5af6a?pvs=21)에 대해 더 자세히 써놓은 글)
+([의존성, 의존성 주입, 의존성 역전의 원칙](https://swiftycody.github.io/posts/%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%A3%BC%EC%9E%85-%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%97%AD%EC%A0%84%EC%9D%98-%EC%9B%90%EC%B9%99/)에 대해 더 자세히 써놓은 글)
 
 아래는 `DIP`를 위반한 예제입니다.(위 글에서 사용한 동일한 예제)
 
