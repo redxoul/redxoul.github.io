@@ -179,8 +179,8 @@ import PowerAssert
 
 ```swift
 public macro assert(_ condition: Bool) = #externalMacro(
-  module: “PowerAssertPlugin”,
-  type: “PowerAssertMacro"
+  module: "PowerAssertPlugin",
+  type: "PowerAssertMacro"
 )
 ```
 
@@ -201,8 +201,8 @@ public macro assert(_ condition: Bool) = #externalMacro(
 
 @freestanding(expression)
 public macro assert(_ condition: Bool) = #externalMacro(
-  module: “PowerAssertPlugin”,
-  type: “PowerAssertMacro"
+  module: "PowerAssertPlugin",
+  type: "PowerAssertMacro"
 )
 ```
 
