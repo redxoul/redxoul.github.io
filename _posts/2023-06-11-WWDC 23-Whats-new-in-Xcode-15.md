@@ -468,4 +468,4 @@ func login(password: String) -> Error? {
 
 ### `Swift Package`
 
-- `File > New > Package…` 메뉴 명령을 사용하여 `다양한 유형의 Swift 패키지를 생성`할 수 있습니다. 템플릿에는 `Macro`, `Package Plugin` 및 `swift-argument-parser를 사용하도록 구성된 command line tool configure가 포함`됩니다.
+- `File > New > Package…` 메뉴 명령을 사용하여 `다양한 유형의 Swift 패키지를 생성`할 수 있습니다. 템플릿에는 `Macro`, `Package Plugin` 및 `swift-argument-parser를 사용하도록 구성된 command line tool configure가 포함`됩니다.
