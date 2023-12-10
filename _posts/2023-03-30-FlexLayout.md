@@ -21,7 +21,7 @@ mermaid: true
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/d299bdf9-ec21-492c-8cc3-2dff45ff9b59)
 
-## `FlexLayout의 Setting`
+## FlexLayout의 Setting
 
 `FlexLayout`은 `iOS 8.0`부터 지원하여 많은 프로젝트에서 도입하기 좋은 조건을 갖고 있습니다.
 
@@ -53,7 +53,7 @@ FLEXLAYOUT_SWIFT_PACKAGE=1
 
 `결론` = `PinLayout`도 함께 `Dependency` 설정을 해주고, 함께 `import 해서` 사용합니다.
 
-## `FlexLayout 작성의 기본 틀`
+## FlexLayout 작성의 기본 틀
 
 FlexLayout 작성의 기본 틀은 아래와 같습니다.
 
@@ -110,7 +110,7 @@ class FlexLayoutSample: UIView {
 
 ([UIViewRepresentable, UIViewControllerRepresentable 프로토콜(feat. PreviewProvider, SnapKit)](https://swiftycody.github.io/posts/SwiftUI-PreviewProvider-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C-Preview/)  글 참고)
 
-## `FlexLayout의 작성`
+## FlexLayout의 작성
 
 `FlexLayout`을 작성할 때 필요한 API 및 예제는 공식문서에 자세히 설명이 잘 되어있습니다.
 
@@ -135,7 +135,7 @@ private func setFlexLayout() {
 }
 ```
 
-`.padding()`
+### .padding()
 
 패딩을 줄 수 있습니다. `float`으로 설정할 수도 있고 `%`로도 설정할 수 있습니다.
 
@@ -161,26 +161,25 @@ private func setFlexLayout() {
 
 `FlexLayout`에서 여러 속성을 줄 때는 `.flex` 뒤로 계속 이어서 chaining으로 작성할 수 있습니다.
 
-`.define { flex in }`
+### .define { flex in }
 
 `서브뷰를 정의`할 때는 `.define { flex in }` 으로 작성해 줍니다.
 
-`.addItem()`
+### .addItem()
 
 `서브뷰를 추가`할 때는 `define` 클로저 내에서 `.addItem()`으로 할 수 있습니다.
 
 (`addItem()`으로 서브뷰를 추가하면 `addSubview()`를 따로 작성할 필요는 없습니다)
 
-`.direction()`
+### .direction()
 
 `서브뷰의 방향`을 지정해 줄 때는 `.direction()`으로 해줍니다. 세로방향은 `.column` 가로방향은 `.row` 입니다. 기본값은 `.column` 이기 때문에 세로방향의 컨테이너의 경우 `.direction(.column)`을 생략해 줄 수 있습니다.
 
-`.justifyContent()`
+### .justifyContent()
 
 `서브뷰들의 간격과 배치`를 어떻게 할 것인지를 지정할 수 있습니다. `.start`, `.end`, `.center`, `.spaceBetween`, `.spaceAround`, `.spaceEvenly` 값을 넣어줄 수 있습니다(각 값은 공식문서를 참조). 이 뷰에서는 `.spaceBetween`을 넣어서 서브뷰들을 테두리에 붙이면서 spacing를 주도록 했습니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/7e31be1f-cea4-4d3e-9380-b79a8a82469a)
-
 .justifyContent(.spaceBetween)
 
 그리고 `addItem()`에 아무 뷰도 넣어주지 않을 수도 있습니다. 컨터이너의 역할만 하고, 해당 참조값이 필요하지 않은 UIView의 경우 `addItem()`에서 `생략`을 시켜주어도 됩니다.
@@ -229,23 +228,23 @@ private func setFlexLayout() {
 }
 ```
 
-`.alignItems()`
+### .alignItems()
 
 `서브뷰들의 정렬 방법`을 지정해줍니다. `.stretch`, `.start`, `.end`, `.center`, `.baseline` 이 있고 기본값은 `.stretch`입니다. 때문에 위처럼 `.center`로 지정해주지 않으면 '받기 버튼'이 상단에 붙어버리게 됩니다.
 
-`.height(), .width(), .size()`
+### .height(), .width(), .size()
 
 `크기`를 지정해 줄 때 사용합니다. 크기값을 `float`으로 넣어줄 수도 있고, `%`로 넣어줄 수도 있습니다.
 
 아래쪽 스크린샷의 경우 부모뷰(컨테이너)의 32% 너비로 그려주도록 `.width(32%)`로 설정해 주었습니다.
 
-`.addItem()`
+### .addItem()
 
 위에서도 설명했지만 참조가 필요 없는 UIView의 경우 뷰 값을 생략하여 사용할 수 있습니다.
 
 위 코드에서처럼 `Spacer`역할로도 사용할 수 있습니다.
 
-`.grow()`
+### .grow()
 
 item이 `얼마나 커질 수 있는지` 지정해 줄 수 있습니다. `0`, `1`, `2` 값을 넣어줄 수 있고 기본값은 `0`입니다.
 
@@ -259,7 +258,7 @@ item이 `얼마나 커질 수 있는지` 지정해 줄 수 있습니다. `0`, `1
 
 (반대의 개념으로 `.shrink()`가 있는데 다음 단계에서 설명 예정)
 
-`.aspectRatio()`
+### .aspectRatio()
 
 해당 item의 `가로, 세로의 비율`을 설정할 수 있습니다.
 
@@ -303,7 +302,7 @@ private func setFlexLayout() {
 }
 ```
 
-`.shrink()`
+### .shrink()
 
 item이 얼마나 줄어들 수 있을지 지정해 줄 수 있습니다. `0`, `1`, `2` 값을 넣어줄 수 있고 기본값은 `0`입니다.
 
@@ -321,19 +320,19 @@ item이 얼마나 줄어들 수 있을지 지정해 줄 수 있습니다. `0`, `
 
 그 밖에 잘 사용하는 설정
 
-`.backgroundColor()`
+### .backgroundColor()
 
 `UIColor`값을 넣어 배경색을 지정해 줄 수 있습니다.
 
 view나 컨테이너 등에 지정해 주어 영역을 확인하기에 유용합니다.
 
-`.margin()`
+### .margin()
 
 마진을 정해줄 수 있습니다. `float`으로 설정할 수도 있고 `%`로도 설정할 수 있습니다.
 
 `padding`과 마찬가지로 `.marginTop`, `.marginLeft`, `.marginBotton`, `.marginRight`, `.marginHorizontal`, `.marginVertical` 등의 SugarAPI를 제공합니다.
 
-`.position()`
+### .position()
 
 위치를 `.relative`(상대적위치)로 할 것인지, `.absolute`(절대적위치)로 할 것인지 설정할 수 있습니다. 기본값은 `.relative`로 그동안 위에서 작성했던 것들은 모두 상대적으로 작성한 것입니다.
 
@@ -341,11 +340,11 @@ view나 컨테이너 등에 지정해 주어 영역을 확인하기에 유용합
 
 `.top()`, `.left()`, `.bottom()`, `.right()`, `.start()`, `.end()`, `.vertically()`, `.horizontally()`, `.all()` 로 절대적 위치를 잡아줄 수 있습니다. 각 설정은 `float`과 `%`로 넣을 수 있습니다.
 
-`.minWidth(), .maxWidth(), .minHeight(), .maxHeight()`
+### .minWidth(), .maxWidth(), .minHeight(), .maxHeight()
 
 `item`의 `너비, 높이의 최대, 최소값`을 설정해 줄 수 있고, `float`과 `%`로 정할 수 있습니다.
 
-## `ScrollView의 세팅`
+## ScrollView의 세팅
 
 아래는 스크롤뷰 세팅의 예시입니다.
 
