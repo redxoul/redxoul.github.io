@@ -8,7 +8,7 @@ pin: false
 mermaid: true
 ---
 
-## `Publisher`
+## Publisher
 
 `Publisher Protocol`은 `Combine`의 핵심 중 하나입니다.
 
@@ -36,7 +36,7 @@ let just = Just("Hello world!")
 
 이제 위의 `Just`로부터 값을 받으려면 `Subscriber`가 필요합니다.
 
-## `Subscriber`
+## Subscriber
 
 `Subscriber`는 `Publisher`로부터 입력을 받을 수 있는 타입의 요구사항을 정의하는 `Protocol`입니다.
 
@@ -242,7 +242,7 @@ class SomeObject {
 }
 ```
 
-## `Cancellable`
+## Cancellable
 
 `Publisher`를 `subscribe(sink, assign)`하면 `AnyCancellable` 인스턴스를 반환하고, 해당 `AnyCancellable` 인스턴스는
 
