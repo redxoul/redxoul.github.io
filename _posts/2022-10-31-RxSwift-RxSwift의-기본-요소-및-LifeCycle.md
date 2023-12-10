@@ -1,5 +1,5 @@
 ---
-title: (RxSwift) Lifecycle과 마블다이어그램
+title: (RxSwift) RxSwift의 기본 요소 및 LifeCycle
 author: Cody
 date: 2022-10-31 00:34:00 +0800
 categories: [iOS, RxSwift]
