@@ -13,7 +13,7 @@ mermaid: true
 
 (`@published`를 마킹한 프로퍼티와 유사한 징검다리 역할입니다. `non-Combine` 코드로부터 값을 받아, `sink`를 통해 값을 내보낼 수 있죠)
 
-## `PassthroughSubject`
+## PassthroughSubject
 
 ( = RxSwift의 PublishSubject)
 
@@ -205,7 +205,7 @@ Received completion failure(__lldb_expr_47.MyError.test)
 > 🗒️ `PassthroughtSubject`는 `Subject`의 기본형으로,
 `non-Combine` 코드로부터 값을 받아서 `Subscriber`에게 값을 방출시키는 `Publisher`.
 
-## `CurrentValueSubject`
+## CurrentValueSubject
 
 ( = RxSwift의 BehaviorSubject)
 
