@@ -263,21 +263,21 @@ func tryMap<T>(_ transform: (Output) throw -> T) -> Result<T, Error>.Publisher
 
 ```swift
 // Combine
-var cancellables = Set<AnyCancellable>()
+var cancellables = Set<AnyCancellable>()
 Just(1)
-     .sink {
-        print($0)
-    }
-    .store(in: &cancellables)
+    .sink {
+        print($0)
+    }
+    .store(in: &cancellables)
 ```
 ```swift
 // RxSwift
-let disposeBag = DisposeBag() 
+let disposeBag = DisposeBag()
 Observable.just(1)
-    .subscribe(onNext: {
-        print($0)
-    }
-    .disposed(by:disposeBag)
+    .subscribe(onNext: {
+        print($0)
+    })
+    .disposed(by: disposeBag)
 ```
 
 (전수열 님이 만드신 CancelBag을 사용할 수도 있습니다: https://github.com/devxoul/CancelBag)
