@@ -14,9 +14,9 @@ mermaid: true
 
 `Observable`의 모든 `Element`들을 하나의 `Array`로 묶인 `Single`로 변환시켜줍니다.
 
-(`[Single` 정리글](https://www.notion.so/RxSwift-Traits-Single-Completable-Maybe-263622bcb48949a38d5b1993a9bc7ff7?pvs=21)에서도 썼지만, `Single`로 변환시 `Observable`이 `complete`이벤트를 방출하는지 반드시 확인을 해야합니다. 그렇지 않으면 `observer`가 절대로 `success`이벤트를 받을 수가 없게 됩니다)
+[Single 정리글](https://swiftycody.github.io/posts/RxSwift-Traits-Single-Completable-Maybe/)에서도 썼지만, `Single`로 변환시 `Observable`이 `complete`이벤트를 방출하는지 반드시 확인을 해야합니다. 그렇지 않으면 `observer`가 절대로 `success`이벤트를 받을 수가 없게 됩니다
 
-!https://blog.kakaocdn.net/dn/wPl2z/btrRZOVTMYr/tEx7dgfigKkKK4IE3tFfO1/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/894e0131-694b-48c9-abf1-6e4233372beb)
 
 마블다이어그램에도 볼수 있듯이 `complete`이벤트(세로선)이 발생해야 `Array`로 변환시켜줍니다.
 
@@ -43,7 +43,7 @@ Observable.of("HoneyButter", "Wasabi", "Buldak", "MintChoco")
 
 `Date()`를 받아서 `DateFormatter`로 변환하는 `map`의 예시입니다.
 
-!https://blog.kakaocdn.net/dn/wRWRD/btrR3DegyLV/h2brSoKJyC2sHF5Gfo4TUK/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/6a1b8f6d-c64b-4489-bae0-7a098fb41172)
 
 ```swift
 print("- - - - - map - - - - -")
@@ -73,7 +73,7 @@ Observable.of(Date())
 
 중첩된 `Observable` 내부의 `Observable`을 꺼내서 쓸 수 있습니다.
 
-!https://blog.kakaocdn.net/dn/MDOkP/btrR5zoDTWB/MLQBGvbyehxceYfhPCsU3K/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/b9d3c9e3-3f3d-4098-94f6-a6dbc4991b84)
 
 ```swift
 print("- - - - - flatmap - - - - -")
@@ -126,7 +126,7 @@ mintChocoTaster.tasteScore.onNext(1)
 
 `map`과 `switchLatest`의 조합.
 
-!https://blog.kakaocdn.net/dn/KnDtx/btrR6erfYUZ/OAEcCCjwBBMmofUsJAtWY0/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/9671a0ec-5f5d-4046-a074-177b5ab3af94)
 
 ```swift
 print("- - - - - flatmapLatest - - - - -")
@@ -200,11 +200,11 @@ buldakTester.tasteScore.onError(hate.MintChoco) // Unhandled error happened: Min
 
 `materialize` Operator를 사용하면 어떤 이벤트를 받았는지 알 수 있게 됩니다.
 
-!https://blog.kakaocdn.net/dn/QbSGQ/btrR8WlbCCu/AKu4ayXDQRPftRUsU59S81/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/8ccec053-2263-4413-9b0b-7cec4b21f1f0)
 
 반대로 `dematerialize`는 다시 이벤트 값만 받을 수 있도록 해주는 Operator입니다.
 
-!https://blog.kakaocdn.net/dn/RZGwI/btrR8tqbA3W/FffaqU0PH6nHcYEKL7cNE1/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/b70edc79-be8b-4620-80d8-90a9b7b0345d)
 
 아래는 `materialize`, `dematerialize`의 예제입니다.
 
