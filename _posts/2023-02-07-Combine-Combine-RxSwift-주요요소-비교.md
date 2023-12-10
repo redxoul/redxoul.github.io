@@ -1,12 +1,13 @@
 ---
 title: (Combine) Combine, RxSwift 각 주요요소 비교
 author: Cody
-date: 2023-02-107 00:34:00 +0800
+date: 2023-02-07 00:34:00 +0800
 categories: [iOS, Combine]
 tags: [Swift, Combine, WWDC19, WWDC, iOS13]
 pin: false
 mermaid: true
 ---
+
 `Combine`을 익히려고 보다 보면,
 
 `RxSwift`와 비교를 하면서 익힐 수밖에 없는 듯하여 둘의 핵심요소들의 비교를 정리해 봅니다.
