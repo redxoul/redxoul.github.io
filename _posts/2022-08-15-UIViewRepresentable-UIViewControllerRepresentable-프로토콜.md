@@ -50,7 +50,7 @@ public protocol UIViewRepresentable : View where Self.Body == Never {
 
 (본 포스팅에 이어서 `SnapKit` 포스팅도 예정에 있습니다)
 
-`(Then 라이브러리 포스팅: [`Then 라이브러리`](https://swiftycody.github.io/posts/Then-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/) )`
+(Then 라이브러리 포스팅: [Then 라이브러리](https://swiftycody.github.io/posts/Then-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/) )
 
 ```swift
 class SomeViewController: UIViewController {
