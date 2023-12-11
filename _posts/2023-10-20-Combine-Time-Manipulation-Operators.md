@@ -624,27 +624,21 @@ let subscription3 = measureSubject2.sink { // 추가
 ## 정리
 
 1. delay(for:tolerance:scheduler:options)
-
 - 스케줄러에 지정한 시간만큼 방출한 값을 유지했다가 해당 시간이 지나면 방출시켜줌.
 
 2. collect(\_:options:)는 strategy에 따라
-
 - byTime를 strategy으로 했을 때, 지정된 시간간격으로 Publisher로부터 값을 collect시켜줌. buffering의 형태.
 - byTimeOrCount로 strategy으로 했을 때, 일정 시간 간격으로 방출된 값을 collect하면서 값의 갯수를 제한시켜줌.
 
 3. debounce(for:scheduler:)
-
 - 스케줄러에 지정한 시간만큼 값이 들어오지 않기를 기다렸다가, 값 방출이 멈추기 전까지 받았던 값들을 배열로 한꺼번에 방출시켜줌.
 
 4. throttle(for:scheduler:latest:)
-
 - 지정된 시간 간격만큼 기다린 다음, 해당 간격 중 받았던 가장 첫번째 값(latest: false)이나 최신값(latest: true)를 받음.
 
 5. timeout
-
 - timeout 연산자가 실행이 되면 publisher가 complete되거나 정의된 error를 발생시키고 종료
 
 6. measureInterval(using:)
-
 - Publisher가 2개의 연속된 값 사이의 경과한 시간을 측정해야할 때 사용할 수 있는 도구.
 - TimeInterval은 제공된 스케줄러(여기서는 DispatchQueue)가 제공하는 시간 단위(DispatchQueue는 nanoseconds로 runloop는 초단위로 제공)
