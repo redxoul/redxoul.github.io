@@ -27,7 +27,7 @@ mermaid: true
 ```swift
 #unwrap(1 + )    // error: expected expression after operator
 ```
-- 함수 인자와 마찬가지로 Macro인수와 결과가 Type check가 되기 때문에 잘못된 type의 인수를 전달할 수 없음.
+- 함수 인자와 마찬가지로 Macro인수와 결과가 Type check가 되기 때문에 잘못된 type의 인수를 전달할 수 없음.  
 ```swift
 @AddCompletionHandler(parameterName: 42)    // error: cannot convert argument of type 'Int' to expected type 'String'
 func sendRequest() async throws -> Response
