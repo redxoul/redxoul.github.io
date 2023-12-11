@@ -36,16 +36,15 @@ func sendRequest() async throws -> Response
 - Macro의 구현은 입력의 유효성 체크를 하고 문제가 있을 때 컴파일러 경고, 오류를 내보낼 수 있어 Macro를 올바르게 사용하고 있는지 쉽게 확인이 가능.
 
 3. Macro 확장이 예측 가능하고, 부가적인 방식으로 프로그램에 통합될 것.
-- `Macro`는 프로그램에서 보이는 코드에만 추가할 수 있고 제거나 변경은 안됨. 아래코드에서는 `#someUnkwonMacro()`가 어떤 동작을 하는지는 모르지만, `finishDoingThingy()` 호출을 제거하거나 새 함수로 이동시키지는 않는다는 것을 확실히 알 수 있음.
+- `Macro`는 프로그램에서 보이는 코드에만 추가할 수 있고 제거나 변경은 안됨. 아래코드에서는 `#someUnkwonMacro()`가 어떤 동작을 하는지는 모르지만, `finishDoingThingy()` 호출을 제거하거나 새 함수로 이동시키지는 않는다는 것을 확실히 알 수 있음.  
 ```swift
 func doThingy() {
     startDoingThingy()
-
     #someUnknownMacro()
-
     finishDoingThingy()
 }
 ```  
+
 4. Macro가 뚫을 수 없는 마법이 되어서는 안됨.
 - `Macro`는 프로그램에 더 많은 코드를 추가할 뿐이고 `Xcode`에서 바로 확인도 가능
 - `Macro`를 사용하는 곳에서 `[마우스 우클릭 메뉴 > Expand Macro]` 로 확장되는 항목을 확인할 수 있음.
