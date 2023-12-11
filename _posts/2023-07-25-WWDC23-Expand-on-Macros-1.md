@@ -16,7 +16,6 @@ mermaid: true
 ## 4가지 목적
 
 1. Macro를 사용할 때 매우 명확해야 할 것.
-
 - 2종류의 Macro.
     - `FreeStanding Macro`: 코드에서 다른 항목을 대신함. `#(pound)`기호로 시작
     - `Attached Macro`: 코드 선언에서 `attribute`로 사용됨. `@(at)`기호로 시작
@@ -24,28 +23,21 @@ mermaid: true
 - `#`이나 `@`가 표시되지 않으면 관련 `Macro`가 없는 것.
 
 2. `Macro`로 전달된 코드와 `Macro`에서 다시 전송된 코드가 모두 `complete`하고, 실수를 체크할 수 있어야 함.
-
 - 인수는 완전한 식이어야 하기 때문에 아래와 같이 `1 +`를 Macro로 전달할 수 없음
-
 ```swift
 #unwrap(1 + )    // error: expected expression after operator
 ```
-
 - 함수 인자와 마찬가지로 Macro인수와 결과가 Type check가 되기 때문에 잘못된 type의 인수를 전달할 수 없음.
-
 ```swift
 @AddCompletionHandler(parameterName: 42)    // error: cannot convert argument of type 'Int' to expected type 'String'
 func sendRequest() async throws -> Response
 
 @DictionaryStorage class Options { … }    // error: '@DictionaryStorage' can only be applied to a 'struct'
 ```
-
 - Macro의 구현은 입력의 유효성 체크를 하고 문제가 있을 때 컴파일러 경고, 오류를 내보낼 수 있어 Macro를 올바르게 사용하고 있는지 쉽게 확인이 가능.
 
 3. Macro 확장이 예측 가능하고, 부가적인 방식으로 프로그램에 통합될 것.
-
 - `Macro`는 프로그램에서 보이는 코드에만 추가할 수 있고 제거나 변경은 안됨. 아래코드에서는 `#someUnkwonMacro()`가 어떤 동작을 하는지는 모르지만, `finishDoingThingy()` 호출을 제거하거나 새 함수로 이동시키지는 않는다는 것을 확실히 알 수 있음.
-
 ```swift
 func doThingy() {
     startDoingThingy()
@@ -57,14 +49,10 @@ func doThingy() {
 ```
 
 4. Macro가 뚫을 수 없는 마법이 되어서는 안됨.
-
 - `Macro`는 프로그램에 더 많은 코드를 추가할 뿐이고 `Xcode`에서 바로 확인도 가능
 - `Macro`를 사용하는 곳에서 `[마우스 우클릭 메뉴 > Expand Macro]` 로 확장되는 항목을 확인할 수 있음.
-
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/5e5ebfb8-6673-4932-af5e-7c8aff10b64d)
-
 확장 후 break point를 잡고 디버깅도 가능. Macro 확장 내부의 코드가 컴파일되지 않으면 확장에서 error가 있는 위치와 해당 확장이 소스코드에서 어디로 가는지 모두 확인 가능.
-
 - 위 방법들은 closed-source 라이브러리에서 Macro를 제공하는 경우에도 작동함.
 - Macro 작성자는 Macro가 잘 동작하는지 확인을 위해 유닛테스트도 작성 가능.
 
@@ -219,7 +207,7 @@ public struct Array2D<Element>: Collection {
 
 이를 기존 함수로 작성한 예시.
 
-`makeIndex(\_:\_:)->Index` 함수는 2D 인덱스에 필요한 두 개의 Int를 취한 다음 약간의 산술을 수행하여 1D 인덱스로 변환.
+`makeIndex(_:_:)->Index` 함수는 2D 인덱스에 필요한 두 개의 Int를 취한 다음 약간의 산술을 수행하여 1D 인덱스로 변환.
 
 그런데 프로그램 다른 곳에서 3D 배열이 필요하다는 것을 할게 되어 아래와 같이 또 추가로 작성.
 
