@@ -13,7 +13,7 @@ mermaid: true
 > 유일한 차이점은 끝에서 throw하는 클로저를 제공한다는 것. 클로저 내에서 던지는 모든 오류는 던진 오류와 함께 Publisher를 종료합니다. 여기서는 non-throwing Operator에 대해서만 정리합니다.
 
 
-### `filter`
+### filter
 
 (= `RxSwift`의 `filter`)
 
@@ -46,7 +46,7 @@ numbers
 9 is a multiple of 3!
 ```
 
-### `removeDuplicates`
+### removeDuplicates
 
 (= `RxSwift`의 `distinctUntilChanged`)
 
@@ -83,7 +83,7 @@ mister
 ?
 ```
 
-### `compactMap`
+### compactMap
 
 (= `RxSwift`의 `compactMap`)
 
@@ -119,7 +119,7 @@ strings
 0.23
 ```
 
-### `ignoreOutput`
+### ignoreOutput
 
 (= `RxSwift`의 `ignoreElement`)
 
@@ -149,7 +149,7 @@ numbers
 Completed with: finished
 ```
 
-### `First(where:)`
+### first(where:)
 
 `Swift` 표준라이브러리에 있는 그것과 동일한 맥락의 `Operator`입니다.
 
@@ -197,7 +197,7 @@ Completed with: finished
 
 (= `RxSwift`의 `first`)
 
-### `last(where:)`
+### last(where:)
 
 바로 전에 보았던 `first(where:)`와 반대로 `where`클로저를 만족하는 마지막 값만 찾아서 필터링시켜줍니다.
 
@@ -301,7 +301,7 @@ numbers
 10
 ```
 
-### `drop(while:)`
+### drop(while:)
 
 `while`클로저의 조건문이 true인 동안 값을 무시하다가, false가 되는 시점부터 값을 방출시키도록 해줍니다.
 
@@ -339,7 +339,7 @@ numbers
 | 클로저 조건을 만족하는 값들만 방출 | 클로저 조건을 만족하는 값들을 무시 |
 | 클로저 조건을 만족하는 값이 나와도 filter를 계속 적용 | 클로저 조건을 만족할 때까지만 drop을 적용 |
 
-### `drop(untilOutputFrom:)`
+### drop(untilOutputFrom:)
 
 (= `RxSwift`의 `skipUntil`)
 
@@ -381,7 +381,7 @@ taps
 5
 ```
 
-### `prefix`
+### prefix
 
 (= `RxSwift`의 `take`)
 
@@ -417,7 +417,7 @@ Completed with: finished
 
 `prefix`는 `lazy`하게 동작하기 때문에, 필요한 만큼만 값을 받고 종료시켜 더 추가적인 값을 생성하지 않도록 해줍니다.
 
-### `prefix(while:)`
+### prefix(while:)
 
 `while`클로저의 결과가 `true`일 때까지 `Upstream Publisher`의 값을 통과시킵니다. 결과가 `false`이면 바로 `Publisher`가 `completed`됩니다.
 
@@ -447,7 +447,7 @@ numbers
 Completed with: finished
 ```
 
-### `prefix(untilOutputFrom:)`
+### prefix(untilOutputFrom:)
 
 (= `RxSwift`의 `takeUntil`)
 
