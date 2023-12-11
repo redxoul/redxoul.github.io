@@ -31,7 +31,7 @@ mermaid: true
 
 ---
 
-### AnyPublisher
+### Publisher
 
 `RxSwift`의 `Observable`에 해당하는 요소로, `Publisher` 프로토콜을 따르는 `struct`입니다.
 
@@ -52,7 +52,7 @@ mermaid: true
 
 `RxSwift`의 `Observer`에 해당하는 요소로, `Subscriber` 프로토콜을 따르는 `struct`입니다.
 
-`AnyPublisher`를 `subscribe 하여` `AnyPublisher`가 방출한 이벤트를 받을 수 있는 타입니다.
+`Publisher`를 `subscribe 하여` `Publisher`가 방출한 이벤트를 받을 수 있는 타입입니다.
 
 ---
 
@@ -241,7 +241,7 @@ func tryMap<T>(_ transform: (Output) throw -> T) -> Result<T, Error>.Publisher
 
 `RxSwift`의 `Disposable`에 해당하는 요소입니다.
 
-`AnyPublisher`를 `subscribe` 하기 위해 `.sink`를 하면 `AnyCancellable`을 생성시킵니다.
+`Publisher`를 `subscribe` 하기 위해 `.sink`를 하면 `AnyCancellable`을 생성시킵니다.
 
 `AnyCancellable`은 `Cancellable` `protocol`을 따르는 클래스입니다.
 
