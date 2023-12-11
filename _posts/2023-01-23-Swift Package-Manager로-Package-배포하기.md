@@ -62,7 +62,8 @@ Tests는 배포하지 않으려면 삭제하고, Package.swift에서도 타겟�
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/32bdf2a0-6808-4179-b3bf-6d1152f811ee)
 
-### 8. 아까 `Push 해둔` 태그를 선택해 주고,
+### 8. 태그를 release
+아까 `Push 해둔` 태그를 선택해 주고,
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/b6170db7-da39-4f6c-9154-cd6908bb53b4){: width="50%" height="50%"}
 
 release 내용을 작성해 주고 하단에 `Publish release`를 해줍니다.
