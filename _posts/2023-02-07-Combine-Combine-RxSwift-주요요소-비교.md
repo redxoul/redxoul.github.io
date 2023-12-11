@@ -39,15 +39,12 @@ mermaid: true
 
 `Observable`은 방출할 `Element` 타입을 정의해 주었는데,
 
-`AnyPublisher`는 방출할 `Element` 뿐만 아니라 `Error`타입도 함께 지정을 해주어야 합니다.
+`Publisher`는 방출할 `Element` 뿐만 아니라 `Error`타입도 함께 지정을 해주어야 합니다.
 
-| AnyPublisher | Observable |
+| Publisher | Observable |
 | --- | --- |
-| `public protocol Publisher { }` / `struct AnyPublisher: Publisher { }` (`Publisher`는 사실 Protocol이고, 실제 사용하는 것은 이 protocol을 받은 `struct AnyPublisher`) | `class Observable: ObservableType { }` |
-| `AnyPublisher`는 struct로 `Value Type` | `Observable`은 class로 `Reference Type` |
-| `AnyPublisher`는 `AssociatedType`으로 `Output(Data type)`과 `Failure(Error type)`을 내보냄 | `Observable`은 `Element(Data type)`을 내보냄. `Element`로 `Result` type을 사용하면 이와 유사하게 사용할 수 있음. |
-| `associatedtype Output` / `associatedtype Failure: Error` | `class Observable<Element>` |
-| `AnyPublisher<String, Error>` / `AnyPublisher<String, Never>` | `Observable<Result<String, Error>>`  / `Observable<String>` |
+| `protocol Publisher<Output, Failure> {}` `struct Publisher: Publisher {}` | `class Observable: ObservableType {}` |
+| `Publisher`는 struct로 `Value Type` | `Observable`은 class로 `Reference Type` |
 
 ---
 
@@ -94,7 +91,7 @@ mermaid: true
 
 ### Operators
 
-`AnyPublisher`를 조합하거나, 가공할 때 필요한 `Operator`들입니다.
+`Publisher`를 조합하거나, 가공할 때 필요한 `Operator`들입니다.
 
 (Combine에만 있는 operator는 빨간색으로 표시했습니다)
 
