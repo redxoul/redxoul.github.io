@@ -324,6 +324,6 @@ Apple에서 Combine 발표시 성능에 중점을 두고 개발했다고 한 만
 
 압도적으로 속도가 빠르고, 메모리 할당도 매우 적습니다.
 | Time | Allocation |
-|--|--|
+| -- | -- |
 |![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/68e56ee9-1bf8-46e6-b254-4dffe42ddaf6)|![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/724625f4-2312-4eb7-ab41-6b3b441cab97)|
 
