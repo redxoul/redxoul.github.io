@@ -119,7 +119,7 @@ public protocol Subscription: Cancellable, CustomCombineIdentifierConvertible {
 마지막`[5]`으로 `Publisher`가 모든 값을 내보내고 나면 `Subscriber`의 `receive(completion:)`을 호출하여 `completion`을 전달하고 더 이상 값을 보내지 않음을 알립니다.
 `(다이어그램에서 (5)번 단계)`
 
-## `Custom Subscriber`
+## Custom Subscriber
 
 아래는 `Int`를 `Input`으로 받고, `error`타입은 `Never`(Failure를 받지 않는)인 `Custom Subscriber`입니다.
 
