@@ -441,31 +441,31 @@ func login(password: String) -> Error? {
 
 ('What's new in Xcode 15' 세션에서 다루지 않은 Release Notes의 내용을 정리합니다)
 
-### `Overview`
+### Overview
 
 - `iOS 12` 이상, `tvOS` 12 이상 및 `watchOS` 4 이상에서 온디바이스 디버깅을 지원합니다. `Xcode 15` 베타에는 `macOS Ventura 13.3 이상`이 실행되는 `Mac`이 필요합니다.
 
-### `Playgrounds`
+### Playgrounds
 
 - `Playgrounds` 콘솔은 `Xcode 15`의 새 콘솔을 사용하며 인라인 찾기와 같은 기능을 제공합니다.
 - `Xcode Playgrounds`의 `Result Sidebar`는 행의 모든 ​​표현식에 대한 요약을 표시하고 새로운 컨트롤을 사용하면 각 표현식에 대한 세부 정보가 포함된 팝오버를 볼 수 있습니다.
 - `Playgrounds Map` 템플릿이 최신 `MapKit API`를 사용하도록 업데이트되었습니다.
 
-### `Preview`
+### Preview
 
 - `@objc annotation`을 사용할 때 미리보기가 실패하는 문제가 해결되었습니다.
 - 파일을 탐색할 때 캔버스 모드, 장치 설정 및 선택한 미리 보기 장치와 같은 캔버스 설정이 유지됩니다.
 
-### `Signing and Distribution`
+### Signing and Distribution
 
 - `Xcode` 및 `Xcode Cloud`의 `"Manage version and build number"` 배포 옵션이 앱의 `Framework Dependencies`의 버전 및 빌드 번호를 덮어쓰는 문제가 해결되었습니다. 앱을 배포할 때 `Framework Dependencies`은 원래 버전과 빌드 번호를 유지합니다.
 - `Xcode Organizer` 창 `TestFlight Internal Only` 배포 지원은 현재 사용할 수 없습니다.
 
-### `Source Editor`
+### Source Editor
 
 - `#if...#endif` 블록의 비활성 코드가 이제 흐리게 표시됩니다. 이것은 `Text Editing>Display` 기본 설정 에서 비활성화할 수 있습니다.
 - 코드를 별도의 줄로 분할하는 `"Format to multiple lines"` 리팩터링 작업이 추가됐습니다.
 
-### `Swift Package`
+### Swift Package
 
 - `File > New > Package…` 메뉴 명령을 사용하여 `다양한 유형의 Swift 패키지를 생성`할 수 있습니다. 템플릿에는 `Macro`, `Package Plugin` 및 `swift-argument-parser를 사용하도록 구성된 command line tool configure가 포함`됩니다.
