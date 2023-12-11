@@ -17,13 +17,12 @@ mermaid: true
 
 생각보다 쉽게 배포가 되었습니다.
 
-1. `Github`에서 `Public Repo` 생성
-
+### 1. `Github`에서 `Public Repo` 생성
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/a7f91d9a-928a-4585-abe9-cf928338d6c2)
 
-2. 로컬에 클론 받기
+### 2. 로컬에 클론 받기
 
-3. 터미널에서 클론 받은 경로로 들어가서 아래 명령어 실행
+### 3. 터미널에서 클론 받은 경로로 들어가서 아래 명령어 실행
 
 ```
 swift package init
@@ -35,7 +34,7 @@ swift package init
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/1a2e26bc-e474-47f3-baf3-d8579fa93ce1)
 
-4. `Package.swift`, `README.md` 및 `Sources`, `Tests` 작성해 줍니다.
+### 4. `Package.swift`, `README.md` 및 `Sources`, `Tests` 작성
 
 저는 Package.swift 파일은 거의 그대로 두고,
 
@@ -47,7 +46,7 @@ Tests는 배포하지 않으려면 삭제하고, Package.swift에서도 타겟�
 
 저는 배포할 내용을 테스트해 볼 수 있는 간단한 Test코드를 작성해 두었습니다.
 
-`5. (Xcode, SourceTree, Fork 등) 각자 사용하는 툴로 소스를 Push 해줍니다.`
+### 5. (Xcode, SourceTree, Fork 등) 각자 사용하는 툴로 소스를 Push
 
 여기까지만 해주어도, `Xcode`의 `SPM`에서 `Dependancy` 설정으로 내려받아서 확인할 수 있습니다.
 
@@ -57,14 +56,13 @@ Tests는 배포하지 않으려면 삭제하고, Package.swift에서도 타겟�
 
 추가로 publish release까지 진행하여, 버전관리까지 해봅니다.
 
-6. 버전으로 release 할 버전명을 태그를 만들어주고, `Push`를 해줍니다.
+### 6. 버전으로 release 할 버전명을 태그를 만들어주고, Push
 
-7. Github 레포에서 `Release -> 'Draft a new release'`
+### 7. Github 레포에서 `Release -> 'Draft a new release'`
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/32bdf2a0-6808-4179-b3bf-6d1152f811ee)
 
-8. 아까 `Push 해둔` 태그를 선택해 주고,
-
+### 8. 아까 `Push 해둔` 태그를 선택해 주고,
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/b6170db7-da39-4f6c-9154-cd6908bb53b4){: width="50%" height="50%"}
 
 release 내용을 작성해 주고 하단에 `Publish release`를 해줍니다.
