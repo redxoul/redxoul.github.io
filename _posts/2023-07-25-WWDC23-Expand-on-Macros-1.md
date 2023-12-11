@@ -26,14 +26,14 @@ mermaid: true
 - 인수는 완전한 식이어야 하기 때문에 아래와 같이 `1 +`를 Macro로 전달할 수 없음
 ```swift
 #unwrap(1 + )    // error: expected expression after operator
-```
+```  
 - 함수 인자와 마찬가지로 Macro인수와 결과가 Type check가 되기 때문에 잘못된 type의 인수를 전달할 수 없음.  
 ```swift
 @AddCompletionHandler(parameterName: 42)    // error: cannot convert argument of type 'Int' to expected type 'String'
 func sendRequest() async throws -> Response
 
 @DictionaryStorage class Options { … }    // error: '@DictionaryStorage' can only be applied to a 'struct'
-```
+```  
 - Macro의 구현은 입력의 유효성 체크를 하고 문제가 있을 때 컴파일러 경고, 오류를 내보낼 수 있어 Macro를 올바르게 사용하고 있는지 쉽게 확인이 가능.
 
 3. Macro 확장이 예측 가능하고, 부가적인 방식으로 프로그램에 통합될 것.
@@ -46,8 +46,7 @@ func doThingy() {
 
     finishDoingThingy()
 }
-```
-
+```  
 4. Macro가 뚫을 수 없는 마법이 되어서는 안됨.
 - `Macro`는 프로그램에 더 많은 코드를 추가할 뿐이고 `Xcode`에서 바로 확인도 가능
 - `Macro`를 사용하는 곳에서 `[마우스 우클릭 메뉴 > Expand Macro]` 로 확장되는 항목을 확인할 수 있음.
