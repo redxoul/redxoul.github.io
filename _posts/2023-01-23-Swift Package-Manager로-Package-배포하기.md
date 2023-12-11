@@ -76,6 +76,3 @@ release 내용을 작성해 주고 하단에 `Publish release`를 해줍니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/a3a936cc-f534-4a08-a1b2-374b8c6fa005)
 
-이렇게 `SPM`으로 패키지를 배포한 결과는 아래와 같습니다.
-
-(이 패키지를 이제 `CocoaPods`으로도 함께 배포할 수 있도록 추가해 보고 포스팅을 다시 해보겠습니다)
