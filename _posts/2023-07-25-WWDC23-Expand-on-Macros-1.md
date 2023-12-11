@@ -31,7 +31,6 @@ mermaid: true
 ```swift
 @AddCompletionHandler(parameterName: 42)    // error: cannot convert argument of type 'Int' to expected type 'String'
 func sendRequest() async throws -> Response
-
 @DictionaryStorage class Options { … }    // error: '@DictionaryStorage' can only be applied to a 'struct'
 ```  
 - Macro의 구현은 입력의 유효성 체크를 하고 문제가 있을 때 컴파일러 경고, 오류를 내보낼 수 있어 Macro를 올바르게 사용하고 있는지 쉽게 확인이 가능.
