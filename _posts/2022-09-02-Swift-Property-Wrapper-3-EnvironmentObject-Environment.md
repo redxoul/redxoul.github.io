@@ -9,7 +9,6 @@ mermaid: true
 ---
 
 ### @EnvironmentObject
-
 SwiftUI에서는 환경값이 바뀌었을 때,  
 해당값에 따라서 뷰를 그릴 수 있게 해주는 `@EnvironmentObject`라는 Property Wrapper를 제공합니다.
 
@@ -18,14 +17,13 @@ SwiftUI에서는 환경값이 바뀌었을 때,
 이 값은 부모뷰로부터 주입된 값으로, 자식뷰들에서는 어디에서든 사용할 수 있습니다.
 
 개발을 하다보면 A뷰->B뷰->C뷰->... 로 계속 같은 데이터를 넘겨주고,
-
 데이터가 변경될 때 이에 따라 뷰를 그려야 할 상황이 생기는데,
 
 이런 경우 매우 유용하게 작성할 수 있게 해주는 방법입니다.
 
 간단한 예제로 이전글에서 썼던 `Counter`, `CounterModelView` 예제를 이어서 작성해보겠습니다.
 
-(이전글: [`[Swift, SwiftUI] Property Wrapper (2) @State/@Binding, @Published/@ObservedObject`](https://www.notion.so/Swift-SwiftUI-Property-Wrapper-2-State-Binding-Published-ObservedObject-90464fb942c24d389c57ddd44fc93f88?pvs=21) )
+(이전글: [`[Swift, SwiftUI] Property Wrapper (2) @State/@Binding, @Published/@ObservedObject`](https://swiftycody.github.io/posts/Swift-Property-Wrapper-2-State-Binding-Published-ObservedObject/) )
 
 `CounterModelView`를 `@EnvironmentObject`로 가지고 있는 `CountResultView`를 작성하고,
 
@@ -58,7 +56,7 @@ struct CountResultView_Previews: PreviewProvider {
 }
 ```
 
-!https://blog.kakaocdn.net/dn/6SAAo/btrK30uWAAs/CZqPKSFZeoZs1Gs4DuN720/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/cf73b776-b13b-4dd9-9e15-e2ccad54fed6)
 
 `Counter` 뷰에서 `CountResultView`를 생성할 때,
 
@@ -103,21 +101,21 @@ struct Counter: View {
 }
 ```
 
-!https://blog.kakaocdn.net/dn/mbK4C/btrK5aQ2KS2/eBfeltfkiO6UZOlCMw6lGK/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/2889b5e5-7866-4ab1-9a9b-4c8b53ac2802)
 
 그리고 `CountResultView`를 호출하면,
 
 넘겨준 `viewModel`의 `count`값이 뷰에 잘 반영된 것을 볼 수 있고,
 
-!https://blog.kakaocdn.net/dn/NLm4H/btrK6cU8w39/wYLuRcjrIPr8aGO7vcbH6K/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/e0398f42-2792-4afb-ab99-b65979650ec3)
 
 `CountResultView`에서 초기화를 눌렀을 때,
 
 `CountResultView`와 `Counter`뷰 모두 잘 반영이 된 것을 확인할 수 있습니다.
 
-!https://blog.kakaocdn.net/dn/cSvxzZ/btrK1hjzsOf/6KmuWKcQ6P0mWqOJTswZLk/img.jpg
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/aba0b435-6142-4dfd-8d06-fb0b3ecb70db)
 
-### `@Environment`
+### @Environment
 
 위의 `@EnvironmentObject`와 유사하게 뷰환경에 저장된 값을 읽어올 수 있는 `@Envirnment` Property Wrapper가 있습니다.
 
@@ -169,8 +167,7 @@ struct Counter: View {
 ```
 
 `ColorScheme`의 `.light`모드, `.dark`모드에 따라서 폰트 색상이 잘 변경되는 것을 확인할 수 있습니다.
-
-!https://blog.kakaocdn.net/dn/kE4zH/btrLbMPHZaH/Fc1CA5yTwBrHEeGKuoHeM1/img.jpg
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/20ef068b-9158-41b4-b036-4a6337b0327d)
 
 ### 커스텀 EnvironmentValue를 설정
 
