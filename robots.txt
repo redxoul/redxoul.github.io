@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://swiftycody.github.io/sitemap.xml
