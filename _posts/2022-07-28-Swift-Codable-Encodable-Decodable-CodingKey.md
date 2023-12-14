@@ -2,7 +2,7 @@
 title: (Swift) Codable(Encodable, Decodable), CodingKey
 author: Cody
 date: 2022-08-30 00:34:00 +0800
-categories: [iOS Swift]
+categories: [iOS, Swift]
 tags: [Swift, Codable, Encodable, Decodable, CodingKey]
 pin: false
 mermaid: true
