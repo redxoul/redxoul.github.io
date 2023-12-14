@@ -2,7 +2,7 @@
 title: (SwiftUI) Property Wrapper (2) @State/@Binding, @Published/@ObservedObject
 author: Cody
 date: 2022-08-31 00:34:00 +0800
-categories: [iOS Swift]
+categories: [iOS, Swift]
 tags: [Swift, SwiftUI, iOS13]
 pin: false
 mermaid: true
