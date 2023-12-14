@@ -2,7 +2,7 @@
 title: (Swift) Property Wrapper (1)
 author: Cody
 date: 2022-08-30 00:34:00 +0800
-categories: [iOS Swift]
+categories: [iOS, Swift]
 tags: [Swift, SwiftUI, iOS13]
 pin: false
 mermaid: true
