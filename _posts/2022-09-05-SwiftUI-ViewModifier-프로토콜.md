@@ -2,7 +2,7 @@
 title: (SwiftUI) ViewModifier 프로토콜
 author: Cody
 date: 2022-09-05 00:34:00 +0800
-categories: [iOS Swift]
+categories: [iOS, Swift]
 tags: [Swift, SwiftUI, iOS13]
 pin: false
 mermaid: true
