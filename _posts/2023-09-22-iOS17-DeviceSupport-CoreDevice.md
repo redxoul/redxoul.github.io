@@ -33,3 +33,5 @@ Xcode15 이후로는 새 iOS 디버깅을 위해서 `Device Support`를 받거�
 위 명령어로 `CoreDevice`를 사용하기 위해서는 최소 Xcode14.3 이상이 필요합니다.  
   
 참고: [Missing iOS 17 device support files](https://developer.apple.com/forums/thread/730947?answerId=756665022#756665022)
+
+ps. 위 과정을 진행해도 iOS17과의 디버깅이 안되는 경우 조직에서 MacOS에 설치한 보안솔루션이 CoreDevice와의 통신을 차단하는 케이스일 수 있습니다.
