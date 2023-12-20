@@ -69,8 +69,7 @@ almonds.sorted(by: ... )
 ```
 
 `sorted(by:)`의 summary를 보면
-
-!https://blog.kakaocdn.net/dn/n0Zi5/btrAc7cS7F3/nDNomcmAik7G0STYmqvaF1/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/e11bd0df-4b69-4c66-818c-3113e937be7c)
 
 Element 2개를 매개변수로 받아서 Bool을 리턴하는 클로저를 넣도록 정의되어 있습니다.
 

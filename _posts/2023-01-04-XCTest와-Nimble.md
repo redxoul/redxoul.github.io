@@ -87,8 +87,7 @@ final class LocationInfoModelTests: XCTestCase {
 위와 같이 기댓값과 다른 결과가 `Assertion`을 거치면,
 
 에러가 나면서 작성한 커스텀 메세지나 기본 메세지가 경고를 해줍니다.
-
-!https://blog.kakaocdn.net/dn/c52qDZ/btrVf8hdfHp/YELqdVQ0UpnWfTE3KUNOM0/img.png
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/b41ce4d3-7f25-4adb-b532-905946a76121)
 
 ### Nimble
 
