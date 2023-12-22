@@ -6,8 +6,6 @@ categories: [iOS, iOS Dev]
 tags: [Swift, WWDC23, WWDC, PrivacyManifests, Xcode15, Xcode]
 pin: false
 mermaid: true
-image:
-  path: https://github.com/swiftycody/swiftycody.github.io/assets/9062513/70be61ca-5b35-4911-af99-890327eff3cb
 ---
 [https://developer.apple.com/news/?id=z6fu1dcu](https://developer.apple.com/news/?id=z6fu1dcu) 
 
