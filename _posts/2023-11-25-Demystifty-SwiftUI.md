@@ -303,7 +303,12 @@ ID는 시간이 지남에 따라 다양한 value를 단일 entity(하나의 View
 
   `View 값`은 일시적이므로 Lifetime에 의존해서는 안됨. 우리는 `View의 ID`만 통제할 것.
   View가 처음 생성되면 `Identity` 파트에서의 방식(명시적, 구조적)으로 ID를 할당하고, 시간이 지나면 업데이트에 따라 View에 대한 새로운 값이 생성됨.
-  > `DecibelView(강도: 25)` -> `DecibelView(강도: 50)` -> `DecibelView(강도: 42)`
+```mermaid
+flowchart LR
+  DecibelView(강도: 25) --> DecibelView(강도: 50)
+  DecibelView(강도: 50) --> DecibelView(강도: 42)
+```
+
 
   하지만 SwiftUI 관점에서 이는 동일한 View를 나타냄. View의 ID가 변경되거나, View가 제거되면 lifetime이 끝남.
 
