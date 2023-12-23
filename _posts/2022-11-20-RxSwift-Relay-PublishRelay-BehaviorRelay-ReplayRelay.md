@@ -43,7 +43,7 @@ complete, error가 발생하지 않는 AsyncRelay같은 건 당연히 존재하�
 
 그래서 주요 특징이 모두 동일하므로 간단히 정리하고 넘어가보겠습니다.
 
-### PublishRelay
+## PublishRelay
 
 `PublishSubject`와 동일하지만, `accept`이벤트만 방출하는 `Relay`입니다.
 
@@ -73,7 +73,7 @@ sub:  (2) second accept
 
 ---
 
-### BehaviorRelay
+## BehaviorRelay
 
 `BehaviorSubject`와 동일하지만, `accept`이벤트만 방출하는 `Relay`입니다.
 
@@ -115,7 +115,7 @@ sub2:  (2) second accept
 
 ---
 
-### ReplayRelay
+## ReplayRelay
 
 `ReplaySubject`와 동일하지만, `accept`이벤트만 방출하는 `Relay`입니다.
 

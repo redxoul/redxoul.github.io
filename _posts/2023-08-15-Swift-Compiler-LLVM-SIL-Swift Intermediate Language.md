@@ -101,8 +101,9 @@ magicTest() // 42
 swiftc -O -emit-silgen magic.swift > magic.rawsil
 ```
 
-> ⚠️ 커맨드라인툴 설치가 자꾸 뜨면 터미널에 아래를 실행 후 위 명령어 수행.  
+> 커맨드라인툴 설치가 자꾸 뜨면 터미널에 아래를 실행 후 위 명령어 수행.  
 > `sudo xcode-select -s /Library/Developer/CommandLineTools`
+{: .prompt-warning }
 
 이것은 최적화된 `Swift 컴파일러`를 실행하고 `Raw SIL`을 생성하여 `magic.rawsil` 파일로 출력. 텍스트 편집기에서 `magic.rawsil`을 열고 아래로 스크롤하면 `magicTest()` 함수의 다음 정의를 찾을 수 있음.
 
@@ -171,7 +172,7 @@ bb0:
 어떤 클래스도 초기화 또는 초기화 해제되지 않으며 가상 메서드도 호출되지 않았음. struct가 스택을 사용하고 class가 힙을 사용한다는 말을 들었을 때 이는 일반화임을 명심해야 함. `Swift에서는 모든 것이 힙에서 초기화되기 시작하며 SIL 분석을 통해 allocation을 스택으로 이동하거나 아예 제거할 수도 있음`. 가상 함수 호출은 최적화 프로세스를 통해 `devirtualize`되지 않고 직접 또는 인라인으로 호출될 수도 있음.
  
 
-> 📄  
 > 소스 위치 정보는 `AST` 및 `SIL`에 상주하므로 더 나은 오류 보고가 가능.  
-> `SIL`은 `SSA` 형식으로 작성된 기본 명령 블록을 사용하는 저수준 설명. 순수한 `LLVM`, `IR`로는 불가능한 많은 최적화를 가능하게 하는 Swift 유형의 semantics를 이해.  
-> SIL은 명확한 초기화, 메모리 할당 최적화 및 가상화 해제를 지원.
+`SIL`은 `SSA` 형식으로 작성된 기본 명령 블록을 사용하는 저수준 설명. 순수한 `LLVM`, `IR`로는 불가능한 많은 최적화를 가능하게 하는 Swift 유형의 semantics를 이해.  
+SIL은 명확한 초기화, 메모리 할당 최적화 및 가상화 해제를 지원.
+{: .prompt-info }

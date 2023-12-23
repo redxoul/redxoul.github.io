@@ -10,7 +10,7 @@ mermaid: true
 앞에서 정리한 RxSwift의 Lifecycle 중에서  
 가장 앞단계인 `Observable`의 생성을 위한 `Operator`들을 간단히 정리해봅니다.
 
-### Just
+## Just
 
 단 하나의 `Next`이벤트로 `Element`를 방출하고 종료하는 `Observable` 시퀀스를 생성합니다.
 
@@ -54,7 +54,7 @@ Observable.just([1, 2, 3, 4, 5])
 
 ---
 
-### Of
+## Of
 
 여러개의 이벤트를 방출시키는 `Observable`을 생성합니다.
 
@@ -94,7 +94,7 @@ Observable.of([1, 2, 3, 4, 5])
 
 ---
 
-### From
+## From
 
 From은 배열(`[Element]`)로 입력을 받아서,
 
@@ -123,7 +123,7 @@ Observable.from([1, 2, 3, 4, 5])
 
 ---
 
-### Range
+## Range
 
 `특정범위의 값이 순차적으로 증가하는 `Observable`을 생성`시킵니다.
 `start`값, `count`값 외에 옵셔널로 `scheduler`를 지정해줄 수 있습니다.
@@ -155,7 +155,7 @@ Observable.range(start: 1, count: 9)
 
 ---
 
-### Empty
+## Empty
 
 값이 빈 `Observable`을 생성합니다. `Completed`이벤트만 방출합니다.
 
@@ -184,7 +184,7 @@ completed
 
 ---
 
-### Never
+## Never
 
 방출되는 값도 없고, 종료이벤트(`completed`, `error`)도 발생하지 않는 무한의 `Observable`을 생성합니다.
 

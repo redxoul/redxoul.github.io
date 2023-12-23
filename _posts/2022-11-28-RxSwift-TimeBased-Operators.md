@@ -12,7 +12,7 @@ mermaid: true
 
 ---
 
-### replay
+## replay
 
 `subscribe`를 했을 때, `replay`대상이 이전에 방출했던 `element`를 `buffer`만큼 다시 방출시켜주는 Operator입니다.
 
@@ -43,7 +43,7 @@ replay
 링디기딩디기딩딩딩
 ```
 
-### replayAll
+## replayAll
 
 `replay`와 같지만 `buffer`가 무한한 버전입니다. `subscribe`이전에 방출되었던 모든 `Element`를 방출합니다.
 
@@ -77,7 +77,7 @@ replayAll
 지리지리자
 ```
 
-### buffer
+## buffer
 
 `buffer`는 `timeSpan`, `count`, `scheduler` 세가지 요소를 받습니다.
 
@@ -123,7 +123,7 @@ source
  ...
 ```
 
-### window
+## window
 
 `window`는 `buffer`와 동작이 유사하지만 배열대신 `Observable`로 방출을 합니다.
 
@@ -171,7 +171,7 @@ window
 ...
 ```
 
-### delaySubscription
+## delaySubscription
 
 `delaySubscription`은 `subscription`을 지정한 시간만큼 `delay`시킵니다.
 
@@ -210,7 +210,7 @@ delaySource
 ...
 ```
 
-### delay
+## delay
 
 `delay`는 시퀀스를 지정한 시간만큼 지연시킵니다. 이벤트 방출이 지연됩니다.
 
@@ -251,7 +251,7 @@ delaySubject
 ...
 ```
 
-### interval
+## interval
 
 `interval`은 `DispatchSource`, `Timer`와 같은 역할을 `Rx`로 구현한 Operator입니다.
 
@@ -282,7 +282,7 @@ Observable<Int>
 ...
 ```
 
-### timer
+## timer
 
 `timer`는 `interval`과 유사하지만. 좀더 디테일하게 설정이 가능합니다.
 
@@ -316,7 +316,7 @@ Observable<Int>
 ...
 ```
 
-### timeout
+## timeout
 
 `timeout`은 정해진 시간 내에 이벤트를 방출시키지 않으면 `timeout` `error`를 방출시키는 Operator입니다.
 

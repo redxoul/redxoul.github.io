@@ -9,11 +9,11 @@ mermaid: true
 ---
 `Publisher`가 내보내는 값이나 이벤트를 제한하고 그 중 일부만 소비하고 싶을 때 유용한 `Filtering Operator`입니다.
 
-> 💡 Filtering Operator에는 try 접두사가 붙은 유사 Operator(예: filter와 tryFilter)가 있습니다.
-> 유일한 차이점은 끝에서 throw하는 클로저를 제공한다는 것. 클로저 내에서 던지는 모든 오류는 던진 오류와 함께 Publisher를 종료합니다. 여기서는 non-throwing Operator에 대해서만 정리합니다.
+> Filtering Operator에는 try 접두사가 붙은 유사 Operator(예: filter와 tryFilter)가 있습니다.  
+유일한 차이점은 끝에서 throw하는 클로저를 제공한다는 것. 클로저 내에서 던지는 모든 오류는 던진 오류와 함께 Publisher를 종료합니다. 여기서는 non-throwing Operator에 대해서만 정리합니다.
+{: .prompt-tip }
 
-
-### filter
+## filter
 
 (= `RxSwift`의 `filter`)
 
@@ -46,7 +46,7 @@ numbers
 9 is a multiple of 3!
 ```
 
-### removeDuplicates
+## removeDuplicates
 
 (= `RxSwift`의 `distinctUntilChanged`)
 
@@ -83,7 +83,7 @@ mister
 ?
 ```
 
-### compactMap
+## compactMap
 
 (= `RxSwift`의 `compactMap`)
 
@@ -119,7 +119,7 @@ strings
 0.23
 ```
 
-### ignoreOutput
+## ignoreOutput
 
 (= `RxSwift`의 `ignoreElement`)
 
@@ -149,7 +149,7 @@ numbers
 Completed with: finished
 ```
 
-### first(where:)
+## first(where:)
 
 `Swift` 표준라이브러리에 있는 그것과 동일한 맥락의 `Operator`입니다.
 
@@ -158,9 +158,10 @@ Completed with: finished
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/07a62332-18c5-478b-830a-bfc80e8fd31b)
 
 
-> 💡 이 Operator는 lazy하게 동작합니다.
-> 그래서 where클로저와 일치하는 값을 찾을 때까지 필요한 만큼만 값을 불러오고,
-> 일치하는 값을 찾으면 바로 subscription은 cancel되고 completed됩니다.
+> 이 Operator는 lazy하게 동작합니다.  
+그래서 where클로저와 일치하는 값을 찾을 때까지 필요한 만큼만 값을 불러오고,  
+일치하는 값을 찾으면 바로 subscription은 cancel되고 completed됩니다.
+{: .prompt-tip }
 
 아래는 `first(where:)`의 예시입니다.
 
@@ -197,13 +198,14 @@ Completed with: finished
 
 (= `RxSwift`의 `first`)
 
-### last(where:)
+## last(where:)
 
 바로 전에 보았던 `first(where:)`와 반대로 `where`클로저를 만족하는 마지막 값만 찾아서 필터링시켜줍니다.
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/e64d2189-6ea5-4428-a099-115e4bf021aa)
 
-> ⚠️ `first(where:)`와 달리 이 operator는 publisher가 값 전송을 완료할 때까지 기다려야 일치하는 값을 찾았는지 알 수 있으므로 greedy하게 동작하며 Upstream은 반드시 유한해야 합니다.
+> `first(where:)`와 달리 이 operator는 publisher가 값 전송을 완료할 때까지 기다려야 일치하는 값을 찾았는지 알 수 있으므로 greedy하게 동작하며 Upstream은 반드시 유한해야 합니다.
+{: .prompt-warning }
 
 아래는 `last(where:)`의 예시입니다.
 
@@ -269,7 +271,7 @@ Completed with: finished
 
 (= `RxSwift`의 `takeLast`)
 
-### `dropFirst`
+## `dropFirst`
 
 (= `RxSwift`의 `skip`)
 
@@ -301,7 +303,7 @@ numbers
 10
 ```
 
-### drop(while:)
+## drop(while:)
 
 `while`클로저의 조건문이 true인 동안 값을 무시하다가, false가 되는 시점부터 값을 방출시키도록 해줍니다.
 
@@ -339,7 +341,7 @@ numbers
 | 클로저 조건을 만족하는 값들만 방출 | 클로저 조건을 만족하는 값들을 무시 |
 | 클로저 조건을 만족하는 값이 나와도 filter를 계속 적용 | 클로저 조건을 만족할 때까지만 drop을 적용 |
 
-### drop(untilOutputFrom:)
+## drop(untilOutputFrom:)
 
 (= `RxSwift`의 `skipUntil`)
 
@@ -381,7 +383,7 @@ taps
 5
 ```
 
-### prefix
+## prefix
 
 (= `RxSwift`의 `take`)
 
@@ -417,7 +419,7 @@ Completed with: finished
 
 `prefix`는 `lazy`하게 동작하기 때문에, 필요한 만큼만 값을 받고 종료시켜 더 추가적인 값을 생성하지 않도록 해줍니다.
 
-### prefix(while:)
+## prefix(while:)
 
 `while`클로저의 결과가 `true`일 때까지 `Upstream Publisher`의 값을 통과시킵니다. 결과가 `false`이면 바로 `Publisher`가 `completed`됩니다.
 
@@ -447,7 +449,7 @@ numbers
 Completed with: finished
 ```
 
-### prefix(untilOutputFrom:)
+## prefix(untilOutputFrom:)
 
 (= `RxSwift`의 `takeUntil`)
 

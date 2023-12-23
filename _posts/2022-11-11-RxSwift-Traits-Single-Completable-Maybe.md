@@ -21,7 +21,7 @@ mermaid: true
 
 `API`를 읽는 사람들에게 `코드의 의도를 명확하게 전달하는 방법을 제공`하는 것이 목적입니다.
 
-### Single
+## Single
 
 `Single`은 `success(value)`, `failure(error)` 이벤트만 방출시킵니다.
 
@@ -151,7 +151,7 @@ func loadText(from name: String) -> Single<String> {
 
 ---
 
-### Completable
+## Completable
 
 `Completable`은 `completed`와 `error(error)` 이벤트만 방출시킵니다.
 
@@ -215,7 +215,7 @@ saveText(fileName: "someFile", text: "someText")
     .disposed(by: disposeBag)
 ```
 
-### Maybe
+## Maybe
 
 `Maybe`는 앞에서 설명한 `Single`과 `Completable`을 합쳐놓은 개념입니다.
 
@@ -297,7 +297,7 @@ disposed
 
 `asMaybe`, `asSingle`을 이해하지 않고 한 번만 이벤트를 받기 위해 전환을 했다가
 
-영원히 `success(value)`이벤트를 못 받거나 `error(error)`이벤트를 받아서 의도하지 않게 동작할 수 있으니 주의해야겠죠?
+영원히 `success(value)`이벤트를 못 받거나 `error(error)`이벤트를 받아서 의도하지 않게 동작할 수 있으니 주의해야 합니다.
 
 그래서 `asSingle`, `asMaybe`로 전환해서 쓸 일이 있을 때는
 

@@ -74,6 +74,7 @@ CA로부터 인증서를 받으면 해당 인증서는 `chain of trust` 또는 `
 - 다음 발급 CA 또는 중간 CA의 공개키를 찾아서 디지털 서명을 확인. 이 프로세스는 루트 인증서에 도달할 때까지 계속됨.
 
 > 참고: iOS는 잘 알려진 모든 루트 CA 인증서를 Trust Store에 보관. iOS에 사전 설치되어 제공되는 신뢰할 수 있는 루트 인증서를 알고 싶으면 [Available trusted root certificates for Apple operating systems](https://support.apple.com/en-us/HT209143)을 참조.
+{: .prompt-info }
 
 참조
 

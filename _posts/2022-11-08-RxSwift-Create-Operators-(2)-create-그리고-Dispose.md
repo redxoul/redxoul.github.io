@@ -7,7 +7,7 @@ tags: [Swift, RxSwift]
 pin: false
 mermaid: true
 ---
-### Create
+## Create
 
 [RxSwift의 Lifecycle을 정리한 글](https://swiftycody.github.io/posts/RxSwift-RxSwift%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EC%9A%94%EC%86%8C-%EB%B0%8F-LifeCycle/)에서
 `Observable`이 `next`, `completed`, `error` 이벤트를 방출시키는 타입이라고 했죠.
@@ -120,7 +120,7 @@ The operation couldn’t be completed. (__lldb_expr_56.MyError error 0.)
 disposed
 ```
 
-### Dispose
+## Dispose
 
 그리고 이번 예제에서는 이전에 작성하지 않았던 `DisposeBag`을 작성했습니다.
 

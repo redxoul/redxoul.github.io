@@ -10,7 +10,7 @@ mermaid: true
 
 이번 글에서는 받은 값을 `가공`하기 위한 `Transforming Operators`를 정리해봅니다.
 
-### toArray
+## toArray
 
 `Observable`의 모든 `Element`들을 하나의 `Array`로 묶인 `Single`로 변환시켜줍니다.
 
@@ -37,7 +37,7 @@ Observable.of("HoneyButter", "Wasabi", "Buldak", "MintChoco")
 ["HoneyButter", "Wasabi", "Buldak", "MintChoco"]
 ```
 
-### map
+## map
 
 `Swift`에서 제공하는 `map`과 동일한 기능의 Operator입니다.
 
@@ -67,7 +67,7 @@ Observable.of(Date())
 2022.11.24
 ```
 
-### flatMap
+## flatMap
 
 `Observable` 내부의 `Observable`(`inner Observable`)을 다루기 위한 `Operator`입니다.
 
@@ -120,7 +120,7 @@ mintChocoTaster.tasteScore.onNext(1)
 1
 ```
 
-### flatMapLatest
+## flatMapLatest
 
 `flatMap`과 유사하지만, 상위 `Observable`에서 마지막으로 `next`된 `내부 Observable`의 값만 `subscribe`하게 됩니다.
 
@@ -194,7 +194,7 @@ buldakTester.tasteScore.onError(hate.MintChoco) // Unhandled error happened: Min
 
 ---
 
-### materialize & dematerialize
+## materialize & dematerialize
 
 `materialize`는 구체화한다는 뜻입니다.
 

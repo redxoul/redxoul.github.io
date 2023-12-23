@@ -24,19 +24,19 @@ mermaid: true
 
 `DelegateProxy`의 구현을 `MKMapView`를 예시로 보겠습니다.
 
-### 0. `extension`으로 `HasDelegate`를 따르도록 작성
+## 0. `extension`으로 `HasDelegate`를 따르도록 작성
 이미 `delegate`가 있는 클래스를 대상으로 하기 때문에 `extension`에 따로 구현해줄 것은 없습니다.
 
 ```swift
 extension MKMapView: HasDelegate {}
 ```
 
-### 1. 아래 3가지를 `상속받는 class`(~Proxy로 네이밍)를 필요로 합니다.
+## 1. 아래 3가지를 `상속받는 class`(~Proxy로 네이밍)를 필요로 합니다.
 - `DelegateProxy<Delegate가 있는 클래스 이름, Delegate 이름>`
 - `DelegateProxyType`
 - `Delegate 이름`
 
-### 2. 그리고 해당 `class`에 아래 메서드를 구현
+## 2. 그리고 해당 `class`에 아래 메서드를 구현
 
 ```swift
 class RxMKMapViewDelegateProxy: DelegateProxy<MKMapView, MKMapViewDelegate>, DelegateProxyType, MKMapViewDelegate {
@@ -55,7 +55,7 @@ class RxMKMapViewDelegateProxy: DelegateProxy<MKMapView, MKMapViewDelegate>, Del
 }
 ```
 
-### 3. `Reactive`를 `extension`하여 아래의 것들을 구현해 줍니다.
+## 3. `Reactive`를 `extension`하여 아래의 것들을 구현해 줍니다.
 
 - (위에서 만들어주었던)`DelegateProxy`로 `delegate 계산프로퍼티` 구현
 - (위에서 만들어주었던)`DelegateProxy`로 `setDelegate 메서드` 구현
@@ -98,7 +98,7 @@ public extension Reactive where Base: MKMapView {
     }
 }
 ```
-### 4 RxCocoa에서 익숙한 `.rx`를 통해 위에서 구현한 메서드를 사용
+## 4 RxCocoa에서 익숙한 `.rx`를 통해 위에서 구현한 메서드를 사용
 
 ```swift
 		// ViewModel

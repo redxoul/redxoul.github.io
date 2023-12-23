@@ -122,7 +122,8 @@ WWDC23 Get started with privacy manifests
 그 밖에 `Required Reason API`는 아래 문서에 정리되어 있고 앞으로 계속 업데이트될 예정이라고 합니다.  
 [https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api](https://developer.apple.com/documentation/bundleresources/privacy_manifest_files/describing_use_of_required_reason_api)
 
-> 💡 위 Required Reason API 문서에는 `File timestamp APIs, System boot time APIs, Disk space APIs, Active keyboard APIs,` `User defaults APIs`가 포함되어 있습니다.
+> 위 Required Reason API 문서에는 `File timestamp APIs, System boot time APIs, Disk space APIs, Active keyboard APIs,` `User defaults APIs`가 포함되어 있습니다.
+{: .prompt-tip }
 
    
 위 `Required Reason API`를 사용하여 반환된 데이터들은 다른 용도로 사용하면 안 됩니다.  

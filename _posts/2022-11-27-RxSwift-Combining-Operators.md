@@ -10,7 +10,7 @@ mermaid: true
 
 이번 글에서는 두개 이상의 `Observable`을 결합하기 위한 `Combining Operator`들을 정리해보려 합니다.
 
-### zip
+## zip
 
 `zip`은 묶인 `Observable`들의 결과값을 쌍으로 묶어서 내보내줍니다.
 
@@ -53,7 +53,7 @@ Corn is mine
 Buldak is mine
 ```
 
-### merge
+## merge
 
 2개 이상의 `Observable`을 하나의 `Observable`로 만들어주며, `merge`하려는 `Observable`의 타입이 같아야 합니다.
 
@@ -144,7 +144,7 @@ onion
 caramel
 ```
 
-### combineLatest
+## combineLatest
 
 2개 이상의 `Observable`을 묶어주는데, 각 `Observable`이 마지막으로 방출한 `Element`를 묶어서 방출시켜줍니다.
 
@@ -188,7 +188,7 @@ dateFormat.onNext(.long)
 November 26, 2022
 ```
 
-### concat
+## concat
 
 `concat`은 두개이상의 시퀀스를 이어붙이고 싶을 때 사용합니다.
 
@@ -236,7 +236,7 @@ corn
 garlic
 ```
 
-### startWith
+## startWith
 
 `startWith`는 `concat`의 변형으로
 
@@ -272,7 +272,7 @@ almondPackage
 (3) corn
 ```
 
-### concatMap
+## concatMap
 
 `concatMap`은 이전글에서 정리한 `flatMap`과 유사하지만,
 
@@ -331,7 +331,7 @@ caramel
 garlic
 ```
 
-### withLatestFrom
+## withLatestFrom
 
 `withLatestFrom`은 트리거 역할을 하는 `Observable`의 값이 방출이 될 때,
 
@@ -375,7 +375,7 @@ scan honeyButter
 scan buldak
 ```
 
-### sample
+## sample
 
 `sample`은 위 예제에서 사용한 `withLatestFrom`과 `distinctUntilChanged`를 합쳐놓은 `Operator`입니다.
 
@@ -414,7 +414,7 @@ corn
 honeyButter
 ```
 
-### amb
+## amb
 
 `amb`는 `ambiguous`(애매모호한)의 약자입니다.
 
@@ -454,7 +454,7 @@ challenger2.onNext("6")
 6
 ```
 
-### switchLatest
+## switchLatest
 
 `외부 Observable`이 마지막으로 방출한 `내부 Observable`에서만 `Element`가 방출됩니다.
 
@@ -492,7 +492,7 @@ student1: 손들고 발표
 student2: 손들고 발표
 ```
 
-### reduce
+## reduce
 
 `Swift`의 `Collection`타입에서 제공하는 ``reduce``와 동일한 기능의 `Operator`입니다.
 
@@ -517,7 +517,7 @@ Observable.from((1...10))
 55
 ```
 
-### scan
+## scan
 
 `scan`은 `reduce`와 유사하지만, `reduce`의 과정마다 `Element`를 방출시켜줍니다.
 

@@ -202,8 +202,9 @@ Received value Still there?
 Received completion failure(__lldb_expr_47.MyError.test)
 ```
 
-> 🗒️ `PassthroughtSubject`는 `Subject`의 기본형으로,
+> `PassthroughtSubject`는 `Subject`의 기본형으로,
 `non-Combine` 코드로부터 값을 받아서 `Subscriber`에게 값을 방출시키는 `Publisher`.
+{: .prompt-info }
 
 ## CurrentValueSubject
 
@@ -393,14 +394,13 @@ subject.send(completion: .finished)
 [1st subscription]: receive finished
 ```
 
-> 🗒️ 정리  
-> `CurrentValueSubject`는 `PassthroughSubject`의 변형으로,
-> `.value` 프로퍼티를 통해 현재(마지막) 방출된 값을 받아올 수 있음.
-> 이런 특성이 있기 때문에 초기화 시에 초기값을 넣어주어야 함.
-> `.value` 프로퍼티로 직접 값을 넣어도 `.send()` 함수로 값을 전달하는 것과 동일한 효과(`subscriber`들에게 `value`를 방출).
+> 정리  
+`CurrentValueSubject`는 `PassthroughSubject`의 변형으로, `.value` 프로퍼티를 통해 현재(마지막) 방출된 값을 받아올 수 있음.  
+이런 특성이 있기 때문에 초기화 시에 초기값을 넣어주어야 함.  
+`.value` 프로퍼티로 직접 값을 넣어도 `.send()` 함수로 값을 전달하는 것과 동일한 효과(`subscriber`들에게 `value`를 방출).
+{: .prompt-info }
 
 
-
->💡 추가  
-> `Publisher`나 `Subject`를 `sink`하는 구문 전에 `.print("prefix")`를 넣어주면, `subscription`의 변경이 있을 때마다 출력을 통해 정보를 알려줌.
-
+> 추가  
+`Publisher`나 `Subject`를 `sink`하는 구문 전에 `.print("prefix")`를 넣어주면, `subscription`의 변경이 있을 때마다 출력을 통해 정보를 알려줌.
+{: .prompt-tip }

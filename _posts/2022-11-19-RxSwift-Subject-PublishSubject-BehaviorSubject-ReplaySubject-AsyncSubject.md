@@ -23,7 +23,7 @@ mermaid: true
 
 ---
 
-### PublishSubject
+## PublishSubject
 
 이름과 같이 정보를 받아서 `Observer`에게 `Publish(발행)`를 하는 `Subject`입니다.
 
@@ -127,7 +127,7 @@ sub3:  completed
 
 ---
 
-### BehaviorSubject
+## BehaviorSubject
 
 `BehaviorSubject`는 `PublishSubject`와 거의 동일하고,
 
@@ -191,7 +191,7 @@ if let value = try? behaviorSubject.value() { // 최신 값을 가져올 수 있
 value:  (1) first
 ```
 
-### ReplaySubject
+## ReplaySubject
 
 `ReplaySubject`는 `BehaviorSubject`와 유사하게 `subscribe`하기 이전에 방출되었던 값을 받을 수 있습니다.
 
@@ -263,7 +263,7 @@ sub2:  error(someError)
 sub3:  error(Object `RxSwift.(unknown context at $104ee1af0).ReplayMany<Swift.String>` was already disposed.)
 ```
 
-### AsyncSubject
+## AsyncSubject
 
 `AsyncSubject`는 앞서 설명한 `Subject`들과 전혀 다르게 동작하는 `Subject`입니다.
 

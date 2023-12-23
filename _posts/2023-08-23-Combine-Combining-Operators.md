@@ -114,8 +114,9 @@ publisher
 7
 ```
 
-> ⚠️ Set은 Array와 달리 순서가 보장되지 않기 때문에 방출되는 순서가 달라질 수 있음.  
-> 위 예시에서는 1, 2가 2, 1이 될 수도 있음.
+> Set은 Array와 달리 순서가 보장되지 않기 때문에 방출되는 순서가 달라질 수 있음.  
+위 예시에서는 1, 2가 2, 1이 될 수도 있음.
+{: .prompt-warning }
 
 `stride` Sequence를 더 추가.
 
@@ -319,7 +320,8 @@ publisher.send(completion: .finished) // 추가
 5
 ```
 
-> ⚠️ 업스트림의 publisher가 .finished 완료를 보내지않으면 모든 append는 동작하지 않음.
+> 업스트림의 publisher가 .finished 완료를 보내지않으면 모든 append는 동작하지 않음.
+{: .prompt-warning }
 
 ## append(Sequence)
 
@@ -585,7 +587,8 @@ Completed
 
 `publisher` 중 하나에서 값을 방출할 때마다, 모든 `publisher`의 최신값이 포함된 튜플을 방출시켜줍니다.
 
-> ⚠️ combineLatest로 묶인 모든 publisher들이 최소 1개 이상의 값을 방출하고부터 튜플이 방출됩니다.
+> combineLatest로 묶인 모든 publisher들이 최소 1개 이상의 값을 방출하고부터 튜플이 방출됩니다.
+{: .prompt-warning }
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/1e3043b8-41b3-4db4-abe9-0beb86b9b2e5)
 

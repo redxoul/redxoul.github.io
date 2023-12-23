@@ -9,7 +9,7 @@ mermaid: true
 ---
 
 
-### XCTest
+## XCTest
 `Xcode`에서는 `UnitTest`, `UITest`를 위해 `XCTest`라는 `framework`를 제공합니다.  
 `XCTest`를 작성하는 방법은 다음과 같습니다.
 
@@ -56,8 +56,7 @@ XCTAssertLessThan(expression1, expression2, ...) // expression1이 expression2�
 ```
 
 더 많은 종류의 `Assertion`들은 문서를 참고
-
-https://developer.apple.com/documentation/xctest/comparable_value_assertions
+[https://developer.apple.com/documentation/xctest/comparable_value_assertions](https://developer.apple.com/documentation/xctest/comparable_value_assertions)
 
 사용예는 아래와 같습니다.
 
@@ -89,7 +88,7 @@ final class LocationInfoModelTests: XCTestCase {
 에러가 나면서 작성한 커스텀 메세지나 기본 메세지가 경고를 해줍니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/b41ce4d3-7f25-4adb-b532-905946a76121)
 
-### Nimble
+## Nimble
 
 `Nimble`은 `Test Assertion`을 좀 더 읽기 쉬운 표현으로 작성할 수 있게 해줍니다.
 

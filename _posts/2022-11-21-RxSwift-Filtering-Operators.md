@@ -22,7 +22,7 @@ mermaid: true
 
 ---
 
-### filter
+## filter
 
 `Swift Collection` 타입에서 제공하는 `filter`와 동일한 기능의 `Operator`입니다.
 
@@ -50,7 +50,7 @@ eat Wasabi Almond
 eat HoneyButter Almond
 ```
 
-### ignoreElements
+## ignoreElements
 
 모든 `next`이벤트를 무시합니다. `error`, `complete`로 종료되는 이벤트만 받습니다.
 
@@ -83,7 +83,7 @@ takeAlmond.onCompleted()
 take Wasabi Almond
 ```
 
-### elementAt
+## elementAt
 
 `subscribe`한 후 `n`번째 인덱스의 `Element`만 받습니다.
 
@@ -116,7 +116,7 @@ eat Wasabi Almond
 
 ---
 
-### skip
+## skip
 
 `n`번 `next`이벤트를 `skip`시킵니다.
 
@@ -141,7 +141,7 @@ Wasabi
 Buldak
 ```
 
-### skipWhile
+## skipWhile
 
 `while`클로저가 `true`인 동안 `skip`을 시키고, `false`가 된 순간부터 `next`이벤트를 받습니다.
 
@@ -168,7 +168,7 @@ Wasabi
 Corn
 ```
 
-### skipUntil
+## skipUntil
 
 `skipUntil`은 조금 특이합니다.
 
@@ -207,7 +207,7 @@ buy Corn
 buy Buldak
 ```
 
-### take
+## take
 
 `take`는 `n`개의 `Element`만 받도록 합니다.
 
@@ -232,7 +232,7 @@ Wasabi
 HoneyButter
 ```
 
-### takeWhile
+## takeWhile
 
 `takeWhile`은 `while`클로저가 `true`인 동안만 `Element`를 받습니다.
 
@@ -259,7 +259,7 @@ Wasabi
 HoneyButter
 ```
 
-### takeUntil
+## takeUntil
 
 `takeUntil`은 `skipUntil`과 비슷하게,
 
@@ -275,7 +275,7 @@ Wasabi
 HoneyButter
 ```
 
-### distinctUntilChanged
+## distinctUntilChanged
 
 `distinctUntilChanged`는 기존에 받은 `Element`와 다른 `Element`가 들어왔을 때만 값을 받게 해주어
 

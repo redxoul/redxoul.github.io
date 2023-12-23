@@ -7,7 +7,7 @@ tags: [Swift, RxSwift]
 pin: false
 mermaid: true
 ---
-### defer
+## defer
 
 `defer`로 생성된 `observable`은 다른 생성 operator들과 다르게,
 

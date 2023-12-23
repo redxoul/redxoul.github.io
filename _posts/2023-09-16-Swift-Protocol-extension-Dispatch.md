@@ -9,7 +9,7 @@ mermaid: true
 ---
 ## 프로토콜 extension
 
-프로토콜 자체를 확장하여 **프로토콜 member의 기본 구현을 제공**할 수 있습니다.
+프로토콜 자체를 확장하여 `프로토콜 member의 기본 구현을 제공`할 수 있습니다.
 
 ```swift
 extension Localizable {
@@ -70,7 +70,8 @@ func localize(_ localizables: inout [MutableLocalizable],
 
 이러한 경우 걱정할 함수의 overriding이 없으므로 컴파일러는 어떤 의미에서 함수의 주소를 하드코딩하고 함수가 참조될 때마다 해당 주소로 이동할 수 있습니다.
 
-> 💡 메서드 디스패치 외에도 Swift가 광범위하게 사용하는 **inlining**라는 기술도 있습니다. **inlining**은 컴파일 시간에 함수 호출을 해당 함수의 전체 본문으로 대체합니다. 이는 함수를 호출하는 가장 빠른 방법이지만 **static dispatch** 및 특정 조건에서만 사용할 수 있습니다.
+> 메서드 디스패치 외에도 Swift가 광범위하게 사용하는 `inlining`라는 기술도 있습니다. `inlining`은 컴파일 시간에 함수 호출을 해당 함수의 전체 본문으로 대체합니다. 이는 함수를 호출하는 가장 빠른 방법이지만 `static dispatch` 및 특정 조건에서만 사용할 수 있습니다.
+{: .prompt-tip }
 
 상속과 프로토콜을 추가하면 상황이 좀 더 복잡해집니다. `final`이 아닌 `class` 인스턴스에서 호출된 메서드는 가능한 여러 위치에서 선언될 수 있습니다. `class`, 부모 `class`, `extention` 또는 `프로토콜 extension` 내에서 선언할 수 있습니다. 이는 컴파일러가 함수의 정확한 주소가 무엇인지 미리 알 수 없음을 의미합니다. 대신 `witness table`(감시 테이블)(`v-table` 또는 `가상 테이블`이라고도 함)이라는 것을 사용합니다.
 
@@ -146,7 +147,7 @@ let greeter = GermanGreeter()
 print(greeter.greet())
 ```
 
-**GermanGreeter**는 자체적인 **welcome** 메서드를 구현하지 않기 때문에 위의 줄은 **"Hello"**를 출력.
+`GermanGreeter`는 자체적인 `welcome` 메서드를 구현하지 않기 때문에 위의 줄은 `Hello`를 출력.
 
 ```
 // 출력
@@ -155,7 +156,7 @@ Hello
 
 이것이 작동하는 방식은 기본 인사말 구현이 프로토콜을 준수하는 모든 유형에 복사되고 `프로토콜 witness table`에 추가되는 것입니다. 프로토콜 자체에는 `table`이 없고 `Concrete(구체적인) 타입`에만 존재.
 
-**GermanGreeter** 내부에 메서드를 구현하여 독일어로 번역하도록 작성.
+`GermanGreeter` 내부에 메서드를 구현하여 독일어로 번역하도록 작성.
 
 ```swift
 struct GermanGreeter: Greetable {
@@ -198,7 +199,7 @@ print(greeter.leave())
 Bye
 ```
 
-**GermanGreeter**에 추가 코드 작성.
+`GermanGreeter`에 추가 코드 작성.
 
 ```swift
 struct GermanGreeter: Greetable {
@@ -218,7 +219,7 @@ struct GermanGreeter: Greetable {
 Tschüss
 ```
 
-프로토콜을 사용하도록 **greetinger** 선언을 변경.
+프로토콜을 사용하도록 `greetinger` 선언을 변경.
 
 ```swift
 let greeter: Greetable = GermanGreeter()

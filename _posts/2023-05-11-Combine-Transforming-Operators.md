@@ -70,10 +70,10 @@ finished
 ```
 
 
-> ⚠️ `collect() operator`는 `Upstream`의 `Publisher`가 `finished`되었을 때 `value`들을 배열로 모아서 방출시켜줍니다.
-위 예시는 유한한 값을 가지는 시퀀스이기 때문에 바로 `finished`되어 배열이 방출되었지만,
+> `collect() operator`는 `Upstream`의 `Publisher`가 `finished`되었을 때 `value`들을 배열로 모아서 방출시켜줍니다.  
+위 예시는 유한한 값을 가지는 시퀀스이기 때문에 바로 `finished`되어 배열이 방출되었지만,  
 갯수가 지정되지 않은 `Publisher`에서 `collect()`를 사용할 때는 `finished`되기 전까지 해당 메모리를 계속 사용하고 값을 `Downstream`으로 전달시켜주지 않기 때문에 주의해야 합니다.
-
+{: .prompt-warning }
 
 `collect()` operator는 아래처럼 몇개씩 묶어줄지 지정해 줄 수 있습니다.
 
@@ -239,8 +239,8 @@ Hello, World!
 ```
 
 
-> ⚠️ `collect() operator`와 마찬가지로, `Upstream`의 `Output`을 모두 모아서 `flat`하게 만들어 `Downstream`으로 전달하기 때문에 `Output`갯수가 정해지지 않은 시퀀스를 `flatMap`으로 전환시 시퀀스가 끝나기 전까지 `Downstream`으로 값을 전달하지 않고 메모리 문제를 일으킬 수 있으니 주의해야합니다.
-
+> `collect() operator`와 마찬가지로, `Upstream`의 `Output`을 모두 모아서 `flat`하게 만들어 `Downstream`으로 전달하기 때문에 `Output`갯수가 정해지지 않은 시퀀스를 `flatMap`으로 전환시 시퀀스가 끝나기 전까지 `Downstream`으로 값을 전달하지 않고 메모리 문제를 일으킬 수 있으니 주의해야합니다.
+{: .prompt-warning }
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/9171ae89-f117-4f3d-9451-1e34968a31b5)
 flatMap(maxPublisher:_:)의 마블다이어그램
@@ -275,8 +275,8 @@ C
 ```
 
 
-> ✨ `replaceNil(with:)`는 `nil`을 `non-nil`값으로 대체시켜주기 때문에 당연히 `Output`이 `non-Optional`로 나와야할 거 같은데, 위 예시에서 `.eraseToAnyPublisher()`를 제거했을 때, `Output`이 `Optional<String>`으로 나오는 것을 볼 수 있습니다(공식 문서에서도 `Optional`로 나오는 것으로 설명. why??). Upstream에서 `.eraseToAnyPublisher()`를 사용하면 `non-Optional` 값으로 `Output`이 나오도록 할 수 있습니다.
-
+> `replaceNil(with:)`는 `nil`을 `non-nil`값으로 대체시켜주기 때문에 당연히 `Output`이 `non-Optional`로 나와야할 거 같은데, 위 예시에서 `.eraseToAnyPublisher()`를 제거했을 때, `Output`이 `Optional<String>`으로 나오는 것을 볼 수 있습니다(공식 문서에서도 `Optional`로 나오는 것으로 설명. why??). Upstream에서 `.eraseToAnyPublisher()`를 사용하면 `non-Optional` 값으로 `Output`이 나오도록 할 수 있습니다.
+{: .prompt-tip }
 
 ## replaceEmpty(with:)
 

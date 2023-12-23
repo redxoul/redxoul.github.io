@@ -7,6 +7,8 @@ tags: [Swift, RxSwift]
 pin: false
 mermaid: true
 ---
+## RxSwift의 기본 요소
+
 ### 1. Observable
 
 `Observable<Element>` 형태로 사용되며, `Element`는 `방출(emit)하고자 하는 타입`입니다.

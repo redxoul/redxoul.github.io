@@ -128,8 +128,9 @@ SwiftUI는 선언적UI로서 고수준의 앱이 원하는 것을 Describe하면
   }
   ```
   함수의 각 조건부 분기는 서로 다른 종류의 View를 리턴하는데, Swift에서는 전체 함수에 대한 단일 리턴타입이 필요하기 때문에 이를 모두 `AnyView`로 래핑.
-  > ⚠️ 불행히도 이는 SwiftUI가 작성한 코드의 조건부 구조를 볼 수 없다는 의미
-  
+  > 불행히도 이는 SwiftUI가 작성한 코드의 조건부 구조를 볼 수 없다는 의미
+  {: .prompt-warning }
+
   ```swift
   some View = AnyView
   ```
@@ -298,8 +299,9 @@ ID는 시간이 지남에 따라 다양한 value를 단일 entity(하나의 View
   }
   ```
   이는 동일한 View 정의에서 생성된 두개의 고유한 값. SwiftUI는 비교를 해보고 View가 변경되었는지 알기 위해 값의 복사본을 유지함. 하지만 그 이후에는 이전 값이 소멸됨.
-  > ⚠️ 여기에서 이해해야 할 중요한 점은 `View 값`이 `View ID`와 다르다는 것!   
+  > 여기에서 이해해야 할 중요한 점은 `View 값`이 `View ID`와 다르다는 것!   
   `View value` != `View Identity`
+  {: .prompt-warning }
 
   `View 값`은 일시적이므로 Lifetime에 의존해서는 안됨. 우리는 `View의 ID`만 통제할 것.
   View가 처음 생성되면 `Identity` 파트에서의 방식(명시적, 구조적)으로 ID를 할당하고, 시간이 지나면 업데이트에 따라 View에 대한 새로운 값이 생성됨.
@@ -347,8 +349,9 @@ flowchart TD
   해당 View의 lifetime에 걸쳐 SwiftUI가 다양한 작업에 의해 변경될 때 state를 유지.  
   하지만 `dayTime`이 바뀌어 분기가 바뀌면? SwiftUI가 state의 초기값부터 false View(`else`)의 새 저장공간을 생성하고, true View(`dayTime`)에 대한 저장공간은 할당이 취소됨. 다시 `dayTime` 분기로 돌아가도 마찬가지.
   > 여기서 중요한 점은, ID가 변경될 때마다, state가 대체된다는 것.
-  `State lifetime == View lifetime`  
-  이는 View의 본질(=state)가 무엇인지 명확하게 분리하고 이를 ID와 연결할 수 있기 때문에 꼭 알고 있어야 함.
+  > `State lifetime == View lifetime`  
+  > 이는 View의 본질(=state)가 무엇인지 명확하게 분리하고 이를 ID와 연결할 수 있기 때문에 꼭 알고 있어야 함.
+  {: .prompt-tip }
 
   데이터의 ID를 View에 대한 `명시적 ID`의 형태로 사용하는 데이터 기반의 세트가 있음 -> `ForEach`, `confirmationDialog`, `alert`, `List`, `Table`, `OutlineGroup`.
 
@@ -425,6 +428,7 @@ struct DogView: View {
 > - ID는 의존성 그래프의 중추.
 > - 모든 View는 명시적ID이나 구조적ID를 갖고, 이 ID가 SwiftUI가 변경사항을 올바른 View로 라우팅하고 UI를 효율적으로 업데이트하는 방법.
 > - 의존성의 여러 종류: `@Binding`, `@Environment`, `@State`, `@StateObject`, `@ObservedObject`
+{: .prompt-tip }
 
 #### 명시적ID의 안정성의 중요성
 ```swift
@@ -485,9 +489,10 @@ struct TreatJar: View {
 ```swift
         ForEach(treats, id: \.serialNumber) {
 ```
-> - 무작위 ID를 쓸 떄는 주의가 필요.
+> - 무작위 ID를 쓸 때는 주의가 필요.
 > - ID는 시간이 지나도 변경되어서는 안됨. 새로운 ID는 새로운 lifetime을 가진 새로운 항목을 나타냄.
 > - ID는 고유해야 함. 여러 View가 ID를 공유할 수 없음.
+{: .prompt-tip }
 
 #### 구조적 ID
 ```swift
@@ -513,9 +518,10 @@ struct ExpirationModifier: ViewModifier {
       content.opacity(data < .now ? 0.3 : 1.0)
 ```
 그리고 `opacity(1.0)`이 되었을 때는 불투명도가 `1.0`이 되어서 아무런 효과가 없어서 렌더링 결과에 아무 영향이 없어서 `비활성 수정자`가 되어 더욱 비용이 절감됨.
+
 > - 구조적 ID를 불필요하게 발생시키면 성능저하, state손실, 의도치 않은 애니메이션이 생길 수 있음
 > - 분기를 만들 때 다른 View가 생기는지, 동일한 View의 다른 state가 되는지 고민할 것.
-
+{: .prompt-tip }
 
 
 ## 요약

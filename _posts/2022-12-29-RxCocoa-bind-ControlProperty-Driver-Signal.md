@@ -16,7 +16,7 @@ mermaid: true
 
 이는 `UIKit`들에 반응형 확장(`.rx`)를 추가해서 다양한 이벤트를 `subscribe 할` 수 있게 해 줍니다.
 
-### .rx
+## .rx
 
 `RxCocoa`를 `import 하면`
 
@@ -75,7 +75,7 @@ RxCocoa를 사용하면 `.rx` 를 통해 아래처럼 작성할 수 있습니다
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/fff6bf9c-1455-4a3a-8924-2e2640a3e15a)
 
-### .bind(to:)
+## .bind(to:)
 
 `RxCocoa`를 사용하는 여러 가지 이유 중 하나인 `.bind(to:)`입니다.
 
@@ -157,7 +157,7 @@ Observer 타입을 바인딩 시켜주는 bind(to:)
     }
 ```
 
-### Driver와 Signal
+## Driver와 Signal
 
 `RxSwift`와 함께 `UI`작업을 할 때는 몇가지 특징이 있습니다.
 
