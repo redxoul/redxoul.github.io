@@ -14,7 +14,7 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: iOS 개발로그 # the main title
+title: 🧑🏻‍💻iOS 개발로그 # the main title
 
 tagline: Swift, Xcode, WWDC, Apple 소식 등에 대한 정보를 정리합니다 # it will display as the sub-title
 
