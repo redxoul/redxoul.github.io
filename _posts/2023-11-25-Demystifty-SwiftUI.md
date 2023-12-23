@@ -305,8 +305,8 @@ ID는 시간이 지남에 따라 다양한 value를 단일 entity(하나의 View
   View가 처음 생성되면 `Identity` 파트에서의 방식(명시적, 구조적)으로 ID를 할당하고, 시간이 지나면 업데이트에 따라 View에 대한 새로운 값이 생성됨.
 ```mermaid
 flowchart TD
-  A[`DecibelView(강도:25)`] --> B[`DecibelView(강도: 50)`]
-  B --> C[`DecibelView(강도: 42)`]
+  A[DecibelView<강도:25>] --> B[DecibelView<강도: 50>]
+  B --> C[DecibelView<강도: 42>]
 ```
 
 
