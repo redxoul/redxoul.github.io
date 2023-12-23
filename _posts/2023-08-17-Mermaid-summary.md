@@ -36,6 +36,19 @@ flowchart TD
 	A --> C
 ```
 
+위 flowchart는 위(Top)에서 아래(Down)방향의 그래프이고, 왼쪽(Left)에서 오른쪽(Right)으로 하고 싶을 땐 LR로 작성합니다.
+```
+flowchart LR
+	A --> B
+	A --> C
+```
+
+```mermaid
+flowchart LR
+	A --> B
+	A --> C
+```
+
 조금 더 살을 붙여서,  
 A는 \[네모]로, B와 C는 (\[둥근네모])로 수정하고 화살표에 텍스트를 추가한 모습입니다.  
 A처럼 `한번 윗줄에서 정의한 것은 아랫줄부터 생략이 가능`합니다.
