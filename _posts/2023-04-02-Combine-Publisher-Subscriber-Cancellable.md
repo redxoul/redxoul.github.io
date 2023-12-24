@@ -111,7 +111,7 @@ Received completion (another) finished
 
 두 번째로 `subscribe`할 수 있는 방법은 `assign(to:on:)`입니다.
 
-`assing(to:on:) operator`를 사용하면 수신된 값을 객체의 `KVO(Key-Value Observing)` 호환 프로퍼티에 할당(`assign`)할 수 있습니다.
+`assing(to:on:)` operator를 사용하면 수신된 값을 객체의 `KVO(Key-Value Observing)` 호환 프로퍼티에 할당(`assign`)할 수 있습니다.
 
 ```swift
 // 1. didSet을 가진 클래스를 정의
@@ -205,10 +205,10 @@ object.$value
 (= `@published` 프로퍼티에 `assign(to:)`하는 것이 `Set<AnyCancellable>`에 `store`하는 것과 동일한 효과)
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/1b34a429-6362-4d89-a578-a68b300ac8e4)
-AnyCancellable을 반환하는 assing(to:on:)
+AnyCancellable을 반환하는 `assing(to:on:)`
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/507ee99d-af42-4ab5-bda5-39edf7b53b4f)
-아무것도 반환하지 않는 대신 published의 Publisher를 inout 파라미터로 받는 assign(to:)
+아무것도 반환하지 않는 대신 `published`의 `Publisher`를 'inout' 파라미터로 받는 'assign(to:)`
 
 또 다른 예로 아래와 같은 경우,
 
