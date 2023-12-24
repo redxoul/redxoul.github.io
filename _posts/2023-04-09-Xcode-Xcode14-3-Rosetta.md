@@ -13,10 +13,10 @@ mermaid: true
 Xcode 14.3부터는 Rosetta로 실행하는 것을 지원하지 않습니다.
 {: .prompt-warning }
 
-| Xcode14.2 | Xcode14.3 |
+| Xcode14.2 이하 | Xcode14.3 |
 | -- | -- |
 |![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/1f56dd6e-0e28-4f23-911e-87c38a5ced69)|![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/84624634-72a9-4c75-ae61-d3fbfe60c8d7)|
-|Xcode 14.2 이하에서 Rosetta로 실행 지원 | (우) Xcode 14.3부터 Rosetta로 실행 미지원 |
+
 
 저는 그동안 아래 글에서 **Apple Silicon** 환경(**M1**, **M2**, ...)에서 발생할 수 있는 문제점 및 해결 방법을 정리하고 계속 글을 갱신하고 있었는데요.
 
