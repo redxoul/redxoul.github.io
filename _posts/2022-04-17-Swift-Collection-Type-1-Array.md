@@ -7,7 +7,7 @@ tags: [Swift]
 pin: false
 mermaid: true
 ---
-### 배열의 생성
+## 배열의 생성
 
 ```swift
 // 빈 배열 생성
@@ -21,14 +21,14 @@ someInts = []
 
 ```
 
-### 기본값으로 빈배열 생성
+## 기본값으로 빈배열 생성
 
 ```swift
 var threeDoubles = Array(repeating: 0.0, count: 3)
 // threeDoubles : Double 타입의 [0.0, 0.0, 0.0]
 ```
 
-### 배열끼리 합
+## 배열끼리 합
 
 ```swift
 var anotherThreeDoubles = Array(repeating: 2.5, count: 3)
@@ -38,7 +38,7 @@ var sixDoubles = threeDoubles + anotherThreeDoubles
 // sixDoubles : [0.0, 0.0, 0.0, 2.5, 2.5, 2.5]
 ```
 
-### 리터럴로 배열 생성
+## 리터럴로 배열 생성
 
 ```dart
 var shoppingList: [String] = ["Six Eggs", "Milk"]
@@ -47,7 +47,7 @@ var shoppingList = ["Six Eggs", "Milk"]
 
 ```
 
-### 배열 접근, 변환
+## 배열 접근, 변환
 
 ```swift
 // 갯수
@@ -83,7 +83,7 @@ let apples = shoppingList.removeLast()
 
 ```
 
-### 배열의 순회
+## 배열의 순회
 
 ```swift
 for item in shoppingList {
@@ -107,7 +107,7 @@ for (index, value) in shoppingList.enumerated() {
 
 ```
 
-### 배열의 원소를 연결 (joined)
+## 배열의 원소를 연결 (joined)
 
 ```swift
 let cast = ["Vivien", "Marlon", "Kim", "Karl"]

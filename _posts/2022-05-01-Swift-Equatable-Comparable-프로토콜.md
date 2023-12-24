@@ -8,7 +8,7 @@ pin: false
 mermaid: true
 ---
 
-### Equatable
+## Equatable
 `Equatable`은
 
 두개의 값이 동일한 값인지 아닌지 비교를 하기 위해서 따라야하는 프로토콜입니다.
@@ -60,7 +60,7 @@ myAlmondPackage == yourAlmondPackage // false
 myAlmondPackage == wivesAlmondPackage // true
 ```
 
-### Comparable
+## Comparable
 
 `Comparable`은 이름에서도 느낌이 오듯이,
 

@@ -16,7 +16,7 @@ Swift에서 `String`, `Int`, `Double`, `Bool` 같은 기본 타입은 기본적�
 
 Swift에서 `Set` 타입은 `Set`으로 선언.
 
-### 빈 Set 생성
+## 빈 Set 생성
 
 ```swift
 var letters = Set<Character>()
@@ -26,7 +26,7 @@ letters = []
 
 ```
 
-### 배열 리터럴로 Set 생성
+## 배열 리터럴로 Set 생성
 
 ```swift
 var favoriteGenres: Set<String> = ["Rock", "Classical", "Hip hop"]
@@ -36,7 +36,7 @@ var favoriteGenres: Set = ["Rock", "Classical", "Hip hop"]
 
 ```
 
-### Set 접근, 변경
+## Set 접근, 변경
 
 ```swift
 print("I have \(favoriteGenres.count) favorite music genres.")
@@ -68,7 +68,7 @@ if favoriteGenres.contains("Funk") {
 
 ```
 
-### Set 순회
+## Set 순회
 
 ```swift
 for genre in favoriteGenres {
@@ -80,7 +80,7 @@ for genre in favoriteGenres {
 
 ```
 
-### Set의 명령어
+## Set의 명령어
 
 ```swift
 let oddDigits: Set = [1, 3, 5, 7, 9]
@@ -98,7 +98,7 @@ oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()
 ```
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/9c19845e-02ea-439b-8a56-d01f0404d192)
 
-#### Set 멤버 확인 및 동등 비교
+## Set 멤버 확인 및 동등 비교
 
 `Set`의 동등비교와 맴버 여부를 확인하기 위해 각각 `==` 연산자와 `isSuperset(of:)`, `isStrictSubset(of:)`, `isStrictSuperset(of:)`, `isDisjoint(with:)` 메서드를 사용.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/88085d4a-7c76-441d-94f5-c64b26b9bc83)

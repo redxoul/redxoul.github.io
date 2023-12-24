@@ -10,7 +10,7 @@ mermaid: true
 
 Swift의 `Dictionary`타입은 `Foundation`의 `NSDictionary`를 bridge한 타입.
 
-### 빈 Dictionary 생성
+## 빈 Dictionary 생성
 
 ```swift
 var namesOfIntegers = [Int: String]()
@@ -20,14 +20,14 @@ namesOfIntegers = [:]
 
 ```
 
-### 리터럴로 Dictionary 생성
+## 리터럴로 Dictionary 생성
 
 ```dart
 var airports: [String: String] = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
 
 ```
 
-### Dictionary 접근, 변경
+## Dictionary 접근, 변경
 
 ```swift
 print("The airports dictionary contains \(airports.count) items.")

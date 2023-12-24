@@ -200,47 +200,59 @@ var label = UILabel().builder
 `RxSwift`의 `Reactive` 확장(`.rx`)도 같은 방식으로 구현되어 있는 것을 확인할 수 있습니다.
 
 ```swift
-// RxSwift패키지의 Reactive.swift
-
 @dynamicMemberLookup
 public struct Reactive<Base> {
-/// Base object to extend.public let base: Base
+    /// Base object to extend.
+    public let base: Base
 
-/// Creates extensions with base object.////// - parameter base: Base object.public init(_ base: Base) {
+    /// Creates extensions with base object.
+    ////// - parameter base: Base object.
+    public init(_ base: Base) {
         self.base = base
     }
 
-/// Automatically synthesized binder for a key path between the reactive/// base and one of its propertiespublic subscript<Property>(dynamicMember keyPath: ReferenceWritableKeyPath<Base, Property>) -> Binder<Property> where Base: AnyObject {
+    /// Automatically synthesized binder for a key path between the reactive
+    /// base and one of its properties
+    public subscript<Property>(dynamicMember keyPath: ReferenceWritableKeyPath<Base, Property>) -> Binder<Property> where Base: AnyObject {
         Binder(self.base) { base, value in
             base[keyPath: keyPath] = value
         }
     }
 }
 
-/// A type that has reactive extensions.public protocol ReactiveCompatible {
-/// Extended typeassociatedtype ReactiveBase
+/// A type that has reactive extensions.
+public protocol ReactiveCompatible {
+    /// Extended typeassociatedtype ReactiveBase
 
-/// Reactive extensions.static var rx: Reactive<ReactiveBase>.Type { get set }
+    /// Reactive extensions.
+    static var rx: Reactive<ReactiveBase>.Type { get set }
 
-/// Reactive extensions.var rx: Reactive<ReactiveBase> { get set }
+    /// Reactive extensions.
+    var rx: Reactive<ReactiveBase> { get set }
 }
 
 extension ReactiveCompatible {
-/// Reactive extensions.public static var rx: Reactive<Self>.Type {
+    /// Reactive extensions.
+    public static var rx: Reactive<Self>.Type {
         get { Reactive<Self>.self }
-// this enables using Reactive to "mutate" base type// swiftlint:disable:next unused_setter_valueset { }
+        // this enables using Reactive to "mutate" base type
+        // swiftlint:disable:next unused_setter_valueset { }
     }
 
-/// Reactive extensions.public var rx: Reactive<Self> {
+    /// Reactive extensions.
+    public var rx: Reactive<Self> {
         get { Reactive(self) }
-// this enables using Reactive to "mutate" base object// swiftlint:disable:next unused_setter_valueset { }
+        // this enables using Reactive to "mutate" base object
+        // swiftlint:disable:next unused_setter_valueset { }
     }
 }
 
 import Foundation
 
-/// Extend NSObject with `rx` proxy.extension NSObject: ReactiveCompatible { }
+/// Extend NSObject with `rx` proxy.
+extension NSObject: ReactiveCompatible { }
 ```
+{: file='RxSwift/Reactive.swift'}
 
 `RxSwift`, `RxCocoa`를 그냥 쓰고만 있다가,
 

@@ -14,7 +14,7 @@ Swift에서는 함수가 '이름이 있는 클로저'라고 하는 편이 맞습
 
 이전 글에서 Swift에서는 함수가 [1급객체](https://swiftycody.github.io/posts/Swift-1%EA%B8%89-%EA%B0%9D%EC%B2%B4-First-class-citizen-%EC%99%80-%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98-%EA%B3%A0%EA%B3%84%ED%95%A8%EC%88%98/)라는 포스팅을 했는데, 바로 클로저의 존재가 이를 가능하게 해줍니다.
 
-### 클로저의 형태
+## 클로저의 형태
 
 클로저는 아래의 세가지 형태가 있습니다.
 
@@ -22,7 +22,7 @@ Swift에서는 함수가 '이름이 있는 클로저'라고 하는 편이 맞습
 - `중첩 함수` : 이름이 있고 관련한 함수로 부터 값을 캡쳐 할 수 있는 클로저
 - `클로저 표현` : 경량화 된 문법으로 쓰여지고 관련된 문맥(context)으로부터 값을 캡쳐할 수 있는 이름이 없는 클로저
 
-### 클로저 표현
+## 클로저 표현
 
 Swift에서 클로저 표현은 간결하고 명확한 표현을 지원해줍니다.
 
@@ -112,7 +112,7 @@ let decreasedAlmonds = almonds.sorted(by: { (s1:String, s2:String) -> Boolinretu
 let decreasedAlmonds = almonds.sorted(by: { (s1:String, s2:String) -> Boolinreturn s1 > s2 })
 ```
 
-### 문맥(context)에서 매개변수 타입(parameter type)과 반환타입(return type)의 추론
+## 문맥(context)에서 매개변수 타입(parameter type)과 반환타입(return type)의 추론
 
 위에서 본 `sorted(by:)`의 summary를 봤을 때, 컴파일러는 매개변수로 2개의 Element를,
 
@@ -126,7 +126,7 @@ let decreasedAlmonds = almonds.sorted(by: { (s1:String, s2:String) -> Boolinretu
 let decreasedAlmonds = almonds.sorted(by: { s1, s2inreturn s1 > s2 })
 ```
 
-### 단일 표현 클로저에서의 암시적 반환
+## 단일 표현 클로저에서의 암시적 반환
 
 위 코드의 경우 body부분이 `return s1 > s2` 라는 단일 표현으로된 클로저인데, 이런 경우 `return` 키워드를 생략할 수 있습니다.
 
@@ -136,7 +136,7 @@ let decreasedAlmonds = almonds.sorted(by: { s1, s2inreturn s1 > s2 })
 let decreasedAlmonds = almonds.sorted(by: { s1, s2in s1 > s2 })
 ```
 
-### 축약된 인자 이름
+## 축약된 인자 이름
 
 `인라인 클로저의 경우` 자동으로 축약 인자 이름(`$0, $1, $2`, ...)를 제공해줍니다.
 
@@ -146,7 +146,7 @@ let decreasedAlmonds = almonds.sorted(by: { s1, s2in s1 > s2 })
 let decreasedAlmonds = almonds.sorted(by: { $0 > $1 })
 ```
 
-### 후위 클로저 문법
+## 후위 클로저 문법
 
 어떤 함수의 마지막 매개변수가 클로저라면 `후위 클로저 문법`을 사용할 수 있습니다.
 
@@ -200,7 +200,7 @@ let decreasedAlmonds = almonds.sorted { $0 > $1 }
 추천 입력에는 소괄호까지 생략된 형태인 것을 확인해 볼 수 있습니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/f24b017e-2fd9-4728-b503-3b6da53d46d9)
 
-### 클로저는 참조 타입
+## 클로저는 참조 타입
 
 Swift는 함수를 [1급객체로 취급](https://swiftycody.github.io/posts/Swift-1%EA%B8%89-%EA%B0%9D%EC%B2%B4-First-class-citizen-%EC%99%80-%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98-%EA%B3%A0%EA%B3%84%ED%95%A8%EC%88%98/)을 하고, 클로저가 `참조 타입`으로 분류됩니다.
 

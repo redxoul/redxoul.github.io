@@ -79,7 +79,7 @@ struct SomeSwiftUIView_Previews: PreviewProvider {
 }
 ```
 
-### Live Mode
+## Live Mode
 
 Preview에서 `동적으로 데이터를 받아와서 반영된 모습을 확인`하고 싶거나,
 
@@ -87,7 +87,7 @@ Preview에서 `동적으로 데이터를 받아와서 반영된 모습을 확�
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/3ad5fdaf-ed80-4783-897d-3d2f0eeacc74)
 
-### Xcode14(Beta)에서 Preview의 변경점
+## Xcode14(Beta)에서 Preview의 변경점
 
 1. `Live Mode`가 기본 적용됩니다.
 

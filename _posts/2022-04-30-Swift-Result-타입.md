@@ -18,7 +18,7 @@ Swift 5.0부터 도입된 `Result`타입에 대해 정리해봅니다.
 
 이걸 도입한 이유는 기존에 `error`를 처리하던 `throw`방식에 몇가지 문제가 있었기 때문입니다.
 
-### 기존 throw, do, try, catch 문법
+## 기존 throw, do, try, catch 문법
 
 `Result`타입을 보기 전에 먼저 기존의 `throw`문법을 보겠습니다. 아몬드를 주문하는 예제입니다.
 
@@ -157,7 +157,7 @@ func orderAlmond(_ orderedAlmonds: [Almond]) throws -> Reciept {
 
 `throw`를 변경할 때마다 해당 함수를 사용하는 곳(`someFunction()`)과 처리하는 곳(`orderError(error:)`)을 따로 수정해주어야 하고, 이를 놓칠수 있는 가능성이 생겨나는 것이죠.
 
-### Result 타입
+## Result 타입
 
 이제 `Result`타입을 살펴보겠습니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/8bc24e10-ce48-4da4-8e63-621f0ff067dc)
@@ -242,7 +242,7 @@ error처리를 `orderError(error:)`에서 하든, `case .failure`에서 하든
 
 일관된 위치에서 일관된 흐름으로 처리할 수 있게 되었습니다.
 
-### 정리
+## 정리
 
 `throw` 문은 어떤 값을 던지는 지 특정하지 않기 때문에,
 

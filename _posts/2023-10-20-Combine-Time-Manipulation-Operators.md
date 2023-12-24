@@ -346,7 +346,7 @@ subject.feed(with: typingHelloWorld)
 
 로그를 통해 `throttle`의 동작을 확인. 1초 간격으로 기다렸다가 그 사이에 제일 먼저 받았던 값(`latest: false`)을 방출.
 
-```swift
+```
 +0.0초: Subject 방출됨: H
 +0.0초: Throttled 방출됨: H
 +0.1초: Subject 방출됨: He

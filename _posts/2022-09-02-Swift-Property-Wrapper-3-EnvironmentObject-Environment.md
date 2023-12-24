@@ -8,7 +8,7 @@ pin: false
 mermaid: true
 ---
 
-### @EnvironmentObject
+## @EnvironmentObject
 SwiftUI에서는 환경값이 바뀌었을 때,  
 해당값에 따라서 뷰를 그릴 수 있게 해주는 `@EnvironmentObject`라는 Property Wrapper를 제공합니다.
 
@@ -115,7 +115,7 @@ struct Counter: View {
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/aba0b435-6142-4dfd-8d06-fb0b3ecb70db)
 
-### @Environment
+## @Environment
 
 위의 `@EnvironmentObject`와 유사하게 뷰환경에 저장된 값을 읽어올 수 있는 `@Envirnment` Property Wrapper가 있습니다.
 
@@ -169,7 +169,7 @@ struct Counter: View {
 `ColorScheme`의 `.light`모드, `.dark`모드에 따라서 폰트 색상이 잘 변경되는 것을 확인할 수 있습니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/20ef068b-9158-41b4-b036-4a6337b0327d)
 
-### 커스텀 EnvironmentValue를 설정
+## 커스텀 EnvironmentValue를 설정
 
 먼저 `EnvironmentKey`를 설정해주어야 합니다.
 

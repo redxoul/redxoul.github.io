@@ -53,7 +53,7 @@ let subscriber = StringSubscriber()
 
 `String`, `MyError`를 받는 `StringSubscriber`라는 커스텀 `subscriber`입니다.
 
-`subscribe`시 최대 2개값을 받고, "`world`"라는 값을 받으면 최대값 2개에서 +1씩 더 받습니다.
+`subscribe`시 최대 2개값을 받고, `world`라는 값을 받으면 최대값 2개에서 +1씩 더 받습니다.
 
 이어서 아래에 `PassthroughtSubject`를 생성하고, `Subscription`을 `StringSubscriber`와 `sink`를 통해 만들어봅니다.
 

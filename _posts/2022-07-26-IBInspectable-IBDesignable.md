@@ -21,7 +21,7 @@ mermaid: true
 
 이 상태에서 계산기 버튼들에 `cornerRadius`를 주어 둥글게 만들고 싶은데, 이럴 경우 코드를 작성해야 합니다.
 
-### @IBInspectable
+## @IBInspectable
 
 이름에서도 느껴지듯이 이 `Attribute`를 사용하면 스토리보드의 `Inspector`에서 값을 바로 수정할 수 있게 해 줍니다.
 
@@ -55,7 +55,7 @@ class RoundButton: UIButton {
 
 이제 `@IBDesignable`을 사용할 때입니다.
 
-### @IBDesignable
+## @IBDesignable
 
 바로 작성해봅니다. 아까 작성한 코드에 `@IBDesignable`만 선언해주면 됩니다.
 

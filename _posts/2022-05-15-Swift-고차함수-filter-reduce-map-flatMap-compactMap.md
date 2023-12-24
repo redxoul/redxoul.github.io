@@ -15,7 +15,7 @@ mermaid: true
 let someNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-### filter
+## filter
 
 `filter`는 컨테이너의 값을 걸러서 새로운 컨테이너로 내보내줍니다.이름에서도 느껴지듯이 필터링을 해줍니다.배열 내에 있는 '`Element`타입을 받아서 `Bool`을 반환하는 클로저'를 넣어주면 `Element`배열을 내보내주는데, 이 클로저에 `Element`값을 내보내지는 배열에 포함할지를 결정할 수 있는 조건문을 반환하도록 작성해주면 됩니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/016c9b59-8fcc-41b4-ad2e-63fedee3b173)
@@ -57,7 +57,7 @@ let oddNumbers: [Int] = someNumbers.filter {
 print(oddNumbers) // [1, 3, 5, 7 ,9]
 ```
 
-### reduce
+## reduce
 
 `reduce`는 컨테이너의 값들을 하나의 값으로 줄이는데 사용됩니다. `reduce`는 두개의 매개변수를 받습니다. 첫번째 매개변수는 초기값(`Result`)입니다. 두번째 매개변수는 기존 결과값(`Result`)과 현재값(`Element`)를 받아서 새 Result를 반환하는 클로저입니다. 숫자 컨테이너의 경우 첫 매개변수(초기값 `Result`)에 보통 `0`을 넣고, 해당 컨테이너 외의 값에 결과를 이어서 계산하고 싶다면 해당 값을 넣어주면 됩니다. 그러면 두번째 매개변수 클로저로 해당 초기값을 컨테이너의 값과 함께 넘겨받게 됩니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/f759ed4d-7845-460d-b70b-cd63d7f22195)
@@ -110,7 +110,7 @@ let subtract = someNumbers.reduce(0) { $0 - $1 }
 print(subtract) // -45
 ```
 
-### map
+## map
 
 `map`은 컨테이너의 기존 데이터를 변형(`transform`)하여 새로운 컨테이너를 생성해 반환합니다. 배열 내에 있는 '`Element`타입을 받아서 `T`타입을 반환하는 클로저'를 넣어주면 `T`타입의 배열을 내보내주는데, 이 클로저에 `Element`값을 가공하여 새로운 값 `T`를 반환하도록 작성해주면 됩니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/3e23bfa1-9756-435b-995e-b66d0d49bee9)
@@ -150,11 +150,11 @@ let triple = someNumbers.map { $0 * 3 }
 print(triple) // [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
 ```
 
-### 그리고 flatMap & compactMap
+## 그리고 flatMap & compactMap
 
 `map`에서 파생된 형태로 `flatMap`과 `compactMap`이 있습니다. 위에서 설명한 `map`과 기본적인 동작은 같지만, 추가적인 기능이 있습니다.
 
-### flatMap
+## flatMap
 
 `flatMap`은 `2차원 배열일 때, 1차원 배열로 flat하게 만들어`줍니다.이 때 `배열 내에 nil이 있을 때 제거해주지는 않`습니다.
 
@@ -175,7 +175,7 @@ let flatMapTest = array.flatMap{ $0 } // 'flatMap' is deprecated: Please use com
 print(flatMapTest) // [1, 3, 5, 6, 7]
 ```
 
-### compactMap
+## compactMap
 
 `compactMap`은 (위에도 썼다시피 swift 4.1이전에 flatMap에 있던)'`1차원 배열의 nil값을 제거한 배열을 반환`'해주는 기능을 가지고 있습니다.
 
@@ -196,7 +196,7 @@ print(compactMapTest)
 // [[Optional(1), Optional(2), Optional(3)], [nil, Optional(5)], [Optional(6), nil], [nil, nil]]
 ```
 
-### 고차함수들의 chaining
+## 고차함수들의 chaining
 
 그렇다면 2차원 배열인데 `nil`도 제거하고 싶고, 1차원 배열로 flat하게 만들어주고 싶다면? 앞에서 정리한 `flatMap`과 `compactMap`을 체이닝으로 사용하면 됩니다.
 

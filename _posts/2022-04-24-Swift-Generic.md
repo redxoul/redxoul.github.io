@@ -52,7 +52,7 @@ let temporaryA = a
 }
 ```
 
-### 제네릭 함수와 타입 파라미터
+## 제네릭 함수와 타입 파라미터
 
 제네릭을 사용하면 위 함수들을
 
@@ -80,7 +80,7 @@ let temporaryA = a
 
 여러 타입 파라미터를 받고 싶을 때는 `쉼표`( `,`)로 구분하여 `<T, U, V>`과 같이 여러개를 작성합니다.
 
-### 제네릭 타입
+## 제네릭 타입
 
 `제네릭 함수`를 만들듯이 `제네릭 타입`을 작성할 수 있습니다.
 
@@ -123,7 +123,7 @@ almondsStack.pop() // Wasabi
 almondsStack.pop() // Corn
 ```
 
-### 제네릭 타입 확장
+## 제네릭 타입 확장
 
 `extension`으로 `제네릭 타입`도 확장이 가능합니다.
 
@@ -143,7 +143,7 @@ if let topItem = stackOfStrings.topItem {
 // The top item: MintChoco
 ```
 
-### 타입 파라미터의 타입제한
+## 타입 파라미터의 타입제한
 
 `타입 파라미터`가 기본적으로는 어떤 타입이든 받을 수 있도록 해주지만,
 
@@ -225,7 +225,7 @@ if let almondIndex = findIndex(of: "MintChoco", in: almonds) {
 }
 ```
 
-### 프로토콜과 연관타입 associatedtype
+## 프로토콜과 연관타입 associatedtype
 
 `연관타입`은 `프로토콜`에서 사용할 수 있습니다.
 
@@ -270,7 +270,7 @@ struct Stack<Element>: Container {
 }
 ```
 
-### 기존 타입에 연관타입을 확장
+## 기존 타입에 연관타입을 확장
 
 기존 `Array` 타입을 `Container`프로토콜로 연관타입을 확장.
 
@@ -280,7 +280,7 @@ struct Stack<Element>: Container {
 extension Array: Container {}
 ```
 
-### 프로토콜에 associatedtype 적용을 제한하기
+## 프로토콜에 associatedtype 적용을 제한하기
 
 `타입 파라미터`를 작성할 때 `특정 타입`이나, `프로토콜`으로 제한하듯이
 
@@ -295,7 +295,7 @@ protocol SuffixableContainer: Container {
 }
 ```
 
-### SuffixableContainer
+## SuffixableContainer
 
 → `Suffix`가 `SuffixableContainer`프로토콜을 따르고,
 
@@ -335,7 +335,7 @@ let suffixAlmonds = almondsStack.suffix(4)
 print(suffixAlmonds.items) // ["HoneyButter", "Wasabi", "Corn", "Buldak"]
 ```
 
-### 제네릭의 where절
+## 제네릭의 where절
 
 제네릭에서도 `where`절의 사용이 가능합니다.
 
@@ -385,7 +385,7 @@ else {
 }
 ```
 
-### where절을 포함하는 제네릭 익스텐션
+## where절을 포함하는 제네릭 익스텐션
 
 제네릭을 `extension`으로 확장할 때, `where`절을 포함시킬 수 있습니다.
 
@@ -456,7 +456,7 @@ print([1260.0, 1200.0, 98.6, 37.0].average()) // 648.9
 // average()를 사용할 수 있음
 ```
 
-### 제네릭의 연관타입에 where절 사용
+## 제네릭의 연관타입에 where절 사용
 
 제네릭의 연관타입에도 `where`절을 사용하여 제한을 둘 수 있습니다.
 
@@ -480,7 +480,7 @@ protocol Container {
 protocol ComparableContainer: Container where Item: Comparable { }
 ```
 
-### 제네릭의 subscript에 where절로 제한
+## 제네릭의 subscript에 where절로 제한
 
 제네릭의 `subscript`에도 `where`절로 제한을 둘 수 있습니다.
 

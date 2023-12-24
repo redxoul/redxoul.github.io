@@ -16,7 +16,7 @@ GCD(a, b) = GCD(b, r)과 같고 r이 0이 되었을 때 그 때 b가 최대공�
 > ex) GCD(24, 16) → GCD(16, 8) → GCD(8, 0) → 최대공약수 = 8
 {: .prompt-info }
 
-### 재귀함수로 구현
+## 재귀함수로 구현
 
 ```swift
 func GCD(_ a: Int, _ b: Int) -> Int {
@@ -27,7 +27,7 @@ func GCD(_ a: Int, _ b: Int) -> Int {
 }
 ```
 
-### 반복문으로 구현
+## 반복문으로 구현
 
 ```swift
 func GCD(_ a: Int, _ b: Int)
@@ -40,7 +40,7 @@ func GCD(_ a: Int, _ b: Int)
 }
 ```
 
-### 다항식일 경우
+## 다항식일 경우
 
 a, b, c가 있을 때 a, b의 최대공약수(x)를 먼저 구하고, c, x의 최대공약수를 다시 구하면 됨.
 

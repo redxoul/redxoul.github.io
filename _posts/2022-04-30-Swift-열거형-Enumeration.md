@@ -14,7 +14,7 @@ mermaid: true
 
 `rawValue`와 `관련값`을 가질 수 있고, [일급객체](https://swiftycody.github.io/posts/Swift-1%EA%B8%89-%EA%B0%9D%EC%B2%B4-First-class-citizen-%EC%99%80-%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98-%EA%B3%A0%EA%B3%84%ED%95%A8%EC%88%98/)이기 때문에 `계산프로퍼티`, `함수`를 작성할 수 있고 `초기화를 지정`하거나 `extension`도 가능합니다.
 
-### 열거형의 기본 문법
+## 열거형의 기본 문법
 
 열거형의 기본 문법은 아래와 같습니다.
 
@@ -47,7 +47,7 @@ enum Almond {
 }
 ```
 
-### 열거형의 기본값, 그리고 Objective-C(이하 Objc)의 열거형과의 차이점
+## 열거형의 기본값, 그리고 Objective-C(이하 Objc)의 열거형과의 차이점
 
 `ObjC`에서는 `NSInteger`형으로 열거형을 쓸 수 있었지만,
 
@@ -99,7 +99,7 @@ if myAlmond == 1 {	// error!
 }
 ```
 
-### 열거형의 rawValue
+## 열거형의 rawValue
 
 `Swift`의 열거형에서는 `rawValue`가 별도로 존재합니다.
 
@@ -140,7 +140,7 @@ oneAlmond = .mintChoco
 print(oneAlmond.rawValue) // Your Almond
 ```
 
-### 열거형과 switch문
+## 열거형과 switch문
 
 열거형과 `switch`문은 매우 잘 어울리는 쌍입니다.
 
@@ -178,7 +178,7 @@ default:
 }
 ```
 
-### 열거형의 관련값
+## 열거형의 관련값
 
 `Swift`의 열거형은 `rawValue`외에도 관련값을 가질 수 있습니다.
 

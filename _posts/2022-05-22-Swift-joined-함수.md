@@ -16,7 +16,7 @@ Sequence가 들어있는 배열일 때, 하나의 Sequence로 이어주는 함�
 
 `String`일 때와 그 이외의 배열일 때가 약간 다릅니다.
 
-### String 배열의 joined
+## String 배열의 joined
 
 `String`의 배열의 `joined` 함수의 정의는 아래와 같습니다. 매개변수로 `seperator`가 있고 생략했을 때는 `""`가 기본으로 적용됩니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/0a78413c-ab5e-4cc2-b4dd-1d8f0db21aa6)
@@ -38,7 +38,7 @@ let joinedAlmonds = someAlmonds.joined(separator: " and ")
 print(joinedAlmonds) // HoneyButter and Wasabi and Corn and Buldak and MintChoco
 ```
 
-### 그 외 Sequence의 배열에서의 joined
+## 그 외 Sequence의 배열에서의 joined
 
 `String`이 아닐 때는 `joined()`와 `joined(seperator:)`가 조금 다릅니다.
 

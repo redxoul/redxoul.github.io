@@ -12,7 +12,7 @@ mermaid: true
 
 개별 세션의 내용을 참조한 내용들도 있으며, 글은 계속 수정될 수 있습니다.
 
-### WidgetKit
+## WidgetKit
 
 WatchOS용 앱에서 사용하던 `WidgetKit`을 이제 iOS의 잠금화면용 Widget에서도 사용할 수 있게 되었습니다.
 
@@ -27,7 +27,7 @@ WatchOS용 앱에서 사용하던 `WidgetKit`을 이제 iOS의 잠금화면용 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/1b21913c-3321-4886-a1bb-349d34601b7c)
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/0d67bb74-62f9-4544-910c-9e08865f0432)
 
-### Live Activities
+## Live Activities
 
 `WidgetKit`으로 만들 수 있는 잠금화면에서 실시간으로 업데이트시켜줄 수 있는 뷰입니다.
 
@@ -36,7 +36,7 @@ WatchOS용 앱에서 사용하던 `WidgetKit`을 이제 iOS의 잠금화면용 
 운동 경기의 스코어, Uber 택시가 도착하기 까지의 시간, 운동 타이머 등에 활용 예시가 있습니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/69961cdb-d30f-400d-8f5b-949a7928c0d3)
 
-### Messages Collaboration API
+## Messages Collaboration API
 
 메세지, 페이스 타임으로 공유. 앱 내의 콘텐츠 링크를 공유할 때, 이 API로 그 링크를 협업용으로 설정 가능합니다.  
 필요한 식별자를 제공하고. 수신인이 링크를 누르면 바로 접속 권한을 줄 수 있습니다.  

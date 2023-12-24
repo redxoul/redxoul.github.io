@@ -11,7 +11,7 @@ mermaid: true
 
 개별 세션의 내용을 참조한 내용들도 있으며, 글은 계속 수정될 수 있습니다.
 
-### App Intents Framework
+## App Intents Framework
 
 앱의 기능을 시스템에서 사용가능하게 해서 사용자가 Siri와 단축어로 앱을 자동화하여 사용할 수 있게 해줍니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/d46ef205-4dd4-4740-b40c-7b5c08ee944e)
@@ -35,7 +35,7 @@ Siri뿐만 아니라 시스템 전반에서 앱의 기능을 쓸 수 있게 해�
 
 Siri와 단축어를 위한 사용자화 Intents를 개발하는 개발자들은 `App Intents`로 업그레이드를 하는 것이 좋다고 합니다.기존 `SiriKit Intents`를 만들었다면 `IntentDefinition` 파일에서 Convert버튼을 누르면 변환됩니다.
 
-### PassKey
+## PassKey
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/ebac5c0a-bb74-4333-a42a-452b3ebebf4f)
 
 `FIDO Alliance`(Apple, Google, Microsoft, 등) 내의 여러 플랫폼 업체들과 협력하여 호환되도록 개방형 표준으로 만든 FIDO 솔루션입니다.
@@ -72,18 +72,18 @@ Apple기기와 PC가 통신 후, 생체인증을 하면 끝입니다.
 
 앱과 사이트에 절대적으로 묶여있어 엉뚱한 웹사이트에 속아 해당 패스키를 사용할 일이 없고 사용자가 겪는 자격증명 피싱이 불가능해집니다.
 
-### 앱과 웹사이트에 패스키 적용
+## 앱과 웹사이트에 패스키 적용
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/2a93f3d7-141b-4b8a-b865-591b50268d5f)
 
 PassKey의 적용은 간단합니다.
 
-#### 웹사이트에 적용
+### 웹사이트에 적용
 - 계정 백엔드가 모든 계정마다 고유한 공개키를 저장하도록 하고 인증요청을 보내도록 설정합니다.
 - 웹사이트, 앱에서 사용자에게 패스키를 제안하고, 패스키 생성과 로그인을 위한 API(WebAuthn API, AuthenticationServices Framework API)를 적용해주면 됩니다.
 
 (자세한 내용은 Meet passkeys 세션 참조. https://developer.apple.com/videos/play/wwdc2022/10092/)
 
-#### 앱에서 적용
+### 앱에서 적용
 - 앱에서는 `webCredentials service`를 설정하여 `associated domain`을 설정하고
 - ID입력 TextField에 textContentType을 .userName으로 설정해줍니다. 이렇게 해주면 시스템이 `PassKey`를 제안할 위치를 알아챌 수 있습니다.
 - 그리고 서버로부터 받아온 challenge를 `ASAuthorizationPlatformPublicKey`를 이용하여 provider와 request를 생성하고, `performAutoFillAssistedRequests`를 실행합니다.(WebAuthn 용어에서 `Assertion`은 `로그인`. `Assertion Request`는 `기존 Passkey로 로그인하기 위한 요청`)

@@ -14,7 +14,7 @@ mermaid: true
 
 (참고: https://github.com/CombineCommunity/rxswift-to-combine-cheatsheet)
 
-### Basic Spec.
+## Basic Spec.
 
 |  | RxSwift | Combine |
 | --- | --- | --- |
@@ -31,7 +31,7 @@ mermaid: true
 
 ---
 
-### Publisher
+## Publisher
 
 `RxSwift`의 `Observable`에 해당하는 요소로, `Publisher` 프로토콜을 따르는 `struct`입니다.
 
@@ -48,15 +48,15 @@ mermaid: true
 
 ---
 
-### AnySubscriber
+## AnySubscriber
 
 `RxSwift`의 `Observer`에 해당하는 요소로, `Subscriber` 프로토콜을 따르는 `struct`입니다.
 
-`Publisher`를 `subscribe 하여` `Publisher`가 방출한 이벤트를 받을 수 있는 타입입니다.
+`Publisher`를 `subscribe` 하여 `Publisher`가 방출한 이벤트를 받을 수 있는 타입입니다.
 
 ---
 
-### Core Components
+## Core Components
 
 `RxSwift`의 `Observer`, `Traits`, `Subject`, `Relay`에 해당하는 요소들입니다.
 
@@ -89,7 +89,7 @@ mermaid: true
 
 ---
 
-### Operators
+## Operators
 
 `Publisher`를 조합하거나, 가공할 때 필요한 `Operator`들입니다.
 
@@ -170,12 +170,12 @@ mermaid: true
 
 ---
 
-### Combine에만 있는 Operator들 (try Operator)
+## Combine에만 있는 Operator들 (try Operator)
 
 반면에 `Combine`에만 있는 `try` `Operator`들도 있습니다.
 
 > `tryMap`
-> 
+
 > `tryContains(where:)`
 > 
 > `tryScan`
@@ -217,7 +217,7 @@ func tryMap<T>(_ transform: (Output) throw -> T) -> Result<T, Error>.Publisher
 
 ---
 
-### Combining Operators(결합 연산자)의 차이
+## Combining Operators(결합 연산자)의 차이
 
 2개 이상의 이벤트를 묶어서 처리를 해야 할 때 사용하는 결합 연산자입니다.
 
@@ -237,7 +237,7 @@ func tryMap<T>(_ transform: (Output) throw -> T) -> Result<T, Error>.Publisher
 | CombineLatest, CombineLatest3, CombineLatest4 | combineLatest |
 | Zip, Zip3, Zip4 | zip |
 
-### AnyCancellable
+## AnyCancellable
 
 `RxSwift`의 `Disposable`에 해당하는 요소입니다.
 
@@ -245,7 +245,7 @@ func tryMap<T>(_ transform: (Output) throw -> T) -> Result<T, Error>.Publisher
 
 `AnyCancellable`은 `Cancellable` `protocol`을 따르는 클래스입니다.
 
-`RxSwift`에서는 ``Observable``을 `subscribe` 했을 때 `Disposable`이 생성되고 메모리 해제를 위해서 `dispose(by: disposeBag)`을 해주었죠?
+`RxSwift`에서는 `Observable`을 `subscribe` 했을 때 `Disposable`이 생성되고 메모리 해제를 위해서 `dispose(by: disposeBag)`을 해주었죠?
 
 하지만 `Combine`에서는 `DisposeBag`에 해당하는 개념은 없고, 대신 `Set<AnyCancellable>`에 넣어줍니다.
 
@@ -281,7 +281,7 @@ Observable.just(1)
 
 ---
 
-### Thread Handling
+## Thread Handling
 
 `Combine`에도 `subscribe(on:)`이라는 동일한 이름으로 `Thread Handling`을 지원하지만,
 
@@ -311,7 +311,7 @@ Just(1)
 
 ---
 
-### 성능
+## 성능
 
 (https://medium.com/@M0rtyMerr/will-combine-kill-rxswift-64780a150d89)
 

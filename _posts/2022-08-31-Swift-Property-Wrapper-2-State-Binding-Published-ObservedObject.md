@@ -10,7 +10,7 @@ mermaid: true
  
 이번 글에서는 Swift, SwiftUI로 작성 시 자주 쓰게 되는 `Property Wrapper`를 정리해봅니다.
 
-### @State와 @Binding
+## @State와 @Binding
 
 `@State`와 `@Binding`은 SwiftUI에서 자주 사용하는 Property Wrapper입니다.
 
@@ -67,7 +67,7 @@ struct PlayerView: View {
 
 `@State`와 `@Binding`은 모든 스레드에서 안전하게 값 변경이 가능합니다.
 
-### @Published, 그리고 @ObservedObject
+## @Published, 그리고 @ObservedObject
 
 위에서 본 `@State`와 `@Binding`은 `SwiftUI` 내에서 뷰의 상태값을 변경하는데만 사용하도록 권장되고 있습니다.
 

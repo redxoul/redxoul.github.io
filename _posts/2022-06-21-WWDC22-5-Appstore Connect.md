@@ -10,7 +10,7 @@ mermaid: true
 
 `WWDC2022`에서 `App Store Connect`의 변경점을 정리해봅니다.
 
-### 여러 항목을 하나의 제출로 그룹화
+## 여러 항목을 하나의 제출로 그룹화
 
 (이 내용은 실제 앱스토어 커넥트에서 변경된 사항을 직접봐야 감이 올거 같네요)
 
@@ -36,7 +36,7 @@ mermaid: true
 
 Review item은 앱 버전, 앱 내 이벤트, 사용자 지정 제품 페이지, 제품 페이지 최적화 테스트 일 수 있습니다.
 
-### 대부분의 경우 새 앱 버전없이 제출할 수 있도록 선택 가능
+## 대부분의 경우 새 앱 버전없이 제출할 수 있도록 선택 가능
 
 대부분의 경우 새 앱 버전없이 제출할 수 있도록 선택 가능합니다.
 
@@ -58,7 +58,7 @@ Review item은 앱 버전, 앱 내 이벤트, 사용자 지정 제품 페이지,
 물론 앱 버전없이 심사 제출을 하기 위해서는 이전에 승인된 버전의 앱이 필요합니다. 물론 제출되면 이전 버전에 대해 항목이 심사가 됩니다. 즉, 첫번째 iOS버전이 승인되고 새로운 앱 바이너리 없이 언제든지 앱 내 이벤트, 사용자 지정 제품 페이지 최적화 테스트를 제출할 수 있습니다.
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/300b5e66-859a-4dd9-9744-523d67da9c61)
 
-### 전용 App Review 페이지
+## 전용 App Review 페이지
 
 진행중인 제출물을 관리하고, App Review와 Communicate하며, 최근 완료된 제출물을 볼 수 있는 전용 App Review 페이지가 생겼습니다. App Store Connect에서 해당 앱 페이지의 왼쪽 메뉴 리스트에 App Review 링크에서 볼 수 있습니다.
 
@@ -72,7 +72,7 @@ Review item은 앱 버전, 앱 내 이벤트, 사용자 지정 제품 페이지,
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/ce3d5087-0c09-4ab9-98d1-d5920681f1bc)
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/dcffaae3-9512-4865-a841-c26cd1e0b735)
 
-### App Store Connect API
+## App Store Connect API
 
 앱 워크플로우를 커스터마이징하고 자동화하는데 유용한 App Store Conenct API가 있습니다.
 
