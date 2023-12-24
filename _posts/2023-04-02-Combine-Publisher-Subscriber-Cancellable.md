@@ -205,10 +205,10 @@ object.$value
 (= `@published` 프로퍼티에 `assign(to:)`하는 것이 `Set<AnyCancellable>`에 `store`하는 것과 동일한 효과)
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/1b34a429-6362-4d89-a578-a68b300ac8e4)
-AnyCancellable을 반환하는 `assing(to:on:)`
+`AnyCancellable`을 반환하는 `assing(to:on:)`
 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/507ee99d-af42-4ab5-bda5-39edf7b53b4f)
-아무것도 반환하지 않는 대신 `published`의 `Publisher`를 'inout' 파라미터로 받는 'assign(to:)`
+아무것도 반환하지 않는 대신 `published`의 `Publisher`를 'inout' 파라미터로 받는 `assign(to:)`
 
 또 다른 예로 아래와 같은 경우,
 
