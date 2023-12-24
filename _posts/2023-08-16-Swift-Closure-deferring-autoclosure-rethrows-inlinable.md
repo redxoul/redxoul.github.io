@@ -294,12 +294,12 @@ rethrows -> V {
 }
 ```
 
-> 📄  
 > `Any`는 `Swift`의 궁극적인 `type-erasure`이지만 사용 시 오류가 발생하기 쉬움. 일반적으로 `Generic`이 더 나은 대안.  
 > 클로저를 값을 반환하는 매개변수로 전달하여 함수 본문 내에서 인수 evaluate를 연기.  
 > `@autoclosure`는 표현식 인수의 실행을 지연시키기 때문에 short-circuit 동작을 구현하는 방법.  
 > `rethrow`는 `throws`로 표시되거나 표시되지 않을 수 있는 클로저에서 오류를 전파하는 방법.  
 > `@inlinable`은 함수에 대한 명령을 호출 사이트로 내보내야 함을 컴파일러에 암시.
+{: .prompt-info }
 
 ## Performance
 
@@ -390,12 +390,11 @@ public static func random<T: RandomNumberGenerator>(
 
 마지막으로 `cmoveq` 명령어(같으면 조건부 이동)는 이전 테스트 명령의 결과를 사용하여 `cx` 레지스터를 `ax` 레지스터로 이동. `rcx` 및 `rax`의 접두사 `r`은 레지스터의 전체 64비트를 사용함을 나타냄.
 
-> 🤔  
 > 맹글링된 symbol \_$s6ifelse0A5Test1SiyF:는 ifelse.ifelseTest1() -> Int의 고유한 symbol 이름.(앞의 ifelse.는 모듈 이름 또는 이 경우 파일 이름) Linker는 프로그램의 모든 외부 기호에 대해 짧고 보장된 고유 이름이 필요. [https://github.com/apple/swift/blob/main/docs/ABI/Mangling.rst](https://github.com/apple/swift/blob/main/docs/ABI/Mangling.rst) 에서 mangling 사양을 찾을 수 있음. /Library/Developer/CommandLineTools/usr/bin/. 에 있는 명령줄 도구 swift-demangle을 실행할 수도 있음. 예를 들어 `swift-demangle \_\\$s6ifelseAAyxSb\_xyKXKxyKXKtKlF` 은 `ifelse.ifelse<A>(Swift.Bool, @autoclosure () throws -> A, @autoclosure () throws -> A) throws -> A` 의 symbol로 확인됨.
+{: .prompt-info }
 
-
-> 📄  컴파일러는 소스 코드의 추상화 비용 전부는 아니더라도 많은 부분을 제거함. 다른 소스 코드에 동일한 의미가 있는 경우 컴파일러는 동일한 기계 명령어를 내보낼 가능성이 높음.  추상화는 비용을 지불해야 함. (ifelse와 같은)새로운 언어 기능을 만들기 전에 신중하게 생각해야 함.
-
+> 컴파일러는 소스 코드의 추상화 비용 전부는 아니더라도 많은 부분을 제거함. 다른 소스 코드에 동일한 의미가 있는 경우 컴파일러는 동일한 기계 명령어를 내보낼 가능성이 높음.  추상화는 비용을 지불해야 함. (ifelse와 같은)새로운 언어 기능을 만들기 전에 신중하게 생각해야 함.
+{: .prompt-info }
 
 
 
