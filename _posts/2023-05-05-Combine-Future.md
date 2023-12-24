@@ -133,8 +133,7 @@ Second finished
 
 그 후에는 `promise`를 재실행시키지 않고 `output`을 `share`한다는 것을 알 수 있습니다.
 
-> 정리  
-`Future`는 비동기적으로 단일값을 전달시킬 `promise`의 실행절차를 정의하는 클로저를 받는 `Publisher`.  
+> `Future`는 비동기적으로 단일값을 전달시킬 `promise`의 실행절차를 정의하는 클로저를 받는 `Publisher`.  
 (`promise`는 `(Result<Output, Failure>) -> Void` 클로저로 정의된 `Promise`의 인자값)  
 `Future`는 만들어지자마자 실행이 되어 `output`을 만들고, 여러 `subscription`이 생겨도 한번 만들어진 동일한 `output`을 `share` 받음.
 {: .prompt-tip }
