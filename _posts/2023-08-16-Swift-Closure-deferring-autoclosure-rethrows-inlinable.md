@@ -120,7 +120,7 @@ let value = ifelse(.random(), 100, 0)
 
 이 디자인은 `타입 정보를 보존하고 인수를 반환 타입과 동일한 타입으로 제한`시켜줌.
 
-## `Deferring execution`(실행 지연)
+## Deferring execution(실행 지연)
 
 ```swift
 func expensiveValue1() -> Int {
@@ -197,7 +197,7 @@ let taxicab = ifelse(
 
 이 변경은 호출되는 곳을 이전 상태로 복원하고 여전히 실행을 연기하므로 사용된 인수만 evaluate됨.
 
-## `Using expressions that can fail`
+## Using expressions that can fail
 
 실패가능한 표현식일 때는 위 `ifelse` 함수를 사용할 수 없음.
 
@@ -301,7 +301,7 @@ rethrows -> V {
 > `rethrow`는 `throws`로 표시되거나 표시되지 않을 수 있는 클로저에서 오류를 전파하는 방법.  
 > `@inlinable`은 함수에 대한 명령을 호출 사이트로 내보내야 함을 컴파일러에 암시.
 
-## `Performance`
+## Performance
 
 `optimizing 컴파일러`로 프로그램을 작성할 때 멋진 점 중 하나는 코드를 명확하고 유지 관리 가능하게 만드는 추상화 비용이 없거나 거의 없다는 것.
 
