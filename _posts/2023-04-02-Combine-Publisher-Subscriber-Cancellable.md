@@ -32,7 +32,7 @@ let just = Just("Hello world!")
 
 `Just Publisher`는 `단일 value`를 받아서 `subscribe`하자마자 `value`를 내보냅니다.
 
-![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/c5b069e9-f99b-4070-afea-5d9240649e81){: width="50%" height="50%"}
+![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/c5b069e9-f99b-4070-afea-5d9240649e81)
 
 이제 위의 `Just`로부터 값을 받으려면 `Subscriber`가 필요합니다.
 
