@@ -5,6 +5,7 @@ date: 2023-09-15 00:34:00 +0800
 categories: [iOS, iOS Dev]
 tags: [Swift, CryptoKit, iOS, ECDH, SecureEnclave]
 pin: false
+math: true
 mermaid: true
 ---
 ## Public-Key Cryptography
@@ -41,20 +42,16 @@ CryptoKit은 `ECC`알고리즘를 독점적으로 제공합니다. 알고리즘�
 
 타원곡선은 아래 방정식을 만족하는 점 (x, y)으로 구성됩니다.
 
-```
-y² = x³ + Ax + B
-```
+$$ y^2 = x^3 + Ax + B $$
 
-예를 들어, y² = x³ - x + 1은 아래와 같은 타원 곡선 그래프를 그립니다.
+예를 들어, `y² = x³ - x + 1`은 아래와 같은 타원 곡선 그래프를 그립니다.
 
 ![image](https://github.com/redxoul/redxoul.github.io/assets/9062513/b418115c-9b5c-4815-a12a-785841a53167)
 
 
 `ECC`는 타원곡선 중 아래 조건을 만족하는 `비특이 타원곡선`을 사용하는데
 
-```
-4a³ + 27b² ≠ 0
-```
+$$ 4a^3 + 27b^2 \ne 0 $$
 
 `ECC`는 `비특이 타원곡선`의 아래와 같은 속성을 이용합니다.
 
@@ -203,9 +200,8 @@ Receiver는 Sender의 `공개키`에 자신의 `개인키`를 곱하고,
 
 Sender는 Receiver의 `공개키`에 자신의 `개인키`를 곱해서 같은 점을 얻을 수 있습니다.
 
-```swift
-(s * G) * r = (r * G) * s
-```
+$$ (s * G) * r = (r * G) * s $$
+
 
 이 방법이 `ECDH(Elliptic Curve Diffie Helman) key agreement`로,
 
