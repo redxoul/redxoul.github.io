@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> [swifty-cody.tistory.com](swifty-cody.tistory.com)으로부터 이사하는 중입니다(95%).
+> [swifty-cody.tistory.com](https://swifty-cody.tistory.com)으로부터 이사하는 중입니다(95%).
 {: .prompt-tip }
 
 🧑🏻‍💻 어디선가 고분분투 중인 iOS 개발자.  
