@@ -1,5 +1,5 @@
 ---
-title: (WWDC22) Hello Swift Charts
+title: (WWDC22) Swift Charts
 author: Cody
 date: 2024-01-02 00:34:00 +0800
 categories: [iOS, Swift]
@@ -8,7 +8,8 @@ pin: false
 mermaid: true
 ---
 
-[(WWDC22)Hello Swift Charts](https://developer.apple.com/videos/play/wwdc2022/10136/)
+[(WWDC22)Hello Swift Charts](https://developer.apple.com/videos/play/wwdc2022/10136/)  
+[(WWDC22)Swift Charts: Raise the bar](https://developer.apple.com/videos/play/wwdc2022/10137/)
 
 ## Swift Charts Framework
 - Apple이 디자인한 Chart를 만들기 위한 Framework.
@@ -129,10 +130,28 @@ struct StylesDetailsChart: View {
 ```
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/79b96dce-e314-4e0d-9f6a-51f97cedd88f) 
 
-Chart는 다크모드, 다양한 디스플레이, 크기, 방향, 접근성을 지원
+### 다크모드, 디스플레이 크기, 방향 지원
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/6e1ba54a-11c4-4c87-8903-21d5909dbe20) 
 ![image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/234b12a9-2397-4d53-9679-bf4486bf56b8) 
 
+
+### 접근성 지원
+```swift
+struct StylesDetailsChart: View {
+    var body: some View {
+        Chart(sales) { element in
+            BarMark(
+                x: .value("Sales", element.sales),
+                y: .value("Name", element.name)
+            )
+            .accessibilityLabel(element.name)
+            .accessibilityValue("\(element.sales) sold")
+        }
+    }
+}
+```
+
+### 2개 이상의 데이터 표시
 
 2개 이상의 데이터를 한번에 표시하기.   
 범례는 `foregroundStyle(by:)`로 표시해줌.
@@ -170,6 +189,9 @@ struct LocationsDetailsChart: View {
 ```
 ![2개 이상의 데이터 표시](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/b583166a-5e4c-4208-9b68-12518b39fe69) 
 
+
+### PointMark, LineMark
+
 `Mark` 유형을 `PointMark`나
 ![PointMark](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/f707ade5-50c6-45f0-91fe-5292c4f71679) 
 
@@ -201,6 +223,8 @@ struct LocationsDetailsChart: View {
 ```
 
 ![PointMark와 LineMark를 동시에](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/e7c05004-e03a-4d1b-8344-b2ab1962d83e) 
+
+### symbol
 
 `.symbol(by:)`를 통해 `PointMark`의 각 데이터들을 다른 기호로 표시시켜줌.
 ```swift
