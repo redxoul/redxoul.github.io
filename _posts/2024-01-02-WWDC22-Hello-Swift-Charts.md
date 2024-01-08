@@ -225,8 +225,9 @@ struct LocationsDetailsChart: View {
 ![PointMark와 LineMark를 동시에](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/e7c05004-e03a-4d1b-8344-b2ab1962d83e) 
 
 ### symbol
+`.symbol(by:)`를 통해 `PointMark`의 각 데이터들을 다른 기호로 표시시켜줌.   
+기호가 있으면 색맹인 사람들이 더 차트를 잘 읽을 수 있음.
 
-`.symbol(by:)`를 통해 `PointMark`의 각 데이터들을 다른 기호로 표시시켜줌.
 ```swift
 struct LocationsDetailsChart: View {
     var body: some View {
