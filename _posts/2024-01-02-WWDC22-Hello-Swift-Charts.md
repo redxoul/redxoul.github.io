@@ -188,6 +188,25 @@ struct LocationsDetailsChart: View {
 }
 ```
 ![2개 이상의 데이터 표시](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/b583166a-5e4c-4208-9b68-12518b39fe69) 
+위 처럼 그리면 누적되어 보여줌.
+각각을 나누어 그룹화하려면 `.position(by:)` 수정자를 사용
+```swift
+struct LocationsDetailsChart: View {
+    var body: some View {
+        Chart(seriesData) { series in
+            ForEach(series.sales) { element in
+                BarMark(
+                    x: .value("Day", element.weekday, unit: .day),
+                    y: .value("Sales", element.sales))
+            }
+            .foregroundStyle(by: .value("City", series.city))
+            .symbol(by: .value("City", series.city))
+            .position(by: .value("City", series.city)) // 각각을 그룹화
+        }
+    }
+}
+```
+![2개 이상의 데이터를 그룹화](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/b4eaf6bc-c1ed-4ec9-8dad-5e862cde7ac3) 
 
 
 ### PointMark, LineMark
@@ -271,7 +290,7 @@ struct LocationsDetailsChart: View {
 ![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/4e7c3bfa-5632-4b45-a480-c95e45123e6d) 
 
 ### 보간법(interpolation)
-LineMark의 경우 interpolation으로 더 매끄러운 선을 그려줄 수 있음.
+`LineMark`의 경우 `interpolation`으로 더 매끄러운 선을 그려줄 수 있음.
 ```swift
 struct LocationsDetailsChart: View {
     var body: some View {
