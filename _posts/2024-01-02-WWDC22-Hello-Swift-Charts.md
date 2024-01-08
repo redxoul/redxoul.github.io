@@ -270,6 +270,27 @@ struct LocationsDetailsChart: View {
 ```
 ![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/4e7c3bfa-5632-4b45-a480-c95e45123e6d) 
 
+### 보간법(interpolation)
+LineMark의 경우 interpolation으로 더 매끄러운 선을 그려줄 수 있음.
+```swift
+struct LocationsDetailsChart: View {
+    var body: some View {
+        Chart(seriesData) { series in
+            ForEach(series.sales) { element in
+                LineMark(
+                    x: .value("Day", element.weekday, unit: .day),
+                    y: .value("Sales", element.sales))
+            }
+            .foregroundStyle(by: .value("City", series.city))
+            .symbol(by: .value("City", series.city))
+            .interpolationMethod(.catmullRom) // 보간법 적용
+        }
+    }
+}
+```
+![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/4ce26fca-e9a0-4714-9aad-2b033c8451cc) 
+
+
 위에서 사용했던 `Barmark`, `LineMark`, `PointMark`와   
 `x`, `y`, `foregroundStyle`, `symbol` 속성 외에도   
 
