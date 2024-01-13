@@ -309,6 +309,27 @@ struct LocationsDetailsChart: View {
 ```
 ![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/4ce26fca-e9a0-4714-9aad-2b033c8451cc) 
 
+### 최소값과 최대값의 시각화
+`yStart`, `yEnd`를 통해 최소값과 최대값을 시각화할 수 있음.
+```swift
+struct MonthlySalesChart: View {
+    var body: some View {
+        Chart(SalesData.last12Months, id: \.month) {
+            AreaMark(
+                x: .value("Month", $0.month, unit: .month),
+                yStart: .value("Daily Min", $0.dailyMin),   // 최소값
+                yEnd: .value("Daily Max", $0.dailyMax)      // 최대값
+            )
+            .opacity(0.3)
+            
+            LineMark(x: .value("Month", $0.month, unit: .month),
+                     y: .value("Daily Average", $0.dailyAverage))
+        }
+    }
+}
+```
+![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/963a1abd-83d2-4c8c-a6ce-b9ec664f11d3) 
+
 
 위에서 사용했던 `Barmark`, `LineMark`, `PointMark`와   
 `x`, `y`, `foregroundStyle`, `symbol` 속성 외에도   
@@ -317,4 +338,100 @@ struct LocationsDetailsChart: View {
 `symbolSize`, `lineStyle` 속성 들도 있음.
 ![SCR-20240108-ghgn](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/13d3a4be-96b0-4c77-ba59-bda5c7e39294)
 
+### RectangleMark, RuleMark
+위 차트에서 AreaMark를 BarMark로 LineMark를 RectangleMark로 변경하고,   
+RuleMark를 추가.
+```swift
+struct MonthlySalesChart: View {
+    let averageValue = 137
+    var body: some View {
+        Chart {
+            ForEach(SalesData.last12Months, id: \.month) {
+                BarMark(
+                    x: .value("Month", $0.month, unit: .month),
+                    yStart: .value("Daily Min", $0.dailyMin),   // 최소값
+                    yEnd: .value("Daily Max", $0.dailyMax)      // 최대값
+                )
+                
+                RectangleMark(
+                    x: .value("Month", $0.month, unit: .month),
+                    y: .value("Daily Average", $0.dailyAverage),
+                    height: 2
+                )
+            }
+            .opacity(0.3)
+            RuleMark(
+                y: .value("Average", averageValue)
+            )
+            .lineStyle(StrokeStyle(lineWidth: 3))
+        }
+    }
+}
+```
+![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/d3f9ea31-6b65-4c48-92e9-4db5bc9100e1) 
+
+### 축 값의 변경
+아래와 같이 작성하면 x축의 월 표시가 모두 표시가 되지 않음.
+```swift
+struct MonthlySalesChart: View {
+    let averageValue = 137
+    var body: some View {
+        Chart {
+            ForEach(SalesData.last12Months, id: \.month) {
+                BarMark(
+                    x: .value("Month", $0.month, unit: .month),
+                    y: .value("Sales", $0.sales)
+                )
+            }
+        }
+    }
+}
+```
+![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/8fe3c532-80d0-4669-a482-bcccc5e3f33b) 
+
+`.chartXAxis` 수정자로 `AxisMark`를 일정간격(stride)으로 표시.
+```swift
+struct MonthlySalesChart: View {
+    let averageValue = 137
+    var body: some View {
+        Chart {
+            ForEach(SalesData.last12Months, id: \.month) {
+                BarMark(
+                    x: .value("Month", $0.month, unit: .month),
+                    y: .value("Sales", $0.sales)
+                )
+            }
+        }
+        .chartXAxis {
+            AxisMarks(values: .stride(by: .month))
+        }
+    }
+}
+```
+![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/d1e7e559-7350-4af4-8217-578f21760c22) 
+
+위에서는 각 항목이 너무 길어서 잘림. `AxisValueLabel을` 통해 format을 좁은 형식을 쓰도록 설정해줄 수 있음.
+```swift
+struct MonthlySalesChart: View {
+    let averageValue = 137
+    var body: some View {
+        Chart {
+            ForEach(SalesData.last12Months, id: \.month) {
+                BarMark(
+                    x: .value("Month", $0.month, unit: .month),
+                    y: .value("Sales", $0.sales)
+                )
+            }
+        }
+        .chartXAxis {
+            AxisMarks(values: .stride(by: .month)) { value in
+                AxisGridLine()
+                AxisTick()
+                AxisValueLabel(format: .dateTime.month(.narrow))
+            }
+        }
+    }
+}
+```
+![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/832cbe25-f7e6-44d6-93a1-b3b3dbd84194) 
 
