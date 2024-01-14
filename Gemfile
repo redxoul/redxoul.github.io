@@ -25,3 +25,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem 'jekyll-seo-tag'
 
 gem 'jekyll-sitemap'
+
+gem 'jekyll-redirect-from'
