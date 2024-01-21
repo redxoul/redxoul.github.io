@@ -410,7 +410,7 @@ struct MonthlySalesChart: View {
 ```
 ![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/d1e7e559-7350-4af4-8217-578f21760c22) 
 
-위에서는 각 항목이 너무 길어서 잘림. `AxisValueLabel을` 통해 format을 좁은 형식을 쓰도록 설정해줄 수 있음.
+위에서는 각 항목이 너무 길어서 잘림. `AxisValueLabel`을 통해 format을 좁은 형식을 쓰도록 설정해줄 수 있음.
 ```swift
 struct MonthlySalesChart: View {
     let averageValue = 137
@@ -434,4 +434,84 @@ struct MonthlySalesChart: View {
 }
 ```
 ![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/832cbe25-f7e6-44d6-93a1-b3b3dbd84194) 
+
+Y축의 위치를 앞쪽(`.leading`)으로 적용.
+```swift
+struct MonthlySalesChart: View {
+    let averageValue = 137
+    var body: some View {
+        Chart {
+            ForEach(SalesData.last12Months, id: \.month) {
+                BarMark(
+                    x: .value("Month", $0.month, unit: .month),
+                    y: .value("Sales", $0.sales)
+                )
+            }
+        }
+        .chartXAxis {
+            AxisMarks(values: .stride(by: .month)) { value in
+                AxisGridLine()
+                AxisTick()
+                AxisValueLabel(format: .dateTime.month(.narrow))
+            }
+        }
+        .chartYAxis {
+            AxisMarks(position: .leading)
+        }
+    }
+}
+```
+![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/5a20b023-dfb0-4d06-a8ef-7473d6b55446) 
+
+경우에 따라서는 그래프의 모양, 개요만 보여주고, X, Y축의 정보는 보여주고 싶지 않을 수도 있음.   
+이럴 떄는 hidden 처리가 가능.
+```swift
+struct MonthlySalesChart: View {
+    let averageValue = 137
+    var body: some View {
+        Chart {
+            ForEach(SalesData.last12Months, id: \.month) {
+                BarMark(
+                    x: .value("Month", $0.month, unit: .month),
+                    y: .value("Sales", $0.sales)
+                )
+            }
+        }
+        .chartXAxis {
+            AxisMarks(values: .stride(by: .month)) { value in
+                AxisGridLine()
+                AxisTick()
+                AxisValueLabel(format: .dateTime.month(.narrow))
+            }
+        }
+        .chartYAxis(.hidden)
+        .chartXAxis(.hidden)
+    }
+}
+```
+![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/71d22635-b65d-4c2f-827a-9dfd6c793451) 
+
+### chartPlotStyle
+플롯 영역에 정확한 크기나 종횡비를 설정하고 싶을 때는 `.chartPlotStyle` 사용.  
+`.background`로 색상을 주거나, `.border`로 테두리 설정을 할 수도 있음.
+```swift
+struct StylesOverviewChart: View {
+    let numberOfCategories = TopStyleData.last30Days.count
+    
+    var body: some View {
+        Chart(TopStyleData.last30Days, id: \.name) { element in
+            BarMark(x: .value("sales", element.sales),
+                    y: .value("name", element.name))
+        }
+        .foregroundColor(.pink)
+        .chartPlotStyle { plotArea in
+            plotArea
+                .frame(height: 60.0 * CGFloat(numberOfCategories))
+                .background(.pink.opacity(0.2))
+                .border(.pink, width: 1)
+        }
+    }
+}
+```
+![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/3fa2d474-e866-40d2-8070-dfa1975cbe61) 
 
