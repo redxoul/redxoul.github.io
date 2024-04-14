@@ -41,7 +41,7 @@ mermaid: true
 
 ## 예제
 영화검색을 해주는 Clean Arch 기반의 MVVM 예제.  
-https://github.com/kudoleh/iOS-Clean-Architecture-MVVM
+[https://github.com/kudoleh/iOS-Clean-Architecture-MVVM](https://github.com/kudoleh/iOS-Clean-Architecture-MVVM)
 
 | 검색 | 검색결과 | 검색상세 |
 | -- | -- | -- |
