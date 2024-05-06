@@ -515,3 +515,7 @@ struct StylesOverviewChart: View {
 ```
 ![Image](https://github.com/swiftycody/swiftycody.github.io/assets/9062513/3fa2d474-e866-40d2-8070-dfa1975cbe61) 
 
+### ChartProxy
+차트의 x, y 스케일에 접근할 수 있는 ChartProxy를 제공.  
+ChartProxy의 position(for:) 메서드로 해당 데이터값의 위치를 가져오거나   
+value(at:) 메서드로 주어진 위치의 데이터 값을 가져올 수도 있음.
